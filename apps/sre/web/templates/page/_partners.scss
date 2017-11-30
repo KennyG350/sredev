@@ -1,0 +1,60 @@
+.alignment {
+    margin-left: 50px;
+}
+.bullets {
+    list-style-type: square;
+    /*list-style-position: outside;*/
+   /* margin-left: 1.5em;*/
+    /*margin-right: 100px;*/
+    font-size: 20px;
+    text-align: left;
+}
+.smart-homebuyer-solution {
+    border: 3px solid #1392ca;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 95%;
+    padding: 0 20px 10px 20px;
+    margin-bottom: 30px;
+}
+.h1-solution {
+    color: #1392ca;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 10px;
+}
+.h2-system {
+    color: #1392ca;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.sre-rebates {
+    color: #1392ca;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.5em;
+}
+.smart {
+margin-left: 65%;
+font-size: 12px;
+line-height: 1em;
+}
+
+.mobile {
+display : block!important;
+@include min-screen($breakpoint-md) {
+     display : none!important;
+
+
+}
+}
+
+.desktop {
+display : none!important;
+@include min-screen($breakpoint-md) {
+     display : block!important;
+
+
+}
+}

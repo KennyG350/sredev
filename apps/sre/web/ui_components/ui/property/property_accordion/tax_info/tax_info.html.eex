@@ -1,0 +1,43 @@
+<div class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Tax Info
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <div class="grid u-font14">
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= if @listing.tax_amount do %>
+          <li>
+            <strong class="strong">Annual Tax:</strong>
+            <%= Sre.Listing.ViewHelper.format_currency @listing.tax_amount %>
+          </li>
+          <% end %>
+          <%= if @listing.assessment_improvement_value do %>
+          <li>
+            <strong class="strong">Assessed Improvements:</strong>
+            <%= Sre.Listing.ViewHelper.format_currency @listing.assessment_improvement_value %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= if @listing.tax_assessed_value do %>
+          <li>
+            <strong class="strong">Assessed Value:</strong>
+            <%= Sre.Listing.ViewHelper.format_currency @listing.tax_assessed_value %>
+          </li>
+          <% end  %>
+          <%= if @listing.tax_year do %>
+          <li>
+            <strong class="strong">Tax Year:</strong>
+            <%= @listing.tax_year %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /end .accordion__content -->
+</div>

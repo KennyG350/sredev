@@ -1,0 +1,35 @@
+<fieldset class="<%= @classname %>">
+  <legend class="label input-scaffold__label"><%= @label %></legend>
+  <div class="segmented-control">
+    <label class="elm-filters-rooms-label elm-filters-rooms-label-<%= @input_name %>0 segmented-control__segment segmented-control__segment--selected" for="<%= @input_name %>0">
+      ANY
+      <span class="u-hidden-visually"><%= @label %></span>
+      <input class="u-hidden-visually" id="<%= @input_name %>0" name="<%= @input_name %>" type="radio" value="0" />
+    </label>
+    <label class="elm-filters-rooms-label elm-filters-rooms-label-<%= @input_name %>1 segmented-control__segment" for="<%= @input_name %>1">
+      1+
+      <span class="u-hidden-visually"><%= @label %></span>
+      <input class="u-hidden-visually" id="<%= @input_name %>1" name="<%= @input_name %>" type="radio" value="1" />
+    </label>
+    <label class="elm-filters-rooms-label elm-filters-rooms-label-<%= @input_name %>2 segmented-control__segment" for="<%= @input_name %>2">
+      2+
+      <span class="u-hidden-visually"><%= @label %></span>
+      <input class="u-hidden-visually" id="<%= @input_name %>2" name="<%= @input_name %>" type="radio" value="2" />
+    </label>
+    <label class="elm-filters-rooms-label elm-filters-rooms-label-<%= @input_name %>3 segmented-control__segment" for="<%= @input_name %>3">
+      3+
+      <span class="u-hidden-visually"><%= @label %></span>
+      <input class="u-hidden-visually" id="<%= @input_name %>3" name="<%= @input_name %>" type="radio" value="3" />
+    </label>
+    <label class="elm-filters-rooms-label elm-filters-rooms-label-<%= @input_name %>4 segmented-control__segment" for="<%= @input_name %>4">
+      4+
+      <span class="u-hidden-visually"><%= @label %></span>
+      <input class="u-hidden-visually" id="<%= @input_name %>4" name="<%= @input_name %>" type="radio" value="4" />
+    </label>
+    <label class="elm-filters-rooms-label elm-filters-rooms-label-<%= @input_name %>5 segmented-control__segment" for="<%= @input_name %>5">
+      5+
+      <span class="u-hidden-visually"><%= @label %></span>
+      <input class="u-hidden-visually" id="<%= @input_name %>5" name="<%= @input_name %>" type="radio" value="5" />
+    </label>
+  </div>
+</fieldset>

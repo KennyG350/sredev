@@ -1,0 +1,45 @@
+<hgroup class="testimonials-page__hgroup">
+
+    <hgroup class="marketing-page__hero v2">
+
+        <h1 class="homepage__hero__h3">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap">Testimonials</h1>
+
+    </hgroup>
+  
+  
+  <article class="testimonials-page u-mauto u-mtop24 u-size-max-width">
+
+    <h1 class="h2 u-mbottom16">
+      Our Client Comments
+    </h1>
+  </hgroup>
+<center>99% of our clients who use the Smart Homebuyer Solution are happy and satisfied</center>
+  <%= for testimonial <- @testimonials do %>
+    <div class="testimonial u-mbottom30">
+      <blockquote class="testimonial__quote">
+        <p class="p u-m0">
+          <%= testimonial.testimonial %>
+        </p>
+        <div class="testimonial__info u-float-right">
+          <div class="testimonial__cite">
+            <strong class="strong">
+              <%= testimonial.endorser %>
+            </strong>
+            <small class="u-sans-light">
+              <%= testimonial.location %>
+            </small>
+          </div>
+          <div class="testimonial__received u-line18">
+            <div class="u-text-upper u-font12">
+              Received
+            </div>
+            <div class="strong u-font18">
+              <%= format_currency testimonial.amount_received %>
+            </div>
+          </div>
+        </div>
+      </blockquote>
+    </div>
+  <% end %>
+</article>

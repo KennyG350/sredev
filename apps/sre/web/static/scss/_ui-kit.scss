@@ -1,0 +1,385 @@
+// *******************************************
+// *******************************************
+
+    // UI Kit layout component
+
+// *******************************************
+// *******************************************
+
+//////////////////////////////
+// Layout
+//////////////////////////////
+
+// @vars
+$unit-content-max-width  : 1140; // settings/uik-layout-units
+$unit-edge-space-desktop : 30; // settings/uik-layout-units
+$unit-edge-space         : 16;
+$ui-kit-layout-nav-width : 210;
+$bp-lg                   : rem-calc(1024);
+
+// container element
+.ui-kit-layout {
+    position : relative;
+}
+
+// nav container
+.ui-kit-layout__nav {
+
+    @include min-screen($bp-lg) {
+        position     : fixed;
+        top          : 0;
+        bottom       : 0;
+        left         : 0;
+        width        : rem-calc($ui-kit-layout-nav-width);
+        padding      : rem-calc($unit-edge-space-desktop);
+        overflow     : hidden;
+        overflow-y   : auto;
+        border-right : 1px solid $gray-200;
+        background   : $white;
+    }
+
+}
+
+// content container
+.ui-kit-layout__content {
+    padding : rem-calc($unit-edge-space);
+
+    @include min-screen($bp-lg) {
+        padding : rem-calc($unit-edge-space-desktop $unit-edge-space-desktop $unit-edge-space-desktop ($ui-kit-layout-nav-width + $unit-edge-space-desktop));
+    }
+
+}
+
+// page
+.ui-kit-layout__page {
+    margin-bottom : rem-calc(30);
+
+    @include min-screen($bp-lg) {
+        margin-bottom : rem-calc(60);
+    }
+
+}
+
+// page headers
+.ui-kit-layout__page-header {
+    margin      : rem-calc(0 0 30 0);
+    font-size   : rem-calc(27);
+    color       : $gray-500;
+    text-align  : center;
+    text-shadow : 1px 1px 0 rgba($white, .7);
+
+    @include min-screen($bp-lg) {
+        position      : relative;
+        padding       : rem-calc(0 0 30 0);
+        border-bottom : 1px solid $gray-200;
+        font-size     : rem-calc(36);
+        text-align    : left;
+    }
+
+    &::before {
+
+        @include min-screen($bp-lg) {
+            content       : '';
+            position      : absolute;
+            right         : 0;
+            bottom        : -2px;
+            left          : 0;
+            border-bottom : 1px solid rgba($white, .7);
+        }
+
+    }
+
+}
+
+// page container
+.ui-kit-layout__page__container {
+    max-width : rem-calc($unit-content-max-width);
+    margin    : 0;
+}
+
+// h2 headings
+.ui-kit-layout__h2 {
+    margin-bottom : rem-calc(21);
+    font-size     : rem-calc(21);
+    color         : $primary;
+}
+
+// h3 headings
+.ui-kit-layout__h3 {
+    margin-bottom : rem-calc(3);
+    font-size     : rem-calc(14);
+    color         : $gray-400;
+}
+
+//////////////////////////////
+// Navigation
+//////////////////////////////
+
+// @vars
+$unit-touch       : $unit-touch; // settings/uik-layout-units
+$unit-edge-space  : $unit-edge-space; // settings/uik-layout-units
+$stack-top        : $stack-top; // settings/uik-z-indexes
+$stack-mid        : $stack-mid; // settings/uik-z-indexes
+$ease-in-out-quad : $ease-in-out-quad; // setting/uik-timing-functions
+
+// mobile menu container
+.ui-kit-nav__mobile-container {
+    position   : fixed;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : $stack-mid;
+    transform  : translateX(-100%);
+    overflow   : hidden;
+    overflow-y : auto;
+    background : $gray-900;
+    transition : transform 300ms $ease-in-out-quad;
+
+    @include min-screen($bp-lg) {
+        position    : relative;
+        top         : auto;
+        right       : auto;
+        bottom      : auto;
+        left        : auto;
+        padding-top : rem-calc(30);
+        transform   : translateX(0);
+        border-top  : 1px solid $gray-200;
+        background  : transparent;
+    }
+
+    // mobile visibility modifier
+    &.ui-kit-nav__mobile-container--visible {
+        transform : translateX(0);
+    }
+
+}
+
+// nav item
+.ui-kit-nav__item {
+    display         : block;
+    padding         : rem-calc(($unit-touch / 2) $unit-edge-space);
+    border-bottom   : 1px solid $gray-800;
+    font-size       : rem-calc(13);
+    color           : $white;
+    text-decoration : none;
+    line-height     : rem-calc(16);
+
+    @include min-screen($bp-lg) {
+        padding : rem-calc(8 0);
+        border  : 0;
+        color   : $gray-700;
+    }
+
+}
+
+// current nav item modifier
+.ui-kit-nav__item--current {
+    font-weight : bold;
+
+    @include min-screen($bp-lg) {
+        color : $gray-900;
+    }
+
+}
+
+// mobile visibility trigger
+.ui-kit-nav__mobile-trigger {
+    position        : fixed;
+    right           : rem-calc($unit-edge-space);
+    bottom          : rem-calc($unit-edge-space);
+    z-index         : $stack-top;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    width           : rem-calc($unit-touch);
+    height          : rem-calc($unit-touch);
+    box-shadow      : 0 0 15px rgba($black, .25);
+    border          : 1px solid $gray-200;
+    background      : $white;
+
+    @include min-screen($bp-lg) {
+        display : none;
+    }
+
+    &:focus {
+        outline : 0;
+    }
+
+}
+
+// hamburger icon
+.ui-kit-nav__hamburger {
+    position : relative;
+    display  : block;
+    width    : rem-calc($unit-touch * .5);
+    height   : rem-calc($unit-touch * .35);
+
+    &::before,
+    &::after,
+    .ui-kit-nav__hamburger__inner {
+        content       : '';
+        position      : absolute;
+        left          : 0;
+        display       : block;
+        width         : 100%;
+        height        : 3px;
+        border-radius : 3px;
+        background    : $gray-400;
+        transition    : transform 200ms ease;
+    }
+
+    // top
+    &::before {
+        top : 0;
+    }
+
+    // middle
+    .ui-kit-nav__hamburger__inner {
+        top       : 50%;
+        transform : translateY(-50%);
+    }
+
+    // bottom
+    &::after {
+        bottom : 0;
+    }
+
+    // mobile visibility modifier
+    .ui-kit-nav__mobile-trigger--mobile-visible & {
+
+        // top
+        &::before {
+            top       : 50%;
+            transform : translateY(-50%) rotate(45deg);
+
+        }
+
+        // middle
+        .ui-kit-nav__hamburger__inner {
+            opacity : 0;
+        }
+
+        // bottom
+        &::after {
+            top       : 50%;
+            transform : translateY(-50%) rotate(-45deg);
+        }
+
+    }
+
+}
+
+// nav branding container
+.ui-kit-nav__branding {
+    margin        : rem-calc(0 0 30 0);
+    padding       : rem-calc(30);
+    border-bottom : 1px solid $gray-200;
+    text-align    : center;
+
+    @include min-screen($bp-lg) {
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        flex-flow       : column;
+        width           : rem-calc(155);
+        height          : rem-calc(155);
+        margin          : 0 auto rem-calc(30);
+        padding         : 0;
+        border          : 0;
+        background      : $primary;
+        text-align      : left;
+    }
+
+}
+
+// logo image
+.ui-kit-nav__branding__logo {
+    display   : block;
+    max-width : rem-calc(100);
+    margin    : 0 auto;
+    fill      : $primary;
+
+    @include min-screen($bp-lg) {
+        margin : 0;
+        fill   : $white;
+    }
+
+}
+
+.ui-kit-nav__branding__title {
+    margin-top  : rem-calc(3);
+    font-size   : rem-calc(18);
+    color       : $gray-600;
+    text-shadow : 1px 1px 0 rgba($white, .7);
+
+    @include min-screen($bp-lg) {
+        color       : $white;
+        text-shadow : none;
+    }
+
+}
+
+//////////////////////////////
+// UI Kit Swatches
+//////////////////////////////
+
+// color swatch list
+.ui-kit-colors__list {
+    display         : flex;
+    flex-wrap       : wrap;
+    justify-content : center;
+    align-items     : center;
+
+    @include min-screen($bp-lg) {
+        justify-content : flex-start;
+        margin          : rem-calc(0 (-21 / 2));
+    }
+
+}
+
+// color swatch container
+.ui-kit-colors-list__item {
+    flex   : 0 0 auto;
+    margin : rem-calc(21 / 2);
+}
+
+
+.ui-kit-swatch {
+    width         : rem-calc(176);
+    padding       : rem-calc(6);
+    box-shadow    : 0 1px 12px 0 rgba($black, .12);
+    border        : 1px solid $gray-200;
+    background    : $white;
+}
+
+.ui-kit-swatch__name,
+.ui-kit-swatch__hex-code {
+    font-size   : rem-calc(12);
+    color       : $gray-500;
+}
+
+.ui-kit-swatch__color {
+    border : 1px solid $gray-100;
+}
+
+//////////////////////////////
+// UI Kit Icons
+//////////////////////////////
+
+.ui-kit-icon-example {
+    display       : flex;
+    align-items   : center;
+    margin-bottom : rem-calc(30);
+
+    .icon {
+        flex   : 0 0 rem-calc(18);
+        width  : rem-calc(18);
+        height : rem-calc(18);
+    }
+
+}
+
+.ui-kit-icon-example__label {
+    margin-left : rem-calc(8);
+}

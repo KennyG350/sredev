@@ -1,0 +1,204 @@
+//////////////////////////////////////// // Page sections //////////////////////////////////////// 
+.fintech-page__section {
+ padding : rem-calc(($unit-default-spacing * 6) 0);
+ @include min-screen($breakpoint-md) {
+ margin : rem-calc(0 (-$unit-md-edge-space));
+ padding-right : rem-calc($unit-md-edge-space);
+ padding-left : rem-calc($unit-md-edge-space);
+ margin-top : -40px;
+}
+}
+.fintech-page__section--white {
+ @include min-screen($breakpoint-md) {
+ border-top : 1px solid $gray-200;
+ border-bottom : 0px solid $gray-200;
+ background : $white;
+}
+}
+.fintech-page__section__h1 {
+	display : flex;
+	justify-content : left;
+	align-items : center;
+	max-width : rem-calc(600);
+	margin : 0 auto;
+    margin-bottom : rem-calc($unit-default-spacing);
+	font-size : rem-calc(21);
+	text-align : left;
+ line-height : rem-calc(21 * 1.25);
+ @include sans-bold;
+ @include min-screen($breakpoint-md) {
+ font-size : rem-calc(27);
+ line-height : rem-calc(27 * 1.25);
+}
+}
+.fintech-page__section__h1__sre {
+	width : rem-calc(60);
+ margin : rem-calc(0 $unit-default-spacing);
+ fill : $primary-dark;
+}
+.fintech-page__section__subtext {
+	max-width : rem-calc(600);
+	margin : 0 auto;
+ margin-bottom : rem-calc($unit-default-spacing * 2);
+	text-align : center;
+}
+.fintech-page__section__subtext--wide {
+	max-width : rem-calc(720);
+}
+ ///////////////////////////////////////////// // Contact section ///////////////////////////////////////////// 
+
+.fintech-page__section--contact {
+ padding-bottom : 0;
+}
+.fintech-page__contact {
+ @include min-screen($breakpoint-md) {
+ display : flex;
+ align-items : stretch;
+}
+}
+.fintech-page__contact__content {
+   position : relative;
+   margin-top : -80px;
+ @include clearfix;
+ @include min-screen($breakpoint-md) {
+ padding-right : rem-calc($unit-grid-gutter * 2);
+ margin-top : 0;
+}
+}
+.fintech-page__contact__content__agent {
+	float : left;
+	display : block;
+    margin-right : rem-calc($unit-grid-gutter * 2);
+    margin-bottom: -15px;
+	width : 160px;
+ @include min-screen($breakpoint-md) {
+ float : left;
+ display : block;
+ margin-right : rem-calc($unit-grid-gutter * 2);
+ margin-bottom: -15px;
+ width : 272px;
+}
+}
+.fintech-page__contact__content__h1 {
+padding-top : 72px;
+ font-size : rem-calc(15);
+ line-height: rem-calc(19);	
+ @include min-screen($breakpoint-md) {
+ padding-top : 0px;	 
+ margin-top : rem-calc(72);
+ font-size : rem-calc(18);
+ line-height: rem-calc(22);
+ 
+}
+}
+
+.mobile {
+ display : block!important;
+ @include min-screen($breakpoint-md) {
+	 display : none!important; 
+
+ 
+}
+}
+
+.desktop {
+ display : none!important;
+ @include min-screen($breakpoint-md) {
+	 display : block!important; 
+
+ 
+}
+}
+
+.fintech-page__contact__form {
+	display : none;
+	
+ @include min-screen($breakpoint-md) {
+ flex : 1 0 25%;
+ display : block;
+}
+}
+.fintech-page__contact__content {
+	flex : 1 0 50%;
+ * {
+ @include min-screen($breakpoint-md) {
+ justify-content : flex-start;
+ text-align : left;
+}
+}
+}
+
+
+
+.mortgage-margins {
+	margin-top: 40px; 
+	margin-bottom: 15px;
+}
+.mortgage-input_bottom-margin {
+	padding-bottom: 25px;
+}
+
+.mortpage-calctitle {
+	font-family: open-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 27px;
+	line-height: 34px;
+	color: #2d313b;
+	font-weight: bold;
+	padding-bottom: 15px;
+}	
+.mortgage-add-top {
+	margin-top: -10px;
+}
+
+.smpc-error {
+	font-size: 10px!important;
+	line-height: 12px!important;
+	color: #ca0000;
+}
+.smpc-monthlypayment {
+	font-family: open-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	margin-top: 15px;
+	font-size: 27px;
+	line-height: 33px!important;
+	color: #00b3e6;
+	display: block;
+	line-height:33px!important;
+}
+.smpc-friendlyreminder {
+	font-family: open-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	display: none;
+}
+.mortgage-page_bttn {
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.mortgage_labelPad {
+	margin-top: 10px;
+}
+.mortgage-instructions {
+	line-height:14px!important;
+	padding-top:10px!important;
+}
+.mortgage-top-20 {
+	padding-top:20px;
+}
+.mortgage-bottom-20 {
+	padding-bottom:20px;
+}
+.mortgage-branch-margins {
+	margin-top: 15px; 
+	margin-bottom:15px; 
+	margin-left:15px;
+	padding-bottom: 25px;
+}
+.mortgage-lh-14 {
+	line-height: 14px;
+}
+.mortgage-bot-20 {
+	margin-bottom: 20px;
+}

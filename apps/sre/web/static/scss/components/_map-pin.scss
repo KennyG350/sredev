@@ -1,0 +1,75 @@
+// *******************************************
+// *******************************************
+
+    // Map pin component
+
+// *******************************************
+// *******************************************
+
+// @vars
+
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+
+// settings/stylistic
+$shadow-hard : $shadow-hard;
+
+$map-pin-circumference : 20;
+
+.map-pin {
+    position : absolute;
+    z-index  : $stack-bot;
+    cursor   : pointer;
+
+    // white circle
+    &::before {
+        content       : '';
+        position      : absolute;
+        top           : 0;
+        left          : 0;
+        display       : block;
+        width         : rem-calc($map-pin-circumference);
+        height        : rem-calc($map-pin-circumference);
+        margin        : rem-calc(-($map-pin-circumference / 2));
+        box-shadow    : $shadow-hard;
+        border-radius : 50%;
+        background    : $white;
+    }
+
+    // primary color circle
+    &::after {
+        content       : '';
+        position      : absolute;
+        top           : 0;
+        left          : 0;
+        display       : block;
+        width         : rem-calc($map-pin-circumference - 6);
+        height        : rem-calc($map-pin-circumference - 6);
+        margin        : rem-calc(-(($map-pin-circumference - 6) / 2));
+        box-shadow    : inset 0 0 1px 0 rgba($black, .30);
+        border-radius : 50%;
+        background    : $pop-color;
+    }
+
+    &:hover {
+        z-index: $stack-top;
+    }
+}
+
+.map-pin__label {
+    position      : absolute;
+    top           : 100%;
+    left          : 50%;
+    z-index       : $stack-sub;
+    margin-top    : rem-calc(7);
+    padding       : rem-calc(($unit-default-spacing / 2) $unit-default-spacing);
+    transform     : translateX(-50%);
+    box-shadow    : $shadow-hard;
+    border-radius : 3px;
+    background    : $white;
+    font-size     : rem-calc(11);
+    line-height   : rem-calc(11);
+    white-space   : nowrap;
+    cursor        : pointer;
+    @include sans-bold;
+}

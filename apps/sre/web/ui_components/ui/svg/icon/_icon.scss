@@ -1,0 +1,72 @@
+// *******************************************
+// *******************************************
+
+    // Icon components
+
+// *******************************************
+// *******************************************
+
+// @vars
+$icon-colors            : $all-colors; // settings/colors
+$icon-base-size         : 48;
+$icon-dimension-xs      : 14;
+$icon-dimension-sm      : 21;
+$icon-dimension-md      : 30;
+$icon-dimension-lg      : 48;
+$icon-dimension-xl      : 72;
+$icon-dimension-default : $icon-dimension-md;
+$icon-dimensions        : (
+    'xs' : $icon-dimension-xs,
+    'sm' : $icon-dimension-sm,
+    'md' : $icon-dimension-md,
+    'lg' : $icon-dimension-lg,
+    'xl' : $icon-dimension-xl
+);
+
+.icon {
+    display     : inline-block;
+    width       : rem-calc($icon-dimension-default);
+    height      : rem-calc($icon-dimension-default);
+    margin      : rem-calc(0 4);
+    background  : transparent;
+    fill        : $black;
+    line-height : 0;
+}
+
+@each $icon-dimension-key, $icon-dimension in $icon-dimensions {
+
+    .icon--#{$icon-dimension-key} {
+        width  : rem-calc($icon-dimension);
+        height : rem-calc($icon-dimension);
+    }
+
+}
+
+@each $icon-color-key, $icon-color in $icon-colors {
+
+    .icon--#{$icon-color-key} {
+        fill : $icon-color;
+    }
+
+}
+
+// spin icon modifier
+.icon--spin {
+
+    .icon__svg {
+        animation : icon-spin 450ms infinite linear;
+    }
+
+}
+
+@keyframes icon-spin {
+
+    from {
+        transform : rotate(0deg);
+    }
+
+    to {
+        transform : rotate(360deg);
+    }
+
+}

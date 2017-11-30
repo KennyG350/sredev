@@ -1,0 +1,33 @@
+// *******************************************
+// *******************************************
+
+    // Interactive helper classes
+
+// *******************************************
+// *******************************************
+
+// force onclick events in iOS
+.onclick {
+    cursor : pointer;
+}
+
+// mask click areas
+.onclick-mask {
+    position : absolute;
+    top      : 0;
+    right    : 0;
+    bottom   : 0;
+    left     : 0;
+    z-index  : $stack-bot;
+    cursor   : pointer;
+}
+
+// prevent page scrolling
+.noscroll {
+    height   : 100%;
+    overflow : hidden;
+}
+
+.user-select-none {
+    user-select : none;
+}

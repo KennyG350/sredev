@@ -1,0 +1,13 @@
+<hgroup class="testimonials-page__hgroup">
+
+    <hgroup class="marketing-page__hero v2">
+
+        <h1 class="homepage__hero__h3">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap">About Us</h1>
+
+    </hgroup>
+
+<%= Sre.UI.Company.Overview.render_template(
+)%>
+<%= Sre.UI.Company.Branches.render_template(
+)%>

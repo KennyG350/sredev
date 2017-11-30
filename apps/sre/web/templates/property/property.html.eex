@@ -1,0 +1,50 @@
+<article class="property" itemscope="" itemtype="http://schema.org/SingleFamilyResidence">
+  <div class="property__viewport">
+    <div class="property__hero">
+      <%= Sre.UI.Property.PropertyHero.render_template listing: @listing %>
+    </div>
+    <header id="propertyHeader" class="property__header">
+      <%= Sre.UI.Property.PropertyHeader.render_template listing: @listing %>
+    </header>
+    <div class="property__content">
+      <section class="property__content__details">
+        <%= Sre.UI.Property.PropertyDetailsFavoriteButton.render_template(
+          listing: @listing,
+          classname: "property-aside__favorite--mobile-only"
+        ) %>
+        <%= if Sre.Listing.ViewHelper.has_rebate @listing do %>
+        <%=
+          Sre.UI.Property.PropertyRebateFormula.render_template(
+            classname: "property__content__rebate-formula",
+            listing: @listing
+        )%>
+        <% else %>
+        <h1 class="property__content__details__price">
+          <div class="property__content__details__price__label u-text-upper">
+            Price
+          </div>
+          <div class="property__content__details__price__value strong">
+            $<%= Sre.Listing.ViewHelper.get_list_price @listing %>
+          </div>
+        </h1>
+        <% end %>
+        <%= Sre.UI.Property.PropertyRemarks.render_template listing: @listing %>
+        <aside class="property__accordion">
+          <%= Sre.UI.Property.PropertyAccordion.render_template listing: @listing, schools: @schools %>
+        </aside>
+      </section>
+      <aside class="property__content__aside">
+      </aside>
+    </div>
+  </div>
+  <aside id="propertyAside" class="property__aside">
+    <%= Sre.UI.Property.PropertyAside.render_template(listing: @listing, user: assigns[:user]) %>
+  </aside>
+
+  <script src="//code.listtrac.com/monitor.ashx?acct=x_100704&nonjq=1"; type="text/javascript"></script>
+  <script type="text/javascript">
+    if (typeof(_LT) != 'undefined' && _LT != null ) {
+      _LT._trackEvent(_eventType.view, '<%= @listing.rets_id %>', '<%= @listing.zip_code %>');
+    }
+  </script>
+</article>

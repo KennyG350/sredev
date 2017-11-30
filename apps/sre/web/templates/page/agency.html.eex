@@ -1,0 +1,34 @@
+<article class="info-page-layout width-constraint width-constraint--max-md">
+  <h1 class="h1 info-page-layout__title">
+    Regional Alliance Agency
+  </h1>
+  <ul class="ul agency-overview-list">
+    <li class="agency-overview-list__item">
+      The Regional Alliance Agency is a nationwide network of independent real estate professionals with state broker licenses.
+    </li>
+    <li class="agency-overview-list__item">
+      The Regional Alliance Agency is able to decide the brokerage commission rate dependent on the customer and receives all of the brokerage commission from customers procured by the Regional Alliance Agency.
+    </li>
+    <li class="agency-overview-list__item">
+      The Regional Alliance Agency will be allocated customer leads from SRE and receives all of our brokerage commission, which is usually 1% of the sales price.
+    </li>
+    <li class="agency-overview-list__item">
+      The Regional Alliance Agency does not pay any fees to SRE.
+    </li>
+    <li class="agency-overview-list__item">
+      The Regional Alliance Agency provides full services to ensure customer satisfaction.
+    </li>
+  </ul>
+
+  <p class="p u-font14 u-text-center i" style="color: red;">
+    Now recruiting nationwide
+  </p>
+
+  <h4 class="h4 u-text-center">
+    Track Record of Honolulu Office in 2016
+  </h4>
+  <h5 class="h4 u-mbottom15 u-font14 u-text-center">Jan. 1st - Oct. 31th</h5>
+
+  <p>Total Sales Amount of Transactions <span class="u-font14">(6 Agents for 10 months)</span> . . . . . <span class="u-font20 strong">$808 million</span><br />
+  Total Number of Transactions <span class="u-font14">(6 Agents for 10 months)</span>. . . . . . . . . . .<span class="u-font20 strong">120 transactions</span></p>
+</article>

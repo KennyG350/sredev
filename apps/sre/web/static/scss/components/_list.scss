@@ -1,0 +1,22 @@
+// *******************************************
+// *******************************************
+
+    // List component styles
+
+// *******************************************
+// *******************************************
+
+.list__item {
+    padding : rem-calc(12);
+    border-bottom: 1px solid $gray-100;
+
+    &:hover,
+    &.list__item--active {
+        background : rgba($primary, .05);
+    }
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+}

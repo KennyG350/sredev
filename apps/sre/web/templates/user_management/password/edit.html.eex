@@ -1,0 +1,8 @@
+<div class="">
+  <h3>Change Your password.</h3>
+
+  <%= form_for @changeset, user_management_password_path(@conn, :update, @current_user), fn _f -> %>
+
+  <% end %>
+
+</div>

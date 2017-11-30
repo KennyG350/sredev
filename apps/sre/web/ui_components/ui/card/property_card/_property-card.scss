@@ -1,0 +1,202 @@
+// *******************************************
+// *******************************************
+
+    // Property Card Component
+
+// *******************************************
+// *******************************************
+
+// @vars
+$stack-top             : $stack-top; // settings/z-indexes
+$property-card-padding : 9;
+$shadow                : $shadow; // settings/stylistic
+$stack-mid             : $stack-mid; // settings/z-indexes
+
+// container element
+.property-card {
+    border     : 1px solid $gray-300;
+    background : $gray-050;
+    transition : background 300ms ease,
+                 box-shadow 300ms ease;
+
+    &:hover,
+    &.property-card--selected {
+
+        @include min-screen($breakpoint-md) {
+            box-shadow : $shadow;
+            background : $white;
+        }
+
+    }
+
+}
+
+// header
+.property-card__header {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : flex-start;
+}
+
+
+// left side of header
+.property-card__header__left {
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : stretch;
+    flex            : 0 0 calc(100% - 110px);
+    width           : calc(100% - 110px);
+    overflow        : hidden;
+}
+
+.property-card__header__right {
+
+    flex : 0 0 110px;
+}
+
+.property-card__header__rebate {
+    display         : flex;
+    flex-flow       : column;
+    justify-content : center;
+    align-items     : center;
+    height          : 52px;
+    text-align      : center;
+    line-height     : 1.2rem;
+}
+
+.property-card__header__rebate__label {
+    font-size : rem-calc(12);
+    color     : $symbolic-wealth;
+}
+
+.property-card__header__rebate__value {
+    font-size : rem-calc(21);
+    color     : $symbolic-wealth;
+}
+
+.property-card__header__main {
+    padding : rem-calc($property-card-padding);
+}
+
+// favorite button
+.property-card__header__favorite {
+    flex         : 0 0 rem-calc($unit-touch);
+    order        : -1;
+    width        : rem-calc($unit-touch);
+    overflow     : hidden;
+    border-right : 1px solid $gray-300;
+    line-height  : 0;
+}
+
+.property-card__header__favorite__layout {
+    display      : flex;
+    align-items  : stretch;
+}
+
+.property-card__header__favorite__icon {
+    position   : relative;
+    flex       : 1 0 rem-calc($unit-touch);
+    width      : rem-calc($unit-touch);
+    height     : rem-calc($unit-touch);
+    transform  : translateX(-100%);
+    transition : transform 180ms $ease-in-out-quad;
+
+    .icon {
+        position  : absolute;
+        top       : 50%;
+        left      : 50%;
+        width     : rem-calc($unit-touch * .5);
+        height    : rem-calc($unit-touch * .5);
+        margin    : 0;
+        transform : translate(-50%, -50%);
+        fill      : $gray-600;
+    }
+
+}
+
+.property-card__header__favorite__icon--heart .icon {
+    fill : $primary;
+}
+
+// favorited modifier
+.property-card__header__favorite--favorited {
+
+    .property-card__header__favorite__icon {
+        transform : translateX(0);
+    }
+
+}
+
+// image section
+.property-card__image {
+    position       : relative;
+    height         : 0;
+    padding-bottom : 56.25%;
+    border-top     : 1px solid $gray-300;
+    border-bottom  : 1px solid $gray-300;
+    background     : $black;
+}
+
+.property-card__broker-agent {
+    position    : absolute;
+    right       : 0;
+    bottom      : 0;
+    left        : 0;
+    z-index     : $stack-bot;
+    display     : flex;
+    align-items : center;
+    height      : rem-calc(25);
+    padding     : rem-calc(0 8);
+    background  : $gray-800;
+    font-size   : rem-calc(12);
+    color       : $white;
+}
+
+.property-card__mls-watermark {
+    position : absolute;
+    top      : rem-calc(4);
+    left     : rem-calc(4);
+    z-index  : $stack-top;
+}
+
+// image element
+.property-card__image__img {
+    display : block;
+    width   : 100%;
+}
+
+// listed by SRE badge
+.property-card__image__sre-badge {
+    position    : absolute;
+    bottom      : 0;
+    left        : 0;
+    z-index     : $stack-mid;
+    display     : flex;
+    align-items : center;
+    padding     : rem-calc(3 $property-card-padding);
+    background  : $primary;
+    font-size   : rem-calc(12);
+    color       : $white;
+}
+
+.property-card__image__sre-badge__svg {
+    height      : rem-calc(14);
+    margin-left : rem-calc(4);
+    fill        : $white;
+}
+
+// footer
+.property-card__footer {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : stretch;
+}
+
+// footer price
+.property-card__footer__price {
+    padding : rem-calc($property-card-padding);
+}
+
+.property-card__footer__meta__property-meta__item {
+    padding : rem-calc(0 $unit-default-spacing);
+}

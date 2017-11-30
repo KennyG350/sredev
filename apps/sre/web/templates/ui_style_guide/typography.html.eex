@@ -1,0 +1,322 @@
+<h2 class="ui-kit-layout__page-header">
+  Typography
+</h2>
+<section class="ui-kit-layout__page__container">
+  <div class="ui-kit-layout__page__container">
+        <h2 class="ui-kit-layout__h2">
+          Typographical Foundation
+        </h2>
+        <div class="grid">
+          <div class="grid__sm--12 grid__md--2">
+            <h2 class="ui-kit-layout__h3">
+              Font Family:
+            </h2>
+            <div class="u-sans-bold u-font72 u-line60">
+              Aa
+            </div>
+            <div class="u-sans-bold u-font16">
+              Open Sans
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--2">
+            <h2 class="ui-kit-layout__h3">
+              Font Styles:
+            </h2>
+            <div class="u-sans-regular">
+              Regular
+            </div>
+            <div class="u-sans-light">
+              Light
+            </div>
+            <div class="u-sans-bold">
+              Bold
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--2">
+            <h2 class="ui-kit-layout__h3">
+              Units:
+            </h2>
+            <div
+              class="u-sans-regular"
+              style={{maxWidth: '100px'}}
+            >
+              9, 10, 11, 12, 14, 16, 18, 21, 24, 30, 48, 60, 72
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--6">
+            <h2 class="ui-kit-layout__h3">
+              Font Stacks:
+            </h2>
+            <div class="u-sans-regular">
+              'open-sans', 'Helvetica Neue', Helvetica, Arial, sans
+            </div>
+            <div class="u-sans-light">
+              'open-sans', 'Helvetica Neue', Helvetica, Arial, sans
+            </div>
+            <div class="u-sans-bold">
+              'open-sans', 'Helvetica Neue', Helvetica, Arial, sans
+            </div>
+          </div>
+        </div>
+        <div class="grid u-mtop60">
+          <div class="grid__sm--12 grid__md--4">
+            <h2 class="ui-kit-layout__h3">
+              Headers:
+            </h2>
+            <div class="h1">
+              Heading H1
+            </div>
+            <div class="h2">
+              Heading H2
+            </div>
+            <div class="h3">
+              Heading H3
+            </div>
+            <div class="h4">
+              Heading H4
+            </div>
+            <div class="h5">
+              Heading H5
+            </div>
+            <div class="h6">
+              Heading H6
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--8">
+            <h2 class="ui-kit-layout__h3">
+              Text Elements:
+            </h2>
+            <p class="p">
+              <strong class="strong">Paragraph:</strong> <a class="a" href="#">Link</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis. Aenean ex neque, tincidunt quis eleifend vitae, aliquet ac dui. Aenean ullamcorper sodales turpis, imperdiet ullamcorper mi cursus eu. Morbi iaculis commodo dictum.
+            </p>
+            <p class="p p--small">
+              <strong class="strong">Paragraph (Small Text):</strong> <a class="a" href="#">Link</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis. Aenean ex neque, tincidunt quis eleifend vitae, aliquet ac dui. Aenean ullamcorper sodales turpis, imperdiet ullamcorper mi cursus eu. Morbi iaculis commodo dictum.
+            </p>
+            <ol class="ol">
+              <li><strong class="strong">Ordered List:</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+              <li>Aliquam tincidunt mauris eu risus.</li>
+              <li>Vestibulum auctor dapibus neque.</li>
+            </ol>
+            <ul class="ul">
+              <li><strong class="strong">Unordered List:</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+              <li>Aliquam tincidunt mauris eu risus.</li>
+              <li>Vestibulum auctor dapibus neque.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="ui-kit-layout__page__container">
+        <h2 class="ui-kit-layout__h2">
+          Typographical Utilities
+        </h2>
+        <h2 class="ui-kit-layout__h3">
+          Font & Text Utilities
+        </h2>
+        <div class="grid">
+          <div class="grid__sm--12 grid__md--4 u-font14">
+            <div class="u-sans-regular">
+              Sans Serif Font, Regular Weight
+            </div>
+            <div class="u-sans-light">
+              Sans Serif Font, Light Weight
+            </div>
+            <div class="u-sans-bold">
+              Sans Serif Font, Bold Weight
+            </div>
+            <div class="u-text-upper">
+              Uppercase
+            </div>
+            <div class="u-text-lower">
+              Lowercase
+            </div>
+            <div class="u-text-capitalize">
+              capitalize
+            </div>
+            <div>
+              <a
+                class="u-link-clean"
+                href="#"
+              >
+                Clean Link
+              </a>
+            </div>
+            <div>
+              <a
+                class="u-link-complex u-link-clean"
+                href="#"
+              >
+                <strong class="strong">Complex </strong>
+                <span class="u-text-primary">Clean Link</span>
+              </a>
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--8 u-font14">
+            <p class="p p--small u-text-left">
+              <strong class="strong">Text Left Aligned:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis.
+            </p>
+            <p class="p p--small u-text-center">
+              <strong class="strong">Text Centered:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis.
+            </p>
+            <p class="p p--small u-text-right">
+              <strong class="strong">Text Right Aligned:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis.
+            </p>
+            <p class="p p--small u-text-truncate">
+              <strong class="strong">Truncate Text:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis.
+            </p>
+          </div>
+        </div>
+        <h2 class="ui-kit-layout__h3 u-mtop30">
+          Text Color
+        </h2>
+        <div class="grid">
+          <div class="grid__sm--12 grid__md--4 u-font14">
+            <div class="u-text-primary">
+              Primary
+            </div>
+            <div class="u-text-primary-dark">
+              Primary Dark
+            </div>
+            <div class="u-text-amber">
+              Amber
+            </div>
+            <div class="u-text-orange">
+              Orange
+            </div>
+            <div class="u-text-light-green">
+              Light Green
+            </div>
+            <div class="u-text-green">
+              Green
+            </div>
+            <div class="u-text-indigo">
+              Indigo
+            </div>
+            <div class="u-text-blue">
+              Blue
+            </div>
+            <div class="u-text-light-blue">
+              Light Blue
+            </div>
+            <div class="u-text-cyan">
+              Cyan
+            </div>
+            <div class="u-text-teal">
+              Teal
+            </div>
+            <div class="u-text-pink">
+              Pink
+            </div>
+            <div class="u-text-purple">
+              Purple
+            </div>
+            <div class="u-text-deep-purple">
+              Deep Purple
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--4 u-font14">
+            <div class="u-text-symbolic-success">
+              Symbolic Success
+            </div>
+            <div class="u-text-symbolic-warning">
+              Symbolic Warning
+            </div>
+            <div class="u-text-symbolic-error">
+              Symbolic Error
+            </div>
+          </div>
+          <div class="grid__sm--12 grid__md--4 u-font14">
+            <div class="grid">
+              <div class="grid__sm--12 grid__md--6">
+                <div class="u-text-white">
+                  White
+                </div>
+                <div class="u-text-gray-050">
+                  Gray 050
+                </div>
+                <div class="u-text-gray-100">
+                  Gray 100
+                </div>
+                <div class="u-text-gray-200">
+                  Gray 200
+                </div>
+                <div class="u-text-gray-300">
+                  Gray 300
+                </div>
+                <div class="u-text-gray-400">
+                  Gray 400
+                </div>
+              </div>
+              <div class="grid__sm--12 grid__md--6">
+                <div class="u-text-gray-500">
+                  Gray 500
+                </div>
+                <div class="u-text-gray-600">
+                  Gray 600
+                </div>
+                <div class="u-text-gray-700">
+                  Gray 700
+                </div>
+                <div class="u-text-gray-800">
+                  Gray 800
+                </div>
+                <div class="u-text-gray-900">
+                  Gray 900
+                </div>
+                <div class="u-text-black">
+                  Black
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid u-mtop30">
+          <div class="grid__sm--12">
+            <h2 class="ui-kit-layout__h3">
+              Font Size/Line Height
+            </h2>
+            <div class="u-font9 u-line9 u-text-truncate">
+              <code class="code">.u-font9 .u-line9</code> Size: 9rem, Line: 9rem
+            </div>
+            <div class="u-font10 u-line10 u-mtop6 u-text-truncate">
+              <code class="code">.u-font10 .u-line10</code> Size: 10rem, Line 10rem
+            </div>
+            <div class="u-font11 u-line11 u-mtop6 u-text-truncate">
+              <code class="code">.u-font11 .u-line11</code> Size: 11rem, Line 11rem
+            </div>
+            <div class="u-font12 u-line12 u-mtop6 u-text-truncate">
+              <code class="code">.u-font12 .u-line12</code> Size: 12rem, Line 12rem
+            </div>
+            <div class="u-font14 u-line14 u-mtop6 u-text-truncate">
+              <code class="code">.u-font14 .u-line14</code> Size: 14rem, Line 14rem
+            </div>
+            <div class="u-font16 u-line16 u-mtop6 u-text-truncate">
+              <code class="code">.u-font16 .u-line16</code> Size: 16rem, Line 16rem
+            </div>
+            <div class="u-font18 u-line18 u-mtop6 u-text-truncate">
+              <code class="code">.u-font18 .u-line18</code> Size: 18rem, Line 18rem
+            </div>
+            <div class="u-font21 u-line21 u-mtop6 u-text-truncate">
+              <code class="code">.u-font21 .u-line21</code> Size: 21rem, Line 21rem
+            </div>
+            <div class="u-font24 u-line24 u-mtop6 u-text-truncate">
+              <code class="code">.u-font24 .u-line24</code> Size: 24rem, Line 24rem
+            </div>
+            <div class="u-font27 u-line27 u-mtop6 u-text-truncate">
+              <code class="code">.u-font27 .u-line27</code> Size: 27rem, Line 27rem
+            </div>
+            <div class="u-font30 u-line30 u-mtop6 u-text-truncate">
+              <code class="code">.u-font30 .u-line30</code> Size: 30rem, Line 30rem
+            </div>
+            <div class="u-font48 u-line48 u-mtop6 u-text-truncate">
+              <code class="code">.u-font48 .u-line48</code> Size: 48rem, Line 48rem
+            </div>
+            <div class="u-font60 u-line60 u-mtop6 u-text-truncate">
+              <code class="code">.u-font60 .u-line60</code> Size: 60rem, Line 60rem
+            </div>
+            <div class="u-font72 u-line72 u-mtop6 u-text-truncate">
+              <code class="code">.u-font72 .u-line72</code> Size: 72rem, Line 72rem
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

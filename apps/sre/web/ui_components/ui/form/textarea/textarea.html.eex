@@ -1,0 +1,16 @@
+<div class="input-scaffold <%= @classname %> <%= if @disabled? do %>input-scaffold--disabled<% end %>">
+  <%= if @label do %>
+    <label for="<%= @id %>" class="label input-scaffold__label">
+      <%= @label %>
+    </label>
+  <% end %>
+  <textarea
+    id="<%= @id %>"
+    name="<%= @id %>"
+    placeholder="<%= @placeholder %>"
+    class="input textarea input-scaffold__input textarea--<%= @size %> <%= if @disabled? do %>input--disabled<% end %>"
+    <%= if @disabled? do %>
+      disabled
+    <% end %>
+  ></textarea>
+</div>

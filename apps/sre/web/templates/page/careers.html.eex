@@ -1,0 +1,375 @@
+<hgroup class="testimonials-page__hgroup">
+    <hgroup class="marketing-page__hero v2">
+    <h1 class="h1-smart drop-15">Careers</h1>
+    <div>
+    <h1 class="marketing-page__hero__h2">SRE is recruiting Alliance Real Estate Agencies and Alliance Mortgage Brokers.</h4>
+  </hgroup><article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+  <h1 class="h2 u-mbottom16">
+    Alliance Real Estate Agencies
+  </h1>
+   <div class="alignment">
+    <ul class="ul-alignment">
+      <li class="bullets">Alliance Real Estate Agencies (or Agents) will receive <strong class="strong">leads</strong> from the Multi-Solution Platform</li>
+      <br>
+      <li class="bullets">Alliance Real Estate Agencies (or Agents) will provide <strong class="strong">full service</strong> for customer satisfaction</li>
+      <br>
+      <li class="bullets">Alliance Real Estate Agencies may have their own team of agents!</li>
+    </ul>
+  </div>
+  <div class="alliance-agency-box">
+  <h3 class="careersh3">2016 Transaction Amount of Honolulu Agency</h3>
+  <p style="color: white;"><span style="font-weight: bold; font-size: 20px;">$824,906,827</span><span style="font-size: 12px; margin-left: 5px;">by 6-agent team</span></p>
+  <p style="color: white; font-style: italic; font-size: 12px; margin-left: 80px; line-height: 1em;">*$137,484,470 on average per agent</p>
+  </div>
+  <h1 class="h2 u-mbottom16">
+    Alliance Mortgage Brokers
+  </h1>
+   <div class="alignment">
+    <ul class="ul-alignment">
+      <li class="bullets">Alliance Mortgage Brokers will receive <strong class="strong">leads</strong> from the Multi-Solution Platform</li>
+      <br>
+      <li class="bullets">Alliance Mortgage Brokers will have the right to use the <a class="link" href="/solution">Smart Homebuyer Solution </a><strong class="strong">(i.e., $20,000 on average*)</strong> which can be used for the client's expense such as closing costs</li>
+      <br>
+      <li class="bullets" id="submitted">Alliance Mortgage Brokers will have access to our fast and simple digital loan processing system</li><br>
+       <font size=2rem>*Based on actual transactions by SRE in Hawaii for 2016</font>
+      <br>
+       <br>
+    </ul>
+  </div>
+
+ <div class="panel_carrer_form" id="pcf1" style="border: 0px solid #ced1d9">
+<article class="contact-page u-mauto u-size-max-width">
+  <a href="#submitted"><form action="https://script.google.com/a/sre.com/macros/s/AKfycbzc2Zk8G9XZx6vSLwmj9y-WWQShfva2PrIMV1a-_wsbemPjZq7G/exec" onsubmit="required()" method="post" id="gform"></a>
+    <h1 class="h2 u-mbottom16 contact-page__h1 apply-here">
+      Apply Here 
+    </h1>
+    <div class="panel__content">
+    <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "First_Name",
+        label: "First Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "last_name",
+        label: "last Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "email",
+        label: "Email *",
+        type: "email",
+        value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+      )%>
+      </div>
+       <div style="width: 50%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "phone",
+        label: "phone",
+        type: "tel",
+        value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+      )%>
+      </div>
+       <div style="width: 100%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "address",
+        label: "address",
+        type: "address",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "city",
+        label: "city",
+        type: "city",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 20%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "state",
+        label: "state",
+        type: "state",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 30%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "zip code",
+        label: "zip code",
+        type: "zip code",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "real estate license number",
+        label: "real estate license number",
+        type: "real estate license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "mortgage broker license number",
+        label: "mortgage broker license number",
+        type: "mortgage broker license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+          <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "referred_by",
+        label: "Referred by",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 100%; float: left;">
+      <%= Sre.UI.Form.Textarea.render_template id: "message", label: "Message", placeholder: "" %>
+      <div class="u-text-right">
+      <!--<input type="button" value="send" id="cr_form(1)">-->
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Apply Here", classname: "button", id: "generic-contact"%>
+      </div>
+      </div>
+  </form>
+  </article>
+</div>
+<style>
+  .msg1 {
+    background-color: #00b3e6;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 64%;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-size:18px;
+    color: #fff;
+  }
+@media only screen and (max-width: 844px) {
+  .msg1 {width:100%;}
+}
+</style>
+<!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message" class="msg1">
+Thank you for applying.<br>
+      Our professional staff will get back to you. </h2>
+  </div>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script>
+function required()  
+{  
+  var empt = document.forms["gform"]["email"].value;  
+  if (empt == "")  
+  {    
+alert("Please enter your email address.");  
+return false;  
+  }  
+}
+function validEmail(email) { // see:
+  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  return re.test(email);
+}
+
+function validateHuman(honeypot) {
+  if (honeypot) {  //if hidden form filled up
+    console.log("Robot Detected!");
+    return true;
+  } else {
+    console.log("Welcome Human!");
+  }
+}
+
+// get all data in form and return object
+function getFormData() {
+  var form = document.getElementById("gform");
+  var elements = form.elements; // all form elements
+  var fields = Object.keys(elements).map(function(k) {
+    if(elements[k].name !== undefined) {
+      return elements[k].name;
+    // special case for Edge's html collection
+    }else if(elements[k].length > 0){
+      return elements[k].item(0).name;
+    }
+  }).filter(function(item, pos, self) {
+    return self.indexOf(item) == pos && item;
+  });
+  var data = {};
+  fields.forEach(function(k){
+    data[k] = elements[k].value;
+    var str = ""; // declare empty string outside of loop to allow
+                  // it to be appended to for each item in the loop
+    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
+      str = str + elements[k].checked + ", "; // take the string and append 
+                                              // the current checked value to 
+                                              // the end of it, along with 
+                                              // a comma and a space
+      data[k] = str.slice(0, -2); // remove the last comma and space 
+                                  // from the  string to make the output 
+                                  // prettier in the spreadsheet
+    }else if(elements[k].length){
+      for(var i = 0; i < elements[k].length; i++){
+        if(elements[k].item(i).checked){
+          str = str + elements[k].item(i).value + ", "; // same as above
+          data[k] = str.slice(0, -2);
+        }
+      }
+    }
+  });
+
+  // add form-specific values into the data
+  data.formDataNameOrder = JSON.stringify(fields);
+  data.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+  data.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+  console.log(data);
+  return data;
+}
+
+function handleFormSubmit(event) {  // handles form submit withtout any jquery
+  event.preventDefault();           // we are submitting via xhr below
+  var data = getFormData();         // get the values submitted in the form
+
+  /* OPTION: Remove this comment to enable SPAM prevention, see README.md
+  if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+    return false;
+  }
+  */
+
+  if( !validEmail(data.email) ) {   // if email is not valid show error
+    document.getElementById('email-invalid').style.display = 'block';
+    return false;
+  } else {
+    var url = event.target.action;  //
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    // xhr.withCredentials = true;
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        console.log( xhr.status, xhr.statusText )
+        console.log(xhr.responseText);
+        document.getElementById('gform').style.display = 'none'; // hide form
+        document.getElementById('pcf1').style.display = 'none'; // hide form
+        document.getElementById('thankyou_message').style.display = 'block';
+        return;
+    };
+    // url encode form data for sending as post data
+    var encoded = Object.keys(data).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
+    xhr.send(encoded);
+  }
+}
+function loaded() {
+  console.log('contact form submission handler loaded successfully');
+  // bind to the submit event of our form
+  var form = document.getElementById('gform');
+  form.addEventListener("submit", handleFormSubmit, false);
+};
+document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
+  <!-- <script data-cfasync="false" type="text/javascript"
+  src="https://script.google.com/a/sre.com/macros/s/AKfycbzc2Zk8G9XZx6vSLwmj9y-WWQShfva2PrIMV1a-_wsbemPjZq7G/exec"></script>
+  <script data-cfasync="false" type="text/javascript"
+  src="/form-submission-handler.js"></script> -->
+
+<!--<div class="contact-form-mobile contact-page__form panel u-mbottom48 elm-message-form">
+
+<article class="contact-page u-mauto u-size-max-width">
+  <form action="mailto:info@sre.com" method="post" enctype="text/plain">
+  <div class="apply-here">
+    <h1 class="h2 u-mbottom16 contact-page__h1">
+      Apply Here
+    </h1>
+  </div>
+    <div class="panel__content">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "first_name",
+        label: "First Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "last_name",
+        label: "last Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "email",
+        label: "Email",
+        type: "email",
+        value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "phone",
+        label: "phone",
+        type: "tel",
+        value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "address",
+        label: "address",
+        type: "address",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "city",
+        label: "city",
+        type: "city",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "state",
+        label: "state",
+        type: "state",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "zip code",
+        label: "zip code",
+        type: "zip code",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "real estate license number",
+        label: "real estate license number",
+        type: "real estate license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "mortgage broker license number",
+        label: "mortgage broker license number",
+        type: "mortgage broker license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "referred_by",
+        label: "Referred by",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Textarea.render_template id: "message", label: "Message", placeholder: "" %>
+      <div class="u-text-right">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Send", classname: "button", id: "generic-contact" %>
+      </div>
+    </div>
+    <div class="form-submit-error"></div>
+  </form>
+  </article>
+</div>-->
+</div>
+
+<%= Sre.UI.Company.Overview.render_template(
+)%>
+
+<%= Sre.UI.Company.Branches.render_template(
+)%>

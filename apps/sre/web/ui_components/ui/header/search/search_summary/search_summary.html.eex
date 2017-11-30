@@ -1,0 +1,16 @@
+<a href="#" type="button" class="search-summary u-link-complex <%= @classname %> elm-mobile-filters-open">
+  <span class="search-summary__layout">
+    <%= Sre.UI.Svg.Icon.render_template icon: "search", classes: ["icon--gray-300", "search-summary__icon"] %>
+    <%= if @search? do %>
+      <span class="search-summary__summary">
+        <span class="search-summary__location strong u-font18 u-mright6 u-text-nowrap u-text-gray-700">
+          <%= get_location assigns[:filters] %>
+        </span>
+      </span>
+    <% else %>
+      <span class="search-summary__placeholder u-sans-ligh u-text-gray-400">
+        Search a location...
+      </span>
+    <% end %>
+  </span>
+</a>

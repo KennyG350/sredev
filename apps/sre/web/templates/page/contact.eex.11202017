@@ -1,0 +1,64 @@
+<hgroup class="testimonials-page__hgroup">
+    <hgroup class="marketing-page__hero v2">
+
+  <div class="homepage__hero__h1-content-container">
+        <h1 style="font-size: 15px; margin-bottom: 5px;">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap">About Us</h1>
+  </div>
+  </hgroup>
+
+<%= Sre.UI.Company.Overview.render_template(
+)%>
+
+<%= Sre.UI.Company.Branches.render_template(
+)%>
+
+
+
+<!-- 
+    <!-- <h1 class="marketing-page__hero__h2">We welcome any questions and/or offers from you.<br>Our agents at your nearest office will take care of you soon.</h4> -->
+  </hgroup>
+<!--       <h1 class="h2"><br>
+      Company Overview
+    </h1>
+    <br><p>We have spent the past 4 years developing our idea of changing the long-established, outdated system dominated by existing real estate brokerages, mortgage lenders, and real estate platformers; therefore, creating the SRE Multi-Solution Platform for the benefit of consumers.</p>
+-->
+
+<!-- <article class="contact-page u-mauto u-size-max-width">
+  <form class="contact-page__form panel u-mbottom48 elm-message-form">
+    <h1 class="h2 u-mbottom16 contact-page__h1">
+      Contact Form
+    </h1>
+    <div class="panel__content">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "first_name",
+        label: "First Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "last_name",
+        label: "last Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "email",
+        label: "Email",
+        type: "email",
+        value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "phone",
+        label: "phone",
+        type: "tel",
+        value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Textarea.render_template id: "message", label: "Message", placeholder: "" %>
+      <div class="u-text-right">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Send Message", classname: "button", id: "generic-contact"%>
+      </div>
+    </div>
+    <div class="form-submit-error"></div>
+  </form>
+  </article>-->

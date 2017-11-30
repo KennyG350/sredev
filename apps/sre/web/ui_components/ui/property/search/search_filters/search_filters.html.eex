@@ -1,0 +1,339 @@
+<section class="search-filters">
+  <h1 class="strong search-filters__header u-flex-justify-between u-flex-align-items-center">
+    Search
+    <a href="/properties" class="u-link-complex search-filters__header__close elm-search-properties-toggle-filters">
+      <%= Sre.UI.Svg.Icon.render_template icon: "close", classes: ["icon--sm", "icon--gray-600"] %>
+    </a>
+  </h1>
+  <form class="search-filters__form user-select-none elm-search-filters-form">
+    <div class="search-filters__main">
+      <div class="search-filters__section grid u-flex-align-items-center">
+        <div class="grid__sm--12 grid__md--2">
+          <h1 class="search-filters__section__label label">Price Range</h1>
+        </div>
+        <div class="grid__sm--12 grid__md--10">
+          <div class="grid u-flex-align-items-center">
+            <div class="grid__sm--12 grid__md--8">
+              <div class="range-slider-container search-filters__price-range-slider-container">
+                <div class="range-slider elm-range-slider">
+                  <div class="range-slider__bar"></div>
+                  <div
+                    class="range-slider__bar range-slider__bar--selected elm-range-slider-inner-bar"
+                    style="left: 0%; width: 100%;"
+                  >
+                    <div class="range-slider__tooltip-container">
+                      <span class="tooltip range-slider__tooltip elm-range-slider-tooltip">$0 - $5M+</span>
+                    </div>
+                  </div>
+                  <div style="margin-left: 0%;">
+                    <div class="range-slider__knob-container elm-range-slider-knob-left">
+                      <div class="range-slider__knob-container__knob"></div>
+                    </div>
+                  </div>
+                  <div style="margin-left: 100%;">
+                    <div class="range-slider__knob-container elm-range-slider-knob-right">
+                      <div class="range-slider__knob-container__knob"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid__sm--12 grid__md--4">
+              <div class="input-range">
+                <div class="input-range__min">
+                  <label class="u-hidden-visually" for="search-filters-price-minimum">
+                    Minimum Price
+                  </label>
+                  <input
+                    class="input input--text input--md elm-filters-price-minimum"
+                    id="search-filters-price-minimum"
+                  />
+                  <input
+                    class="elm-filters-price-minimum-hidden"
+                    name="price_min"
+                    type="hidden"
+                  />
+                </div>
+                <div class="input-range__sep">
+                  <span>to</span>
+                </div>
+                <div class="input-range__max">
+                  <label class="u-hidden-visually" for="search-filters-price-maximum">
+                    Maximum Price
+                  </label>
+                  <input
+                    class="input input--text input--md elm-filters-price-maximum"
+                    id="search-filters-price-maximum"
+                  />
+                  <input
+                    class="elm-filters-price-maximum-hidden"
+                    name="price_max"
+                    type="hidden"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /end .search-filters__section -->
+
+      <div class="search-filters__section grid u-flex-align-items-center">
+        <div class="grid__sm--12 grid__md--2">
+          <h1 class="search-filters__section__label label u-mbottom0">Property Type</h1>
+          <button
+            type="button"
+            class="search-filters__section__label a u-text-upper strong elm-filters-property-type-select-all"
+          >
+            Select All
+          </button>
+        </div>
+        <div class="grid__sm--12 grid__md--10 u-flex search-filters__property-type-input-container">
+          <label
+            for="property_type_house"
+            class="u-text-center onclick u-block u-p16"
+          >
+            <svg height="40" viewbox="0 0 38 40" width="38" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.707 0L1.97 17.418v5.565h4.926v14.573H0v2.688h37.988v-2.688h-6.896V22.983h4.926v-5.58l-.954-.96.003-12.158h-9.413l.005 2.704L18.706 0zM4.657 18.5L18.74 3.845l6.925 6.963v.017l4.567 4.574 3.098 3.113v1.78H4.658V18.5zm27.572-4.905L28.35 9.697l-.005-2.723h4.03l-.002 6.767-.146-.145zM9.583 22.99h18.82V37.55h-4.93v-10.98h-8.958v10.98H9.584V22.99zm7.62 14.562h3.58V29.26h-3.58v8.292z" fill="#9297A5" fill-rule="evenodd"></path>
+            </svg>
+            <div class="label u-text-center u-block">
+              House
+            </div>
+            <input id="property_type_house" name="property_type_house" type="checkbox" class="elm-filters-property-type-house" />
+          </label>
+          <label
+            for="property_type_townhouse"
+            class="u-text-center onclick u-block u-p16"
+          >
+            <svg height="40" viewbox="0 0 69 40" width="69" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <path d="M24.604 30.248h5.7v-2.5h-5.7M24.564 21.967h5.7v-2.5h-5.7M12.362 21.967h5.7v-2.5h-5.7M24.564 17.02h5.7v-2.5h-5.7M12.362 17.02h5.7v-2.5h-5.7" fill="#1292C9"></path>
+                <path d="M21.108 0L6.692 10.967v26.13H0v2.5h42.705v-2.5h-6.692V10.954L21.108 0zm.026 3.152l10.613 7.8H10.883l10.25-7.8zM9.26 23.453h24.185v-10H9.26v10zm0 2.5h24.185v11.145H21.13V27.75H12.3v9.347H9.26V25.95zm5.61 11.142h3.692v-6.846H14.87v6.846z" fill="#9297A5"></path>
+                <path d="M39.142 30.248h5.7v-2.5h-5.7M39.182 21.967h5.7v-2.5h-5.7M51.384 21.967h5.7v-2.5h-5.7M39.182 17.02h5.7v-2.5h-5.7M51.384 17.02h5.7v-2.5h-5.7" fill="#1292C9"></path>
+                <path d="M48.338 0l-2.87 2.11-12.036 8.844v26.143h-6.69v2.5h42.704v-2.5h-6.693v-26.13L48.338 0zm-.027 3.152l10.252 7.8H37.698l10.613-7.8zM36 23.453h24.185v-10H36v10zm0 2.5h24.184v11.145h-3.04V27.75h-8.83v9.347H36.002V25.95zm14.884 11.142h3.693v-6.846h-3.693v6.846z" fill="#9297A5"></path>
+              </g>
+            </svg>
+            <div class="label u-text-center u-block">
+              Townhouse
+            </div>
+            <input id="property_type_townhouse" name="property_type_townhouse" type="checkbox" class="elm-filters-property-type-townhouse" />
+          </label>
+          <label
+            for="property_type_condo"
+            class="u-text-center onclick u-block u-p16"
+          >
+            <svg height="40" viewbox="0 0 43 40" width="43" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <path d="M26.268 35.005h8.866v-2.623h-8.866M26.268 30.743h8.866V28.12h-8.866M26.268 26.482h8.866V23.86h-8.866M26.268 22.22h8.866v-2.624h-8.866M26.268 17.956h8.866v-2.623h-8.866M9.522 35.005h8.865v-2.623H9.522M9.522 30.17h8.865v-2.624H9.522M9.522 25.334h8.865V22.71H9.522M9.522 20.497h8.865v-2.623H9.522M9.522 15.66h8.865V13.04H9.522" fill="#2093C8"></path>
+                <path d="M23.97 0L3.884 11.316v25.902H0v2.623H43.67V37.22h-3.884V10.443H23.97V0zM6.51 12.848l14.83-8.357V37.22H6.512v-24.37zm17.457 24.37h13.19V13.065H23.97v24.153z" fill="#9297A5"></path>
+              </g>
+            </svg>
+            <div class="label u-text-center u-block">
+              Condo
+            </div>
+            <input id="property_type_condo" name="property_type_condo" type="checkbox" class="elm-filters-property-type-condo" />
+          </label>
+        </div>
+      </div><!-- /end .search-filters__section -->
+
+      <div class="search-filters__section grid">
+        <div class="grid__sm--12 grid__md--2">
+          <h1 class="search-filters__section__label label">Rooms</h1>
+        </div>
+        <div class="grid__sm--12 grid__md--8">
+          <div class="search-filters__rooms-container">
+            <div class="search-filters__rooms-inputs">
+              <%= Sre.UI.Property.Search.SearchFilters.Rooms.render_template(
+                classname: "elm-filters-room-bedrooms",
+                label: "Beds",
+                input_name: "bedrooms"
+              ) %>
+            </div>
+            <div class="search-filters__rooms-inputs">
+              <%= Sre.UI.Property.Search.SearchFilters.Rooms.render_template(
+                classname: "elm-filters-room-bathrooms",
+                label: "Baths",
+                input_name: "bathrooms"
+              ) %>
+            </div>
+          </div>
+        </div>
+      </div><!-- /end .search-filters__section -->
+
+      <div class="search-filters__section grid u-flex-align-items-center">
+        <div class="grid__sm--12 grid__md--2">
+          <h1 class="search-filters__section__label label">Home Size</h1>
+        </div>
+        <div class="grid__sm--12 grid__md--5">
+          <div class="grid">
+            <div class="grid__sm--12 grid__md--6">
+              <label for="home_size_min" class="label input-scaffold__label">
+                SQFT
+              </label>
+              <select
+                class="search-filters__sqft-select input input--select input--md elm-filters-home_size_min"
+                id="home_size_min"
+                name="home_size_min"
+              >
+                <option value="">
+                  Any Size
+                </option>
+                <option value="600">
+                  600+ sq ft
+                </option>
+                <option value="800">
+                  800+ sq ft
+                </option>
+                <option value="1000">
+                  1,000+ sq ft
+                </option>
+                <option value="1200">
+                  1,200+ sq ft
+                </option>
+                <option value="1400">
+                  1,400+ sq ft
+                </option>
+                <option value="1600">
+                  1,600+ sq ft
+                </option>
+                <option value="1800">
+                  1,800+ sq ft
+                </option>
+                <option value="2000">
+                  2,000+ sq ft
+                </option>
+                <option value="2250">
+                  2,250+ sq ft
+                </option>
+                <option value="2500">
+                  2,500+ sq ft
+                </option>
+                <option value="2750">
+                  2,750+ sq ft
+                </option>
+                <option value="3000">
+                  3,000+ sq ft
+                </option>
+                <option value="3500">
+                  3,500+ sq ft
+                </option>
+                <option value="4000">
+                  4,000+ sq ft
+                </option>
+                <option value="5000">
+                  5,000+ sq ft
+                </option>
+                <option value="6000">
+                  6,000+ sq ft
+                </option>
+                <option value="7000">
+                  7,000+ sq ft
+                </option>
+                <option value="8000">
+                  8,000+ sq ft
+                </option>
+                <option value="9000">
+                  9,000+ sq ft
+                </option>
+                <option value="10000">
+                  10,000+ sq ft
+                </option>
+              </select>
+            </div>
+            <div class="grid__sm--12 grid__md--6">
+              <label for="lot_size_min" class="label input-scaffold__label">
+                Lot Size
+              </label>
+              <select
+                class="input input--select input--md elm-filters-lot_size_min"
+                id="lot_size_min"
+                name="lot_size_min"
+              >
+                <option value="">
+                  Any Size
+                </option>
+                <option value="0.5">
+                  1/2+ acre
+                </option>
+                <option value="1">
+                  1+ acre
+                </option>
+                <option value="2">
+                  2+ acres
+                </option>
+                <option value="5">
+                  5+ acres
+                </option>
+                <option value="10">
+                  10+ acres
+                </option>
+                <option value="20">
+                  20+ acres
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div><!-- /end .search-filters__section -->
+
+      <div class="search-filters__section grid u-flex-align-items-center">
+        <div class="grid__sm--12 grid__md--2">
+          <h1 class="search-filters__section__label label">Year Built</h1>
+        </div>
+        <div class="grid__sm--12 grid__md--10">
+          <div class="grid">
+            <div class="grid__sm--12 grid__md--6">
+              <label for="year_built_min" class="label input-scaffold__label">
+                Year Built
+              </label>
+              <select
+                class="input input--select input--md elm-filters-year_built_min"
+                id="year_built_min"
+                name="year_built_min"
+              >
+                <option value="">
+                  Any Year
+                </option>
+                <option value="2010">
+                  2010+
+                </option>
+                <option value="2005">
+                  2005+
+                </option>
+                <option value="2000">
+                  2000+
+                </option>
+                <option value="1990">
+                  1990+
+                </option>
+                <option value="1980">
+                  1980+
+                </option>
+                <option value="1970">
+                  1970+
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div><!-- /end .search-filters__section -->
+      <div class="search-filters__form-options">
+        <button
+          type="button"
+          class="search-filters__clear-filters u-text-primary strong elm-filters-clear-button"
+        >
+          Clear Filters
+        </button>
+      </div>
+    </div><!-- /end .search-filters__main -->
+    <div class="search-filters__form-controls">
+      <%= Sre.UI.Button.ButtonDefault.render_template(
+        value: "Cancel",
+        classname: "search-filters__form-controls__button button--gray-300 elm-search-properties-toggle-filters"
+      )%>
+      <%= Sre.UI.Button.ButtonDefault.render_template(
+        value: "View Results",
+        classname: "search-filters__form-controls__button elm-search-properties-save-filters"
+      )%>
+    </div>
+  </form>
+</section>

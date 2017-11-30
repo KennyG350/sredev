@@ -1,0 +1,76 @@
+// *******************************************
+// *******************************************
+
+    // Property desktop header component
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-md-edge-space   : $unit-md-edge-space;
+$unit-default-spacing : $unit-default-spacing;
+$grid-8of12           : $unit-grid-8of12;
+$grid-7of12           : $unit-grid-7of12;
+$grid-5of12           : $unit-grid-5of12;
+$grid-4of12           : $unit-grid-4of12;
+$grid-gutter          : $unit-grid-gutter;
+
+.property-header {
+    padding       : rem-calc($unit-default-spacing);
+    border-top    : 1px solid $gray-200;
+    border-bottom : 1px solid $gray-200;
+    background    : $white;
+
+    @include min-screen($breakpoint-md) {
+        padding : rem-calc($unit-default-spacing * 2);
+    }
+
+}
+
+.property-header__layout {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : stretch;
+    height          : 100%;
+}
+
+.property-header__location {
+    display         : flex;
+    flex-flow       : column;
+    justify-content : center;
+    align-items     : flex-start;
+    flex            : 0 1  $grid-7of12;
+    width           : $grid-7of12;
+    font-size       : rem-calc(13);
+    line-height     : rem-calc(16);
+}
+
+.property-header__location__line1 {
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(21);
+        line-height : rem-calc(24);
+    }
+
+}
+
+.property-header__location__line2 {
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(16);
+        line-height : rem-calc(18);
+    }
+
+}
+
+.property-header__meta  {
+    flex  : 1 1  $grid-5of12;
+    width : $grid-5of12;
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(21);
+        line-height : rem-calc(24);
+    }
+
+}

@@ -1,0 +1,21 @@
+<div class="input-scaffold input-scaffold--select <%= @classname %> <%= if @disabled? do %>input-scaffold--disabled<% end %>">
+  <%= if @label do %>
+    <label for="<%= @id %>" class="label input-scaffold__label">
+      <%= @label %>
+    </label>
+  <% end %>
+  <select
+    id="<%= @id %>"
+    name="<%= @id %>"
+    class="input input-scaffold__input input--select input--<%= @size %> <%= if @disabled? do %>input--disabled<% end %>"
+    <%= if @disabled? do %>
+      disabled
+    <% end %>
+  >
+    <%= for option <- @options do %>
+      <option value="<%= option.value %>" <%= if option[:selected], do: "selected" %>>
+        <%= option.label %>
+      </option>
+    <% end %>
+  </select>
+</div>

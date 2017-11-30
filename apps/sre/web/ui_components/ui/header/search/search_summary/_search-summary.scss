@@ -1,0 +1,28 @@
+// *******************************************
+// *******************************************
+
+    // Search summary component
+
+// *******************************************
+// *******************************************
+
+.search-summary__layout {
+    display     : flex;
+    flex-wrap   : nowrap;
+    align-items : center;
+    flex        : 1 1 auto;
+    text-align  : left;
+}
+
+.search-summary__icon {
+    flex   : 0 0 rem-calc(16);
+    width  : rem-calc(16);
+    height : rem-calc(16);
+}
+
+.search-summary__summary {
+    display     : flex;
+    align-items : center;
+    flex        : 1 0 auto;
+    max-width   : calc(100% - #{rem-calc(21)});
+}

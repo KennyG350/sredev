@@ -1,0 +1,56 @@
+<article class="testimonials-page__hgroup">
+
+    <hgroup class="marketing-page__hero v2">
+
+        <h1 class="homepage__hero__h3">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Mortgage Solution</h1>
+
+    </hgroup>
+  
+
+<!-- 
+  <div class="homepage__hero__h1-content-container">
+      <hgroup class="marketing-page__hero v2">
+      <div class="homepage__hero__h1-content-container">
+          <h1 style="font-size: 18px; margin-bottom: 5px;">Human Assisted e-Commerce</h1>
+          <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Mortgage Solution</h1>
+      </div>
+      </hgroup>
+  </div>
+-->
+
+
+<article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+
+<div class="branches-title mortpage-calctitle" align="center">
+    Save on Closing Costs
+</div>
+    <p class="p">
+      <strong class="strong">Alliance Mortgage Lenders* (Brokers)</strong> may use the <a class="link" href="/solution">Smart Homebuyer Solution </a> <strong class="strong">($20,000 on average)**</strong> for their client's expense such as closing costs.<br>
+      <font size=2rem><a class="link" href="/careers">*Agreement Required</a></font><br>
+      <font size=2rem>**Based on actual transactions by SRE in Hawaii for 2016</font>
+    </p>
+<div class="u-text-center btn-see-more"> <a href="/testimonials" class="button"> <span class="button__layout">Testimonials</span> </a> </div>
+<br>
+    
+<div class="branches-title mortpage-calctitle" align="center">
+    Best Mortgage Loan
+</div>
+
+    <p class="p">
+      <strong class="strong">Alliance Mortgage Lenders* (Brokers)</strong> will provide the best mortgage loan and the most efficient service for customer satisfaction.<br>
+      <font size=2rem><a class="link" href="/careers">*Agreement Required</a></font>
+    </p>
+
+     <!-- <div class="u-text-center btn-see-more"> <a href="/careers" class="button"> <span class="button__layout"> Apply Here </span> </a> </div> -->
+
+<br>    
+
+  </article>
+</article>
+
+<!-- <%= Sre.UI.Company.Overview.render_template(
+)%> -->
+
+<%= Sre.UI.Company.Branches.render_template(
+)%>

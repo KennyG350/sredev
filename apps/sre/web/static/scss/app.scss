@@ -1,0 +1,190 @@
+// *******************************************
+// *******************************************
+
+    // Desktop styles
+
+// *******************************************
+// *******************************************
+
+// Inverted Triangle CSS Architecture
+// see: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+
+// BEM Syntax
+// see: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+// Atomic Design
+// see: http://bradfrost.com/blog/post/atomic-web-design/
+
+/////////////////////////////////////////////
+// Settings
+// contain font, colors definitions, etc.
+// DON'T GENERATE ANY CSS !!!
+/////////////////////////////////////////////
+@import '../../../node_modules/sassdash/scss/sassdash',
+        'settings/global',
+        'settings/layout-units',
+        'settings/colors',
+        'settings/breakpoints',
+        'settings/fonts',
+        'settings/stylistic',
+        'settings/z-indexes';
+
+/////////////////////////////////////////////
+// Tools
+// globally used mixins and functions
+// DON'T GENERATE ANY CSS !!!
+/////////////////////////////////////////////
+@import 'tools/rem-calc',
+        'tools/tint-shade',
+        'tools/timing-functions',
+        'tools/placeholder',
+        'tools/css-filter',
+        'tools/absolute-center',
+        'tools/media-queries',
+        'tools/no-flicker',
+        'tools/clearfix',
+        'tools/overflow-ellipses',
+        'tools/grid-mixins';
+
+/////////////////////////////////////////////
+// Generic
+// reset and/or normalize styles, box-sizing definition, etc.
+// first layer of generated CSS
+/////////////////////////////////////////////
+@import 'generic/reset',
+        'generic/box-sizing',
+        'generic/interactive';
+
+/////////////////////////////////////////////
+// Elements
+// styling for bare HTML elements (like H1, A, etc.)
+// Note: use OOCSS and BEM for typography styles in component layer
+/////////////////////////////////////////////
+@import 'elements/root-elements',
+        'elements/buttons',
+        'elements/inline-elements';
+
+/////////////////////////////////////////////
+// Objects
+// class-based selectors which define undecorated design patterns
+/////////////////////////////////////////////
+@import 'objects/grid',
+        'objects/marketing-page-layout',
+        'objects/error-page-layout';
+
+/////////////////////////////////////////////
+// Components
+// UI components
+/////////////////////////////////////////////
+
+// generic ui components
+@import 'components/typography',
+        'ui/svg/icon/icon',
+        'ui/button/button',
+        'ui/button/social_button/social-button',
+        'ui/alert/alert',
+        'components/tabs',
+        'components/price',
+        'components/property-meta',
+        'components/gs-rating',
+        'components/testimonial',
+        'components/list',
+        'components/pagination',
+        'components/image-slider',
+        'components/error-code',
+        'components/segmented-control',
+        'components/range-slider',
+        'components/price-slider',
+        'components/tooltip',
+        'components/dot-leader',
+        'components/bar-chart',
+        'components/map-pin';
+
+// content UI elements
+@import 'components/panel',
+        'components/table',
+        'components/accordion',
+        'components/testimonial-hero',
+        'components/testimonial-tiles';
+
+// property/location components
+@import 'ui/card/location_card/location-card',
+        'ui/card/property_card/property-card';
+
+// form components
+@import 'ui/form/input/input',
+        'ui/form/input/input-range',
+        'ui/form/textarea/textarea',
+        'ui/form/label',
+        'ui/form/input-scaffold';
+
+// form components
+@import 'ui/search_form/search-form';
+
+// layout specific components
+@import '../../templates/layout/app'; // desktop region layout
+
+// header
+@import 'ui/header/header',
+        'ui/header/search/location_search/location-search',
+        'ui/header/nav/main_nav/main-nav';
+
+@import 'ui/footer/footer';
+
+@import 'ui/maps/google_map/google-map';
+
+// page components
+@import 'components/marketing-page',
+        'components/user-page';
+
+// page specific components
+@import '../../templates/page/homepage',
+        '../../templates/page/agency',
+        '../../templates/page/buying',
+        '../../templates/page/selling',
+        '../../templates/page/testimonials',
+        '../../templates/page/contact',
+        '../../templates/page/home-mortgage-rate-calculator',
+        '../../templates/page/fintech',
+        '../../templates/page/solution',
+        '../../templates/page/partners',
+        '../../templates/page/careers',
+        '../../templates/page/rewards';
+
+// user page components
+@import '../../templates/user_management/saved_search/saved-search';
+
+// property search page/section
+@import '../../templates/property/search',
+        'ui/property/search/search_nav/search-nav',
+        'ui/property/search/search_filters/search-filters';
+
+// property page
+@import '../../templates/property/property',
+        'ui/property/property_header/property-header',
+        'ui/property/property_aside/property-aside',
+        'ui/property/property_rebate_formula/property-rebate-formula',
+        'ui/property/property_contact_form/property-contact-form',
+        'ui/property/property_details_map/property-details-map',
+        'ui/property/property_meta_list/property-meta-list',
+        'ui/property/property_hero/property-hero';
+
+@import 'ui/company/overview/overview',
+        'ui/company/branches/branches';
+
+/////////////////////////////////////////////
+// Trumps
+// utilities and helper classes with ability to override anything which goes before in the triangle
+// use immutable declarations (!important)
+/////////////////////////////////////////////
+@import 'trumps/spacing',
+        'trumps/display',
+        'trumps/flex',
+        'trumps/float',
+        'trumps/link',
+        'trumps/position',
+        'trumps/size',
+        'trumps/text',
+        'trumps/vertical-alignment';
+
+@import 'ui-kit';

@@ -1,0 +1,28 @@
+<%= if @total_results > 0 do %>
+<nav class="pagination pagination--center <%= @classname %>">
+  <%= unless first_page? @current_page do %>
+    <a href="/properties?page=<%= previous_page(@current_page) %>" rel="prev" class="button button--white pagination__button pagination__button--prev">
+      <span class="button__layout">
+        <%= Sre.UI.Svg.Icon.render_template icon: "caret_left", classes: ["pagination__button__icon", "icon--xs"] %>
+        <span class="u-hidden-visually">
+          Previous
+        </span>
+      </span>
+    </a>
+  <% end %>
+  <small class="pagination__context u-text-gray-600">
+    <%= start_range @current_page, @per_page %> - <%= end_range @current_page, @per_page, @total_results %>
+      of <%= Sre.Listing.ViewHelper.format_number @total_results %>
+    </small>
+  <%= unless last_page? @current_page, @per_page, @total_results do %>
+    <a href="/properties?page=<%= next_page(@current_page) %>" rel="next" class="button button--white pagination__button pagination__button--next">
+      <span class="button__layout">
+        <%= Sre.UI.Svg.Icon.render_template icon: "caret_right", classes: ["pagination__button__icon", "icon--xs"] %>
+        <span class="u-hidden-visually">
+          Next
+        </span>
+      </span>
+    </a>
+  <% end %>
+</nav>
+<% end %>

@@ -1,0 +1,203 @@
+// *******************************************
+// *******************************************
+
+    // Testimonial Tiles
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-sm-edge-space   : $unit-sm-edge-space;
+$unit-md-edge-space   : $unit-md-edge-space;
+$unit-default-spacing : $unit-default-spacing;
+$bp-lg                : rem-calc(1458);
+$bp-one-col-wide      : rem-calc(550);
+$bp-two-cols          : rem-calc(747);
+$bp-three-cols        : rem-calc(1125);
+
+@mixin get-testimonial-image($number) {
+    background-image : url('/images/testimonial-#{$number}-md.jpg');
+}
+
+.testimonial-tiles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.testimonial-tiles__tile {
+    position: relative;
+    flex-grow: 1;
+    flex-basis: rem-calc(350);
+    height: 18vw;
+    min-height: rem-calc(260);
+    padding: rem-calc(12);
+    background-position: center;
+    background-size: cover;
+
+    @include min-screen($bp-lg) {
+        flex-basis: 30vw;
+    }
+}
+
+.testimonial-tiles__tile--tile1 {
+    @include get-testimonial-image(7);
+
+    .testimonial-tiles__blockquote {
+        top: rem-calc(12);
+        right: 54%;
+        left: rem-calc(12);
+    }
+}
+
+.testimonial-tiles__tile--tile2 {
+    @include get-testimonial-image(2);
+
+    .testimonial-tiles__blockquote {
+        top: rem-calc(12);
+        right: 50%;
+        left: rem-calc(12);
+    }
+}
+
+.testimonial-tiles__tile--tile3 {
+    @include get-testimonial-image(5);
+
+    .testimonial-tiles__blockquote {
+        top: rem-calc(12);
+        right: rem-calc(12);
+        left: 50%;
+    }
+}
+
+.testimonial-tiles__tile--tile4 {
+    @include get-testimonial-image(4);
+
+    .testimonial-tiles__blockquote {
+        right: 30%;
+        bottom: rem-calc(24);
+        left: rem-calc(12);
+    }
+}
+
+.testimonial-tiles__tile--tile5 {
+    @include get-testimonial-image(6);
+
+    .testimonial-tiles__blockquote {
+        right: 40%;
+        bottom: rem-calc(21);
+        left: rem-calc(12);
+    }
+}
+
+.testimonial-tiles__tile--tile6 {
+    @include get-testimonial-image(3);
+
+    .testimonial-tiles__blockquote {
+        right: rem-calc(12);
+        bottom: rem-calc(21);
+        left: 30%;
+    }
+}
+
+.testimonial-tiles__quote {
+    @include sans-bold;
+    font-size: 2.8vw;
+    line-height: 3.5vw;
+
+    @include min-screen($bp-one-col-wide) {
+        font-size: 2vw;
+        line-height: 2.5vw;
+    }
+
+    @include min-screen($bp-two-cols) {
+        font-size: 1.2vw;
+        line-height: 1.5vw;
+    }
+
+    @include min-screen($bp-three-cols) {
+        font-size: 1vw;
+        line-height: 1.25vw;
+    }
+}
+
+.testimonial-tiles__blockquote {
+    position: absolute;
+    box-shadow: 0 0 20px 10px rgba($white, .6);
+    background-color: rgba($white, .55);
+}
+
+.testimonial-tiles__quote-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem-calc(-20);
+}
+
+.testimonial-tiles__author {
+    padding-right: .2vw;
+    font-size: 2.5vw;
+    line-height: 6vw;
+
+    @include min-screen($bp-one-col-wide) {
+        font-size: 2vw;
+        line-height: 5vw;
+    }
+
+    @include min-screen($bp-two-cols) {
+        font-size: 1.2vw;
+        line-height: 3vw;
+    }
+
+    @include min-screen($bp-three-cols) {
+        margin-top: .5vw;
+        font-size: 1vw;
+        line-height: 1.25vw;
+    }
+}
+
+.testimonial-tiles__rebate {
+    @include sans-bold;
+    position: relative;
+    font-size: 2.8vw;
+    line-height: 4vw;
+
+    @include min-screen($bp-one-col-wide) {
+        font-size: 2.2vw;
+        line-height: 3vw;
+    }
+
+    @include min-screen($bp-two-cols) {
+        font-size: 1.4vw;
+        line-height: 1.8vw;
+    }
+
+    @include min-screen($bp-three-cols) {
+        font-size: 1vw;
+        line-height: 1.25vw;
+    }
+}
+
+.testimonial-tiles__rebate__amount {
+    @include sans-bold;
+    position: relative;
+    top: -.6vw;
+    display: block;
+    padding-bottom: .7vw;
+    font-size: 3.25vw;
+    line-height: 4vw;
+
+    @include min-screen($bp-one-col-wide) {
+        font-size: 3vw;
+        line-height: 3.8vw;
+    }
+
+    @include min-screen($bp-two-cols) {
+        font-size: 1.8vw;
+        line-height: 2.2vw;
+    }
+
+    @include min-screen($bp-three-cols) {
+        font-size: 1.4vw;
+        line-height: 2.5vw;
+    }
+}

@@ -1,0 +1,48 @@
+// *******************************************
+// *******************************************
+
+    // Pagination navigation components
+
+// *******************************************
+// *******************************************
+
+// @vars
+$pagination-button-default-height : $button-default-height; // components/buttons
+
+.pagination {
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : center;
+}
+
+// alignment modifiers
+.pagination--center {
+    justify-content : center;
+}
+
+.pagination__button {
+    width   : rem-calc($pagination-button-default-height);
+    margin  : 0;
+    padding : 0;
+    border  : 1px solid $gray-100;
+
+
+    &:hover,
+    &:focus {
+
+        .pagination__button__icon {
+            fill : $primary;
+        }
+
+    }
+
+}
+
+.pagination__context {
+    margin : rem-calc(0 12);
+}
+
+.pagination__button__icon {
+    fill   : $gray-500;
+    filter : none !important;
+}

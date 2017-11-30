@@ -1,0 +1,133 @@
+<p style="color:red;text-align:center;margin-top:20px;" role="alert"><%= get_flash(@conn, :error) %></p>
+
+<div class="user-page">
+  <%= render Sre.UserManagement.UserView, "nav.html" %>
+  <section class="user-page__main">
+    <h1 class="user-page__main__section-header">
+      Your Profile
+    </h1>
+    <%= form_for @changeset, user_management_user_path(@conn, :update, @user_id), fn f -> %>
+      <div class="grid u-flex-align-items-center u-mbottom16">
+        <div class="grid__sm--12 grid__md--3 user-page__form-label">
+          <label class="strong u-font14 u-line14 u-text-gray-600" for="fname">First Name</label>
+        </div>
+        <div class="grid__sm--12 grid__md--9">
+          <%= text_input(f, :first_name, class: "input input-scaffold__input input--text input--md" ) %>
+        </div>
+      </div>
+      <div class="grid u-flex-align-items-center u-mbottom16">
+        <div class="grid__sm--12 grid__md--3 user-page__form-label">
+          <label class="strong u-font14 u-line14 u-text-gray-600" for="lname">Last Name</label>
+        </div>
+        <div class="grid__sm--12 grid__md--9">
+          <%= text_input(f, :last_name, class: "input input-scaffold__input input--text input--md" ) %>
+        </div>
+      </div>
+
+      <div class="grid u-flex-align-items-center u-mbottom16">
+        <div class="grid__sm--12 grid__md--3 user-page__form-label">
+          <label class="strong u-font14 u-line14 u-text-gray-600" for="email">Email Address</label>
+        </div>
+        <div class="grid__sm--12 grid__md--9">
+          <%= text_input(f, :email, class: "input input-scaffold__input input--text input--md") %>
+        </div>
+      </div>
+
+      <%= inputs_for f, :user_phones, fn p -> %>
+        <div class="grid u-flex-align-items-center u-mbottom16">
+          <div class="grid__sm--12 grid__md--3 user-page__form-label">
+            <label class="strong u-font14 u-line14 u-text-gray-600" for="phone_number">Phone Number</label>
+          </div>
+          <div class="grid__sm--12 grid__md--9">
+            <%= text_input(p, :phone_number, class: "input input-scaffold__input input--text input--md") %>
+          </div>
+        </div>
+
+        <div class="grid u-flex-align-items-center u-mbottom16">
+          <div class="grid__sm--12 grid__md--3 user-page__form-label">
+            <label class="strong u-font14 u-line14 u-text-gray-600" for="phone_extension">Phone Ext.</label>
+          </div>
+          <div class="grid__sm--12 grid__md--9">
+            <%= text_input(p, :phone_extension, class: "input input-scaffold__input input--text input--md") %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= inputs_for f, :user_profile, fn p -> %>
+        <div class="grid u-flex-align-items-start u-mbottom16">
+          <div class="grid__sm--12 grid__md--3 user-page__form-label">
+            <label class="strong u-font14 u-line14 u-text-gray-600" for="street">Address</label>
+          </div>
+          <div class="grid__sm--12 grid__md--9">
+            <%= text_input(p, :address, class: "input input-scaffold__input input--text input--md u-mbottom16", placeholder: "Street Address" ) %>
+            <div class="grid">
+              <div class="grid__sm--6">
+                <%= text_input(p, :city,
+                  class: "input input-scaffold__input input--text input--md",
+                  placeholder: "City" ) %>
+              </div>
+              <div class="grid__sm--2">
+                <%= text_input(p, :state,
+                  class: "input input-scaffold__input input--text input--md",
+                  placeholder: "State" ) %>
+              </div>
+              <div class="grid__sm--4">
+                <%= text_input(p, :zip,
+                  class: "input input-scaffold__input input--text input--md",
+                  placeholder: "Zipcode" ) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-text-right">
+          <%= Sre.UI.Button.ButtonDefault.render_template(
+            value: "Update Profile",
+            classname: "button--primary",
+          )%>
+        </div>
+      <% end %>
+    <% end %>
+    <h2 class="user-page__main__section-header u-mtop32">
+      Your Password
+    </h2>
+
+    <%= form_for @password_changeset, user_management_password_path(@conn, :auth_0_update), fn f ->  %>
+      <div class="grid u-flex-align-items-center u-mbottom16">
+        <div class="grid__sm--12 grid__md--3 user-page__form-label">
+          <label class="strong u-font14 u-line14 u-text-gray-600" for="fname">Current Password</label>
+        </div>
+        <div class="grid__sm--12 grid__md--9">
+          <%= password_input(f, :current,
+            class: "input input-scaffold__input input--text input--md",
+            placeholder: "Current Password" ) %>
+        </div>
+      </div>
+      <div class="grid u-flex-align-items-center u-mbottom16">
+        <div class="grid__sm--12 grid__md--3 user-page__form-label">
+          <label class="strong u-font14 u-line14 u-text-gray-600" for="fname">New Password</label>
+        </div>
+        <div class="grid__sm--12 grid__md--9">
+          <%= password_input(f, :password,
+            class: "input input-scaffold__input input--text input--md",
+            placeholder: "New Password" ) %>
+        </div>
+      </div>
+      <div class="grid u-flex-align-items-center u-mbottom16">
+        <div class="grid__sm--12 grid__md--3 user-page__form-label">
+          <label class="strong u-font14 u-line14 u-text-gray-600" for="fname">Confirm Password</label>
+        </div>
+        <div class="grid__sm--12 grid__md--9">
+          <%= password_input(f, :password_confirmation,
+            class: "input input-scaffold__input input--text input--md",
+            placeholder: "Confirm Password" ) %>
+        </div>
+      </div>
+      <div class="u-text-right">
+        <%= Sre.UI.Button.ButtonDefault.render_template(
+          value: "Update Password",
+          classname: "button--primary",
+        )%>
+      </div>
+    <% end %>
+  </section>
+</div>

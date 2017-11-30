@@ -1,0 +1,288 @@
+// *******************************************
+// *******************************************
+
+    // Button component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$button-default-height     : $unit-touch; // settings/layout-units
+$button-max-width          : $unit-max-line-length; // settings/layout-units
+$button-edge-space         : $unit-default-spacing; // settings/layout-units
+$button-colors             : $all-colors; // settings/colors
+$button-sizes              : $component-sizes; // settings/layout-units
+$button-shadows            : $shadows; // settings/stylistic
+$button-transition         : background-color 250ms ease,
+                             text-shadow 250ms ease;
+$button-outline-transition : border 250ms ease,
+                             color 250ms ease;
+$button-radius             : 50px;
+
+@function get-button-size-keys($size, $unit) {
+    // scss-lint:disable NameFormat
+    @return map_get( // get value in size key
+        map_get( // get size key
+            $button-sizes,
+            $size
+        ),
+        $unit
+    );
+    // scss-lint:enable NameFormat
+}
+
+@function get-button-text-color($color) {
+
+    @if (lightness($color) > 70) {
+        @return $gray-700;
+    } @else {
+        @return $white;
+    }
+
+}
+
+@function get-outline-button-text-color($color) {
+
+    @if (lightness($color) > 70) {
+        @return $gray-700;
+    } @else {
+        @return $color;
+    }
+
+}
+
+@function get-button-text-shadow($color) {
+
+    @if (lightness($color) > 70) {
+        @return $text-shadow-white;
+    } @else {
+        @return $text-shadow;
+    }
+
+}
+
+// button defaults
+.button {
+    position        : relative;
+    display         : inline-block;
+    height          : rem-calc(get-button-size-keys('md', 'size'));
+    min-width       : rem-calc(get-button-size-keys('md', 'size'));
+    max-width       : rem-calc($button-max-width);
+    margin          : rem-calc(0 0 $button-edge-space 0);
+    padding         : rem-calc(0 $button-edge-space);
+    overflow        : hidden;
+    background      : $primary;
+    font-size       : rem-calc(get-button-size-keys('md', 'font-size'));
+    color           : $white;
+    text-align      : center;
+    text-shadow     : $text-shadow;
+    text-decoration : none;
+    transition      : $button-transition;
+    @include sans-bold;
+
+    // mask out button
+    &::before {
+        content    : '';
+        position   : absolute;
+        top        : 0;
+        right      : 0;
+        bottom     : 0;
+        left       : 0;
+        z-index    : $stack-bot;
+        background : transparent;
+        transition : $button-transition;
+    }
+
+    &:hover,
+    &:focus {
+        text-shadow : $text-shadow0;
+
+        &::before {
+            background : rgba($white, .1);
+        }
+
+    }
+
+    &:focus {
+        outline : 3px solid rgba($primary, .5);
+    }
+
+    &:active {
+        box-shadow  : $shadow-inset;
+        text-shadow : $text-shadow-offset;
+
+        &::before {
+            background : rgba($black, .15);
+        }
+
+    }
+
+    .icon {
+        filter : drop-shadow($shadow-hard);
+    }
+
+}
+
+// button flexbox layout
+// direct child of button element
+.button__layout {
+    position        : relative;
+    z-index         : $stack-top;
+    display         : flex;
+    justify-content : center;
+    align-content   : center;
+    align-items     : center;
+    height          : 100%;
+    white-space     : nowrap;
+}
+
+// outline style modifier
+.button--outline {
+    border      : 2px solid $primary;
+    background  : transparent;
+    color       : $primary;
+    text-shadow : none;
+    transition  : $button-outline-transition;
+
+    &::before {
+        display : none;
+    }
+
+    &:hover {
+        border-color : tint($primary, 15%);
+        color        : tint($primary, 15%);
+    }
+
+    &:active {
+        border-color : $primary-dark;
+        color        : $primary-dark;
+        text-shadow  : none;
+    }
+
+    &.button--disabled,
+    &[disabled] {
+        border-color : rgba($primary, .5);
+        background   : transparent !important;
+        color        : rgba($primary, .5);
+    }
+
+    .icon {
+        filter : none;
+    }
+
+}
+
+// plain modifier
+.button--plain {
+    background  : transparent !important;
+    color       : $primary;
+    text-shadow : none;
+
+    .icon {
+        filter : none;
+    }
+
+}
+
+// disabled modifier
+.button--disabled,
+.button[disabled] {
+    background  : rgba($primary, .5);
+    text-shadow : none !important;
+    cursor      : not-allowed;
+}
+
+// button size modifiers
+@each $button-size-key, $button-size in $button-sizes {
+
+    .button--#{$button-size-key} {
+        height    : rem-calc(get-button-size-keys($button-size-key, 'size'));
+        font-size : rem-calc(get-button-size-keys($button-size-key, 'font-size'));
+    }
+
+}
+
+// button color modifiers
+@each $button-color-key, $button-color in $button-colors {
+
+    .button--#{$button-color-key} {
+        background  : $button-color;
+        color       : get-button-text-color($button-color);
+        text-shadow : get-button-text-shadow($button-color) !important;
+
+        &.button--disabled,
+        &[disabled] {
+            background : rgba($button-color, .5) !important;
+
+            &::before {
+                display : none;
+            }
+
+        }
+
+        &.button--outline {
+            border-color : $button-color;
+            background   : transparent;
+            color        : get-outline-button-text-color($button-color);
+            text-shadow  : none !important;
+
+            &:hover {
+                border-color : tint($button-color, 15%);
+                color        : tint(get-outline-button-text-color($button-color), 15%);
+            }
+
+            &:active {
+                border-color : shade($button-color, 15%);
+                color        : shade($button-color, 15%);
+                text-shadow  : none;
+            }
+
+            &.button--disabled,
+            &[disabled] {
+                border-color : rgba($button-color, .5);
+                background   : transparent !important;
+                color        : rgba(get-outline-button-text-color($button-color), .5);
+            }
+
+        }
+
+        &.button--plain {
+            border      : 0;
+            background  : transparent !important;
+            color       : $button-color;
+            text-shadow : none !important;
+
+            &:hover {
+                color : tint($button-color, 15%);
+            }
+
+            &.button--disabled,
+            &[disabled] {
+                color : rgba($button-color, .5);
+            }
+
+            &:active {
+                box-shadow  : none;
+                text-shadow : none;
+            }
+
+            &::before {
+                display : none !important;
+            }
+
+        }
+
+    }
+
+}
+
+// expand modifier
+.button--expand {
+    display : block;
+    width   : 100%;
+}
+
+// border-radius modifier
+.button--radius {
+    border-radius : $button-radius;
+}

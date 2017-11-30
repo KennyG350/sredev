@@ -1,0 +1,42 @@
+<div id="property-schools-container"
+  class="accordion__section accordion__section--disable-collapse accordion__section--expand"
+  data-lat="<%= Sre.Listing.ViewHelper.number_to_string @listing.latitude %>"
+  data-lon="<%= Sre.Listing.ViewHelper.number_to_string @listing.longitude %>">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Schools
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <p class="u-font14 u-line18 u-text-gray-600">
+      School data provided by GreatSchools. Intended for reference only. To verify enrollment eligibility, contact the school or district directly.
+    </p>
+  <div class="u-mtop30 u-mbottom30">
+      <%= for school <- @schools do %>
+      <div class="gs-rating u-mtop48">
+        <div class="gs-rating__disc <%= school_rating_color school.school_rating %>">
+          <span class="gs-rating__disc__score">
+            <%= school.school_rating %>
+          </span>
+          <div class="gs-rating__disc__sub">
+            <span class="gs-rating__disc__score-qualifier">
+              out of 10
+            </span>
+            <span class="gs-rating__disc__gs">
+              GreatSchools
+            </span>
+          </div>
+        </div>
+        <div class="gs-rating__info">
+          <div class="gs-rating__school">
+            <%= school.school_name %>
+            <div class="gs-rating__school__age">
+              <%= school_type(school.school_type) %> - <%= school.school_level %>
+            </div>
+          </div>
+        </div>
+      </div><!-- /end .gs-rating -->
+      <% end %>
+    </div>
+  </div>
+</div>

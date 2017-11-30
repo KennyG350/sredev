@@ -1,0 +1,250 @@
+// *******************************************
+// *******************************************
+
+    // Header component settings
+
+// *******************************************
+// *******************************************
+
+// @vars
+$unit-default-spacing                            : $unit-default-spacing; // settings/layout-units
+$header-background-color                         : $white; // settings/colors
+$header-border-color                             : $gray-200; // settings/colors
+$header-branding-color                           : $primary; // settings/colors
+$header-branding-color-alt                       : $primary-dark; // settings/colors
+$header-sm-height                                : $unit-sm-header-height; // settings/layout-units
+$header-md-height                                : $unit-md-header-height; // settings/layout-units
+$header-mobile-nav-drawer-index                  : $index-drawer; //settings/z-indexes
+$header-branding-mobile-hamburger-width          : 24;
+$header-branding-mobile-hamburger-height         : 16;
+$header-branding-mobile-hamburger-line-thickness : 3;
+
+// container element
+.header {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : stretch;
+    border-bottom   : 1px solid $header-border-color;
+    background      : $header-background-color;
+}
+
+// contains branding and search form
+.header__branding-and-search {
+    display     : flex;
+    align-items : stretch;
+    flex        : 1 0 auto;
+
+    @include min-screen($breakpoint-md) {
+        flex : 0 0 auto;
+    }
+
+}
+
+// SRE branding
+.header__branding {
+    display     : flex;
+    align-items : center;
+}
+
+// branding svg element
+.header__branding__link,
+.header__branding__svg {
+    flex    : 1 0 rem-calc($header-sm-height);
+    width   : rem-calc($header-sm-height);
+
+    @include min-screen($breakpoint-md) {
+        flex  : 1 0 rem-calc($header-md-height);
+        width : rem-calc($header-md-height);
+    }
+
+}
+
+.header__branding__link {
+    display : none;
+
+    @include min-screen(rem-calc(330)) {
+        display : block;
+    }
+
+}
+
+.header__branding__svg {
+    display    : block;
+    fill       : $header-branding-color-alt;
+    transition : fill 200ms ease;
+
+    &:hover {
+        fill : $header-branding-color;
+    }
+}
+
+// mobile hamburger menu trigger
+.header__branding__mobile-hamburger {
+    position: relative;
+    display      : block;
+    flex         : 1 0 rem-calc($header-branding-mobile-hamburger-width);
+    width        : rem-calc($header-branding-mobile-hamburger-width);
+    height       : rem-calc($header-branding-mobile-hamburger-height);
+    margin-right : rem-calc($unit-default-spacing);
+
+    @include min-screen(rem-calc(330)) {
+        margin-right : rem-calc($unit-default-spacing * 2);
+    }
+
+    &:focus {
+        outline : none;
+    }
+
+    &::before,
+    &::after,
+    > span {
+        content       : '';
+        position      : absolute;
+        top           : 50%;
+        left          : 50%;
+        width         : 100%;
+        height        : rem-calc($header-branding-mobile-hamburger-line-thickness);
+        transform     : translate(-50%, -50%);
+        border-radius : 3px;
+        background    : $gray-400;
+        transition    : transform 350ms ease,
+                        opacity 300ms ease;
+    }
+
+    &::before {
+        margin-top : rem-calc(-$header-branding-mobile-hamburger-line-thickness * 2);
+    }
+
+    &::after {
+        margin-top : rem-calc($header-branding-mobile-hamburger-line-thickness * 2);
+    }
+
+    // mobile menu visibile modifier
+    .header--mobile-nav-visible & {
+
+        &::before {
+            margin-top : 0;
+            transform  : translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            margin-top : 0;
+            transform  : translate(-50%, -50%) rotate(-45deg);
+        }
+
+        span {
+            opacity : 0;
+        }
+
+    }
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+}
+
+// navigation
+.header__main-nav {
+    position   : fixed;
+    top        : rem-calc($header-sm-height - 1);
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : $header-mobile-nav-drawer-index;
+    opacity    : 0;
+    transform  : translateX(-100%);
+    overflow   : hidden;
+    overflow-y : auto;
+    border-top : 1px solid $header-border-color;
+    background : $white;
+    transition : opacity 250ms ease,
+                 transform 250ms $ease-in-out-quad;
+
+    // mobile menu visibile modifier
+    .header--mobile-nav-visible & {
+        opacity   : 1;
+        transform : translateX(0);
+    }
+
+    @include min-screen($breakpoint-md) {
+        position   : relative;
+        top        : auto;
+        right      : auto;
+        bottom     : auto;
+        left       : auto;
+        z-index    : auto;
+        opacity    : 1;
+        transform  : translateX(0);
+        overflow   : visible;
+        border-top : 0;
+        background : transparent;
+        transition : none;
+    }
+
+}
+
+// transparent modifier
+.header--transparent {
+    position   : absolute;
+    top        : 0;
+    right      : 0;
+    left       : 0;
+    z-index    : $stack-top;
+    border     : 0;
+    background : transparent;
+
+    .header__branding__mobile-hamburger {
+        position : absolute;
+        top      : rem-calc(16);
+        right    : 0;
+
+        &::before,
+        &::after,
+        > span {
+            background : $white;
+        }
+
+    }
+
+    .header__branding__svg {
+        display : none;
+    }
+
+    &.header--mobile-nav-visible {
+        background : $white;
+
+        @include min-screen($breakpoint-md) {
+            background : transparent;
+        }
+
+        .header__branding__mobile-hamburger {
+
+            &::before,
+            &::after,
+            > span {
+                background : $gray-700;
+            }
+
+        }
+
+
+    }
+
+    @include min-screen($breakpoint-md) {
+
+        .location-search {
+            display : none;
+        }
+
+        .main-nav__link {
+            color : $white;
+        }
+
+        .main-nav__item__dropicon {
+            fill : $white;
+        }
+
+    }
+
+}

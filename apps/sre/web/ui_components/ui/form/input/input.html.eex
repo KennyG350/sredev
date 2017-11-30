@@ -1,0 +1,19 @@
+<div class="input-scaffold <%= @classname %> <%= if @disabled? do %>input-scaffold--disabled<% end %>">
+  <%= if @label do %>
+    <label for="<%= @id %>" class="label input-scaffold__label">
+      <%= @label %>
+    </label>
+  <% end %>
+  <input
+    id="<%= @id %>"
+    type="<%= @type %>"
+    name="<%= @id %>"
+    placeholder="<%= @placeholder %>"
+    value="<%= @value %>"
+    autocomplete="off"
+    class="input input-scaffold__input input--<%= @type %> input--<%= @size %> <%= if @disabled? do %>input--disabled<% end %>"
+    <%= if @disabled? do %>
+      disabled
+    <% end %>
+  />
+</div>

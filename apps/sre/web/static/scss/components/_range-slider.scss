@@ -1,0 +1,76 @@
+// *******************************************
+// *******************************************
+
+    // Range slider component
+
+// *******************************************
+// *******************************************
+
+// @vars
+$slider-baseline            : 6;
+$slider-container-height    : $slider-baseline * 5;
+$slider-bar-height          : $slider-baseline;
+$knob-diameter              : $slider-container-height - 2;
+
+// container element
+.range-slider-container {
+    padding : 0 rem-calc($knob-diameter / 2);
+}
+
+.range-slider {
+    position    : relative;
+    display     : block;
+    width       : 100%;
+    height      : rem-calc($slider-container-height);
+    padding-top : rem-calc(($knob-diameter / 2) - ($slider-baseline / 2));
+}
+
+// child elements
+.range-slider__bar {
+    position         : relative;
+    height           : rem-calc($slider-bar-height);
+    border-radius    : rem-calc($slider-bar-height);
+    background-color : $gray-200;
+}
+
+.range-slider__bar--selected {
+    position         : absolute;
+    margin-top       : rem-calc(-$slider-bar-height);
+    background-color : $sre-primary;
+}
+
+.range-slider__knob-container {
+    position      : absolute;
+    z-index       : 2;
+    width         : rem-calc($unit-touch);
+    height        : rem-calc($unit-touch);
+    margin-top    : rem-calc(-($unit-touch + $slider-bar-height) / 2);
+    margin-left   : rem-calc(-($unit-touch / 2));
+    border-radius : rem-calc($unit-touch);
+}
+
+.range-slider__knob-container__knob {
+    position         : absolute;
+    top              : 50%;
+    left             : 50%;
+    z-index          : 1;
+    width            : rem-calc($knob-diameter);
+    height           : rem-calc($knob-diameter);
+    transform        : translate(-50%, -50%);
+    border           : rem-calc(1) solid $gray-200;
+    border-radius    : rem-calc($knob-diameter);
+    background-color : $white;
+    cursor           : pointer;
+}
+
+.range-slider__knob-container__knob:hover,
+.range-slider__knob-container__knob--dragging {
+    box-shadow : $shadow;
+}
+
+.range-slider__tooltip-container {
+    position  : absolute;
+    top       : rem-calc(-45);
+    left      : 50%;
+    transform : translateX(-50%);
+}

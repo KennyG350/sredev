@@ -1,0 +1,47 @@
+<article class="testimonials-page__hgroup">
+
+    <hgroup class="marketing-page__hero v2">
+
+        <h1 class="homepage__hero__h3">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Multi-Solution</h1>
+
+    </hgroup>
+
+<!--
+<hgroup class="marketing-page__hero v2">
+  <div class="homepage__hero__h1-content-container">
+        <h1 style="font-size: 18px; margin-bottom: 5px;">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Multi-Solution</h1>
+  </div>
+  </hgroup>
+-->
+
+<article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+<div class="branches-title mortpage-calctitle" align="center">
+    Various Solutions
+</div>
+    <p class="p">
+      SRE will create various solutions in collaboration with <strong class="strong">Alliance Members*</strong> such as Real Estate (<a class="link" href="/solution">Smart Homebuyer Solution</a>), Mortgage Loan (<a class="link" href="/mortgage">Smart Mortgage Solution</a>), insurance, title, escrow, appraisal, and other companies.<br>
+      <font size=2rem>*PPC Agreement Required (Industry Leaders per Horizontal)</font>
+    </p>
+<br>  
+<div class="branches-title mortpage-calctitle" align="center">
+    Multi-Solution Platform
+</div>
+    <p class="p">
+      SRE will create the Multi-Solution Platform with various solutions, which returns most of the savings (benefits) brought about by the latest technology to consumers.<br>
+    </p>
+<br> 
+
+<a href="https://drive.google.com/uc?export=download&id=1o2VNB_diuW6GiqBsg1_xiUBYf64vhFhT" target="_blank""><img src="https://drive.google.com/uc?export=download&id=1o2VNB_diuW6GiqBsg1_xiUBYf64vhFhT" alt="SRE Multi-Solution Platform" style="width:80%;" ></a>
+
+ <!--  <img src="https://drive.google.com/uc?export=download&id=1o2VNB_diuW6GiqBsg1_xiUBYf64vhFhT" alt="SRE Multi-Solution Platform" style="width:846px;height:655px;"> -->
+  
+  </article>
+</article>
+
+<!-- <%= Sre.UI.Company.Overview.render_template(
+)%> -->
+
+<%= Sre.UI.Company.Branches.render_template(
+)%>

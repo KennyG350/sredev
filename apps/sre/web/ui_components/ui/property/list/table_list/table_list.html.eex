@@ -1,0 +1,32 @@
+<%= unless @total_results > 0 do %>
+  <p>No Results Found</p>
+<% end %>
+<table class="table search__properties__results__list__layout">
+  <thead class="thead">
+    <tr class="tr thead__tr">
+      <th class="th thead__th">Address</th>
+      <th class="th thead__th">Location</th>
+      <th class="th thead__th">Price</th>
+      <th class="th thead__th">Beds</th>
+      <th class="th thead__th">Baths</th>
+      <th class="th thead__th">SQFT</th>
+      <th class="th thead__th">$/SQFT</th>
+      <th class="th thead__th">On SRE</th>
+    </tr>
+  </thead>
+
+  <tbody class="tbody">
+    <%= for listing <- @listings do %>
+      <tr class="tr tbody__tr elm-listing-link onclick" href="/properties/<%= listing.url %>">
+          <%= Sre.UI.Property.List.TableRow.render_template listing: listing %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= Sre.UI.Property.List.Pagination.render_template(
+  total_results: @total_results,
+  current_page: @current_page,
+  per_page: Application.get_env(:sre, :listings_per_page_per_view)[:table],
+  classname: "search__results__pagination"
+) %>

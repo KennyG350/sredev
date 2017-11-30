@@ -1,0 +1,113 @@
+<div class="property-card">
+  <%= if @header? do %>
+    <div class="property-card__header">
+      <div class="property-card__header__left">
+        <hgroup class="property-card__header__main">
+          <h3 class="u-sans-light u-font16 u-line18 u-text-truncate">
+            <%= Sre.Listing.ViewHelper.street_address @listing %>
+          </h3>
+          <h4 class="u-font14 u-line16 u-text-truncate">
+            <%= Sre.Listing.ViewHelper.city_state_zip @listing %>
+          </h4>
+        </hgroup>
+        <%= Sre.UI.Button.FavoritePropertyButton.render_template(
+          listing: @listing,
+          classname: "property-card__header__favorite",
+          favorited_classname: "property-card__header__favorite--favorited"
+        ) %>
+          <span class="property-card__header__favorite__layout">
+            <span class="property-card__header__favorite__icon property-card__header__favorite__icon--heart">
+              <%= Sre.UI.Svg.Icon.render_template icon: "heart" %>
+              <span class="u-hidden-visually">
+                Unfavorite this listing:
+                <%= Sre.Listing.ViewHelper.street_address @listing %>
+              </span>
+            </span>
+            <span class="property-card__header__favorite__icon property-card__header__favorite__icon--heart-empty">
+              <%= Sre.UI.Svg.Icon.render_template icon: "heart_empty" %>
+              <span class="u-hidden-visually">
+                Favorite this listing:
+                <%= Sre.Listing.ViewHelper.street_address @listing %>
+              </span>
+            </span>
+          </span>
+        </button>
+      </div>
+      <div class="property-card__header__right">
+        <%= if Sre.Listing.ViewHelper.has_rebate(@listing, :card_view) do %>
+        <div class="property-card__header__rebate">
+          <h5 class="property-card__header__rebate__label strong u-text-upper">
+            Est. <%= Sre.Listing.ViewHelper.get_rebate_text @listing %>
+          </h5>
+          <div class="property-card__header__rebate__value strong">
+            $<%= Sre.Listing.ViewHelper.get_rebate_amount @listing %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div><!-- /end .property-card__header -->
+  <% end %>
+  <div class="property-card__image image-slider">
+    <!--<span class="property-card__image__sre-badge badge badge--sre u-sans-bold">
+      Listed by
+      <svg class="badge__svg property-card__image__sre-badge__svg"  viewBox="0 0 60 32" xmlns="http://www.w3.org/2000/svg">
+        <g fill-rule="evenodd">
+          <path d="M1.096 22.6h6.958s-.352 4.13 2.635 4.13c2.986 0 2.494-3.64 2.494-3.64s-.14-1.786-2.39-2.8c-2.25-1.016-8.726-3.893-9.452-7.528C.506 8.58.99 4.904 5.207 2.225c0 0 1.546-1.225 5.482-1.225 3.794 0 6.36.945 7.765 2.8C19.86 5.657 20 8.528 20 10.033h-6.887s.387-3.92-2.32-3.92c-2.704 0-2.423 3.395-2.142 3.885.282.49.985 2.275 7.17 4.55 0 0 5.194 1.565 5.194 7.796 0 6.23-3.227 9.45-10.49 9.45-7.26 0-9.428-2.962-9.428-9.194zM41.518 31.234V1.41h17.384v6.51h-9.7v5.077l8.827.013.01 5.826-8.868.01.004 6.227h9.73l-.004 6.16"/>
+          <path d="M30.25 14.314h-1.996v-7.35h2.622s2.443-.064 2.443 3.64c0 3.703-3.07 3.71-3.07 3.71m10.606 15.934c-.298-.735-.492-.455-.457-7.544 0 0 .204-5.87-4.598-5.87 0 0 5.06-.793 5.06-7.63 0-6.84-5.95-7.795-8.996-7.795H21.014v29.824h7.62V19.116h2.313s2.02-.157 2.02 2.31c0 2.47.264 7.72.3 8.367.034.648.386 1.44 1.124 1.44h7.8s-1.035-.25-1.334-.985"/>
+        </g>
+      </svg> -->
+      <%= if Sre.Listing.ViewHelper.show_co_branding? @listing do %>
+        <img class="property-card__mls-watermark" src="<%= Sre.Listing.ViewHelper.get_mls_logo @listing %>" alt="watermark" />
+        <div class="property-card__broker-agent u-text-truncate">
+          Courtesy of <%= @listing.mls_agent_full_name %> with <%= @listing.mls_office_name %>
+        </div>
+      <% end %>
+    </span>
+    <%= if not @slider? do %>
+      <img class="property-card__image__img" src="<%= get_first_photo(@listing) %>"  data-photos="<%= get_all_photo_paths(@listing) %>" alt="">
+    <% else %>
+      <div id="property-card__image-container" data-photos="<%= get_all_photo_paths(@listing) %>"></div>
+    <% end %>
+  </div><!-- /end .property-card__image -->
+  <div class="property-card__footer">
+    <div class="property-card__footer__price price">
+      <div class="price__value strong">
+        <sup class="price__sup">$</sup>
+        <%= Sre.Listing.ViewHelper.get_list_price @listing %>
+      </div>
+      <!--<div class="price__savings">
+        Save $18,500
+      </div>-->
+    </div><!-- /end .property-card__footer__price -->
+    <ul class="property-card__footer__meta property-meta">
+      <li class="property-meta__item property-card__footer__meta__property-meta__item">
+        <div class="strong u-font14">
+          <%= Sre.Listing.ViewHelper.format_number @listing.bedrooms %>
+        </div>
+        <div class="u-font14">
+          Beds
+        </div>
+      </li>
+      <li class="property-meta__item property-card__footer__meta__property-meta__item">
+        <div class="strong u-font14">
+          <%= Sre.Listing.ViewHelper.format_number @listing.baths %>
+        </div>
+        <div class="u-font14">
+          Bath
+        </div>
+      </li>
+      <li class="property-meta__item property-card__footer__meta__property-meta__item">
+        <div class="strong u-font14">
+          <%= if @listing.living_area do %>
+            <%= Sre.Listing.ViewHelper.format_number @listing.living_area %>
+          <% else %>
+            <%= @listing.square_footage |> Sre.Listing.ViewHelper.to_acres %>
+          <% end %>
+        </div>
+        <div class="u-font14">
+          <%= if @listing.living_area do "SQFT" else "ACR" end%>
+        </div>
+      </li>
+    </ul>
+  </div><!-- /end .property-card__footer -->
+</div>

@@ -1,0 +1,21 @@
+<div class="
+  alert
+  alert--<%= @color_theme %>
+  <%= if @outline do "alert--outline" end %>
+  <%= @classname %>
+">
+  <span class="alert__content">
+    <%= @content %>
+  </span>
+  <%= if @can_close do %>
+    <button class="alert__close" type="button">
+      <%= Sre.UI.Svg.Icon.render_template(
+        icon: "close",
+        classes: ["alert__close__icon"]
+      )%>
+      <span class="u-hidden-visually">
+        Close
+      </span>
+    </button>
+  <% end %>
+</div>

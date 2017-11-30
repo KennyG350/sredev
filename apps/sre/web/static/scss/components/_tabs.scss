@@ -1,0 +1,58 @@
+// *******************************************
+// *******************************************
+
+    // Tabs component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$tabs-tab-colors : $all-colors; // settings/colors
+
+// tabs list
+.tabs {
+    display     : flex;
+    align-items : center;
+}
+
+// tab item
+.tabs__tab {
+    margin-right  : rem-calc(10);
+    border-bottom : 3px solid transparent;
+
+    &:last-child {
+        margin-right : 0;
+    }
+
+}
+
+.tab__link {
+    display         : flex;
+    padding         : rem-calc(9 0);
+    color           : $primary;
+    text-decoration : none;
+}
+
+// current modifier
+.tab--current {
+    border-bottom : 3px solid $primary;
+    @include sans-bold;
+}
+
+// color modifiers
+// .tab--primary
+@each $tabs-tab-color-key, $tabs-tab-color in $tabs-tab-colors {
+
+    .tab--#{$tabs-tab-color-key} {
+
+        .tab__link {
+            color : $tabs-tab-color;
+        }
+
+        &.tab--current {
+            border-bottom-color : $tabs-tab-color;
+        }
+
+    }
+
+}

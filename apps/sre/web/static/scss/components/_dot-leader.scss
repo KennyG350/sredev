@@ -1,0 +1,31 @@
+// *******************************************
+// *******************************************
+
+    // Dot leader list component
+
+// *******************************************
+// *******************************************
+
+.dot-leader {
+    max-width  : rem-calc(640);
+    overflow-x : hidden;
+
+    &::before {
+        content     : '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+        float       : left;
+        width       : 0;
+        white-space : nowrap;
+    }
+
+}
+
+.dot-leader__left {
+    padding-right : .33em;
+    background    : $white;
+}
+
+.dot-leader__right {
+    float        : right;
+    padding-left : .33em;
+    background   : $white;
+}

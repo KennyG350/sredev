@@ -1,0 +1,19 @@
+// **************************************************
+// **************************************************
+
+    // App-wide list of indexes
+
+// **************************************************
+// **************************************************
+
+// default stacking orer indexes
+$stack-sub : -1;
+$stack-bot : 1;
+$stack-mid : 2;
+$stack-top : 3;
+
+// layout/component indexes
+$index-app-notification : 10;
+$index-drawer           : 20;
+$index-app-header       : 21;
+$index-modal            : 22;

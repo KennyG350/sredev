@@ -1,0 +1,69 @@
+<nav class="main-nav <%= @classname %>" role="navigation">
+  <ul class="main-nav__list">
+    <li class="main-nav__item">
+      <a class="main-nav__link" href="/">Listings</a>
+    </li>
+    <li class="main-nav__item  <%= if @request_path == "/homebuyer", do: "main-nav__item--active" %>">
+      <a class="main-nav__link" href="/homebuyer">Homebuyer</a>
+    </li>
+    <li class="main-nav__item  <%= if @request_path == "/mortgage", do: "main-nav__item--active" %>">
+      <a class="main-nav__link" href="/mortgage">Mortgage</a>
+    </li>
+    <li class="main-nav__item  <%= if @request_path == "/platform", do: "main-nav__item--active" %>">
+      <a class="main-nav__link" href="/platform">Solutions</a>
+    </li>
+    <li class="main-nav__item  <%= if @request_path == "/testimonials", do: "main-nav__item--active" %>">
+      <a class="main-nav__link" href="/testimonials">Testimonials</a>
+    </li>
+    <li class="main-nav__item  <%= if @request_path == "/contact", do: "main-nav__item--active" %>">
+      <a class="main-nav__link" href="/contact">About Us</a>
+    </li>
+    <li class="main-nav__item  <%= if @request_path == "/careers", do: "main-nav__item--active" %>">
+      <a class="main-nav__link" href="/careers">Careers</a>
+    </li>
+    <%= if @current_user do %>
+      <li class="main-nav__item main-nav__item--has-submenu">
+        <a
+          href="/mysre/edit-profile"
+          class="main-nav__link u-text-truncate"
+        >
+          <%= full_name(@current_user) %>
+          <%= Sre.UI.Svg.Icon.render_template(
+            icon: "caret_down",
+            classes: ["main-nav__item__dropicon"]
+          )%>
+        </a>
+        <ul class="main-nav__submenu">
+          <li class="main-nav__item main-nav__submenu__item">
+            <%= link(
+              "Your Profile",
+              to: "/mysre/edit-profile",
+              class: "main-nav__link"
+            )%>
+          </li>
+          <li class="main-nav__item main-nav__submenu__item">
+            <%= link(
+              "Favorites",
+              to: "/mysre/favorites",
+              class: "main-nav__link"
+            )%>
+          </li>
+          <li class="main-nav__item main-nav__submenu__item">
+            <%= link(
+              "Saved Searches",
+              to: "/mysre/saved-search",
+              class: "main-nav__link"
+            )%>
+          </li>
+          <li class="main-nav__item main-nav__submenu__item">
+            <a class="main-nav__link" href="/logout">Logout</a>
+          </li>
+        </ul>
+      </li>
+    <% else %>
+      <li class="main-nav__item login elm-login-nav-item">
+        <a class="main-nav__link" href="/login">Sign Up/Login</a>
+      </li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,0 +1,8 @@
+<div class="elm-property-hero-map-overlay map-overlay">
+  <div
+    class="elm-property-hero-map-container map-overlay__map-container"
+    data-lon="<%= @listing.longitude |> Sre.Listing.ViewHelper.number_to_string %>"
+    data-lat="<%= @listing.latitude |> Sre.Listing.ViewHelper.number_to_string %>"
+    data-price="<%= @listing.price |> Sre.Listing.ViewHelper.number_to_string %>"
+  ></div>
+</div>

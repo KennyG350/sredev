@@ -1,0 +1,96 @@
+// *******************************************
+// *******************************************
+
+    // Panel component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$panel-spacing       : $unit-default-spacing; // settings/layout-units
+$panel-header-height : $unit-touch; // settings/layout-units
+$panel-shadows       : $shadows; // seettings/stylistic
+
+/////////////////////////////////////////////
+// Main panel container
+/////////////////////////////////////////////
+
+// panel container element
+// @defaults
+.panel {
+    margin-bottom : rem-calc($panel-spacing);
+    border        : 1px solid $gray-300;
+    background    : $white;
+}
+
+// panel color modifiers
+.panel--gray-050 {
+    background : $gray-050;
+}
+
+.panel--gray-800 {
+    background : $gray-800;
+
+    .panel__content {
+        color : $white;
+    }
+
+    .panel__footer {
+        border-top-color : $gray-600;
+    }
+
+}
+
+// panel shadow modifiers
+@each $panel-shadow-key, $panel-shadow-value in $panel-shadows {
+
+    .panel--#{$panel-shadow-key} {
+        box-shadow : $panel-shadow-value;
+    }
+
+}
+
+/////////////////////////////////////////////
+// Panel header
+/////////////////////////////////////////////
+
+// panel header element
+.panel__header {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    min-height      : rem-calc($panel-header-height); // 48
+    padding         : rem-calc($panel-spacing); // 16
+    border-bottom   : 1px solid $gray-300;
+    background      : $gray-100;
+}
+
+// color modifiers
+.panel__header--white {
+    background : $white;
+}
+
+.panel__header--gray-800 {
+    border-bottom-color : $gray-600;
+    background          : $gray-800;
+    color               : $white;
+}
+
+/////////////////////////////////////////////
+// Panel content
+/////////////////////////////////////////////
+
+// panel content element
+.panel__content {
+    padding : rem-calc($panel-spacing);
+}
+
+/////////////////////////////////////////////
+// Panel footer
+/////////////////////////////////////////////
+// panel footer element
+.panel__footer {
+    margin     : rem-calc(0 $panel-spacing);
+    padding    : rem-calc($panel-spacing);
+    border-top : 1px solid $gray-100;
+}

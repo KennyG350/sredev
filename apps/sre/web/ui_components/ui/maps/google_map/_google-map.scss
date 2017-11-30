@@ -1,0 +1,10 @@
+.ui-google-map {
+  background-color: $primary;
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+}
+
+.ui-google-map--shadow {
+  box-shadow: 0 5px 25px rgba(32, 36, 43, 0.3);
+}

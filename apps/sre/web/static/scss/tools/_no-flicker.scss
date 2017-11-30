@@ -1,0 +1,13 @@
+// *******************************************
+// *******************************************
+
+    // CSS hack to fix blurry & mis-rendered
+    // elements that have been transformed
+
+// *******************************************
+// *******************************************
+
+@mixin no-flicker() {
+    backface-visibility : hidden;
+    transform           : translate3d(0, 0, 0);
+}

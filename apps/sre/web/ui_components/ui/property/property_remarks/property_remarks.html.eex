@@ -1,0 +1,7 @@
+<div class="property__details__remarks property-remarks">
+  <div class="property-remarks__viewport">
+    <p class="p">
+      <%= @listing.public_remarks %>
+    </p>
+  </div>
+</div>

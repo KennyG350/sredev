@@ -1,0 +1,46 @@
+// *******************************************
+// *******************************************
+
+    // Table component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$table-cell-spacing  : $unit-default-spacing; // settings/layout-units
+$table-header-shadow : $text-shadow-white; // settings/stylistic
+
+// container element
+.table {
+    width : 100%;
+}
+
+// table cells
+.th,
+.td {
+    padding : rem-calc($table-cell-spacing);
+}
+
+// thead
+.thead {
+    font-size  : rem-calc(14);
+    text-align : left;
+}
+
+.thead__th {
+    color       : $gray-800;
+    text-shadow : $table-header-shadow;
+    @include sans-bold;
+}
+
+// tbody
+.tbody {
+    background : $white;
+    font-size  : rem-calc(14);
+    color      : $gray-700;
+}
+
+// body row
+.tbody__tr {
+    border-bottom : 1px solid $gray-100;
+}

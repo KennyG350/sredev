@@ -1,0 +1,5 @@
+<div>
+  <p><%= @first_name %> <%= @last_name %> is interested in selling their property at <%= @property_address %></p>
+  <br>
+  <p>They can be reached at <%= @phone %> or <%= @email %></p>
+</div>

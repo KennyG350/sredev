@@ -1,0 +1,330 @@
+<h2 class="ui-kit-layout__page-header">
+  Colors
+</h2>
+<section class="ui-kit-layout__page__container">
+  <div class="ui-kit-colors__list">
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $primary
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#00b3e6"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #00b3e6
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $primary-dark
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#1392ca"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #1392ca
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $symbolic-succsess
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#4caf50"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #4caf50
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $symbolic-warning
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#fd7037"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #fd7037
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $symbolic-error
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#fd7037"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #fd7037
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $symbolic-error
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#fd7037"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #fd7037
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $white
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#fff"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #fff
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-050
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#f0f1f5"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #f0f1f5
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-100
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#e6e7eb"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #e6e7eb
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-200
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#d7d9e0"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #d7d9e0
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-300
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#ced1d9"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #ced1d9
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-400
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#acb1bf"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #acb1bf
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-500
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#9297a6"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #9297a6
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-600
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#7b808c"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #7b808c
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-700
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#676b73"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #676b73
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-800
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#464951"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #464951
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $gray-900
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#2d313b"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #2d313b
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+
+    <div class="ui-kit-colors-list__item">
+      <div class="ui-kit-swatch">
+        <div class="ui-kit-swatch__name">
+          $black
+        </div>
+        <svg
+          class="ui-kit-swatch__color"
+          viewBox="0 0 159 135"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M.903.508H158.49v133.547H.902z" fill="#20242b"/>
+        </svg>
+        <div class="ui-kit-swatch__hex-code">
+          #20242b
+        </div>
+      </div>
+    </div><!-- /end .ui-kit-colors-list__item -->
+  </div>
+</section>

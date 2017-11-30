@@ -1,0 +1,62 @@
+<h2 class="ui-kit-layout__page-header">
+  Notification Components
+</h2>
+<section class="ui-kit-layout__page__container">
+  <h4 class="sg-sub-header">Alerts:</h1>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "primary",
+      can_close: true,
+      outline: false,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "error",
+      can_close: true,
+      outline: false,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "warning",
+      can_close: true,
+      outline: false,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "success",
+      can_close: true,
+      outline: false,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "primary",
+      can_close: true,
+      outline: true,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "error",
+      can_close: true,
+      outline: true,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "warning",
+      can_close: true,
+      outline: true,
+      classname: "u-mbottom16"
+    )%>
+    <%= Sre.UI.Alert.render_template(
+      content: "This is an alert",
+      color_theme: "success",
+      can_close: true,
+      outline: true,
+      classname: "u-mbottom16"
+    )%>
+</section>

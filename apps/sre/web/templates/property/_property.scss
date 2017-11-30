@@ -1,0 +1,108 @@
+// *******************************************
+// *******************************************
+
+    // Property page desktop styles
+    // sre.com/properties/:url
+
+// *******************************************
+// *******************************************
+
+// @vars
+$unit-sm-edge-space                 : $unit-sm-edge-space; // settings/layout-units
+$unit-md-edge-space                 : $unit-md-edge-space; // settings/layout-units
+$grid-8of12                         : $unit-grid-8of12; // settings/layout-units
+$grid-4of12                         : $unit-grid-4of12; // settings/layout-units
+$grid-3of12                         : $unit-grid-3of12;
+$grid-gutter                        : $unit-grid-gutter; // settings/layout-units
+$unit-touch                         : $unit-touch; // settings/layout-units
+$property-desktop-header-height     : 93;
+$property-desktop-hero-height       : $unit-md-hero-height; // settings/layout-units
+$property-aside-md-width            : 355;
+$unit-property-detail-content-width : $unit-property-detail-content-width;
+
+.property {
+    max-width : rem-calc($unit-property-detail-content-width);
+    margin    : 0 rem-calc(-$unit-sm-edge-space);
+
+    @include min-screen($breakpoint-md) {
+        position      : relative;
+        margin        : 0 auto;
+        padding-right : rem-calc($property-aside-md-width);
+        border-right  : 1px solid $gray-200;
+        border-left   : 1px solid $gray-200;
+        background    : $white;
+    }
+
+}
+
+.property__content {
+
+    @include min-screen(rem-calc(1200)) {
+        max-width : rem-calc($unit-default-content-width);
+        margin    : 0 auto;
+        padding   : rem-calc($unit-sm-edge-space);
+    }
+
+}
+
+.property__content__details {
+    padding : rem-calc($unit-sm-edge-space);
+}
+
+.property__content__details__price {
+    display         : flex;
+    justify-content : space-between;
+    margin-top      : rem-calc($unit-default-spacing * 2);
+    margin-bottom   : rem-calc($unit-default-spacing * 4);
+    padding-bottom  : rem-calc($unit-default-spacing * 2);
+    border-bottom   : 4px double $gray-800;
+    font-size       : rem-calc(24);
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+}
+
+.property__content__rebate-formula {
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+}
+
+.property__content__aside {
+    padding : rem-calc($unit-sm-edge-space);
+
+    @include min-screen(rem-calc(1200)) {
+        flex  : 0 0 $grid-3of12;
+        width : $grid-3of12;
+    }
+
+}
+
+.property__accordion {
+
+    @include min-screen($breakpoint-md) {
+        margin : rem-calc(($unit-default-spacing * 4) 0);
+    }
+
+}
+
+.property__aside {
+
+    @include min-screen($breakpoint-md) {
+        position                   : absolute;
+        top                        : 0;
+        right                      : 0;
+        bottom                     : 0;
+        width                      : rem-calc($property-aside-md-width);
+        overflow                   : hidden;
+        overflow-y                 : auto;
+        -webkit-overflow-scrolling : touch;
+        border-left                : 1px solid $gray-200;
+        background                 : $white;
+    }
+
+}

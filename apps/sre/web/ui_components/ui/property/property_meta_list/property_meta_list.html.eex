@@ -1,0 +1,58 @@
+<ul class="property__details__meta property-meta-list u-font18 u-line30 property-meta">
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= @listing.type || "-" %>
+    </div>
+    <div>
+      Type
+    </div>
+  </li>
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= Sre.Listing.ViewHelper.number_to_string @listing.year_built %>
+    </div>
+    <div>
+      Built
+    </div>
+  </li>
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= Sre.Listing.ViewHelper.days_on_market @listing %> days
+    </div>
+    <div>
+      On Market
+    </div>
+  </li>
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= @listing.status || "-" %>
+    </div>
+    <div>
+      Status
+    </div>
+  </li>
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= @listing.square_footage |> Sre.Listing.ViewHelper.to_acres |> Sre.Listing.ViewHelper.render_ACR %>
+    </div>
+    <div>
+      Lot Size
+    </div>
+  </li>
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= Sre.Listing.ViewHelper.format_currency @listing.association_fee_total %>
+    </div>
+    <div>
+      HOA Fees
+    </div>
+  </li>
+  <li class="property-meta__item">
+    <div class="strong">
+      <%= Sre.Listing.ViewHelper.price_per_sqft @listing %>
+    </div>
+    <div>
+      Price/SF
+    </div>
+  </li>
+</ul>

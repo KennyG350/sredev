@@ -1,0 +1,155 @@
+// *******************************************
+// *******************************************
+
+    // Text utilities
+
+// *******************************************
+// *******************************************
+
+// @vars
+$u-text-colors : $all-colors !default; // imported from settings/colors
+$u-font-sizes  : (
+    '9'  : 9,
+    '10' : 10,
+    '11' : 11,
+    '12' : 12,
+    '14' : 14,
+    '16' : 16,
+    '18' : 18,
+    '21' : 21,
+    '24' : 24,
+    '27' : 27,
+    '30' : 30,
+    '48' : 48,
+    '60' : 60,
+    '72' : 72
+);
+$u-text-shadows : $text-shadows; // settings/stylistic
+
+// font sizes
+// Ex: .u-font16
+@each $u-font-size-key, $u-font-size in $u-font-sizes {
+
+    .u-font#{$u-font-size-key} {
+        font-size : rem-calc($u-font-size);
+    }
+
+}
+
+// line heights
+// Ex: .u-line21
+@each $u-font-size-key, $u-font-size in $u-font-sizes {
+
+    .u-line#{$u-font-size-key} {
+        line-height : rem-calc($u-font-size);
+    }
+
+}
+
+// font shadows
+// Ex: .u-text-shadow
+@each $u-text-shadow-key, $u-text-shadow in $u-text-shadows {
+
+    .u-text-#{$u-text-shadow-key} {
+        text-shadow : $u-text-shadow;
+    }
+
+}
+
+// font families
+// Ex: .u-sans
+.u-sans {
+    @include sans('important');
+}
+
+.u-sans-light {
+    @include sans-light('important');
+}
+
+.u-sans-regular {
+    @include sans-regular('important');
+}
+
+.u-sans-bold {
+    @include sans-bold('important');
+}
+
+// Word breaking
+// Break strings when their length exceeds the width of their container.
+.u-text-break {
+    word-wrap : break-word !important;
+}
+
+// Horizontal text alignment
+.u-text-center {
+    text-align : center !important;
+}
+
+.u-text-left {
+    text-align : left !important;
+}
+
+.u-text-right {
+    text-align : right !important;
+}
+
+// Inherit the ancestor's text color.
+.u-text-inherit-color {
+    color : inherit !important;
+}
+
+// Enables font kerning in all browsers.
+// http://blog.typekit.com/2014/02/05/kerning-on-the-web/
+//
+// 1. Chrome (not Windows), Firefox, IE 10+
+// 2. Safari 7 and future browsers
+// 3. Chrome (not Windows), Firefox, Safari 6+, iOS, Android
+.u-text-kern {
+    font-feature-settings : "kern" 1; // 1
+    font-kerning          : normal; // 2
+    text-rendering        : optimizeLegibility; // 3
+}
+
+// Prevent whitespace wrapping
+.u-text-nowrap {
+    white-space : nowrap !important;
+}
+
+// Text truncation
+//
+// Prevent text from wrapping onto multiple lines, and truncate with an
+// ellipsis.
+//
+// 1. Ensure that the node has a maximum width after which truncation can
+//    occur.
+// 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
+//    nodes.
+.u-text-truncate {
+    max-width     : 100%; // 1
+    overflow      : hidden !important;
+    text-overflow : ellipsis !important;
+    word-wrap     : normal !important; // 2
+    white-space   : nowrap !important;
+}
+
+// text transforms
+.u-text-upper {
+    text-transform : uppercase !important;
+}
+
+.u-text-lower {
+    text-transform : lowercase !important;
+}
+
+.u-text-capitalize {
+    text-transform : capitalize !important;
+}
+
+// text colors
+@each $u-text-key, $u-text-color in $u-text-colors {
+
+    .u-text-#{$u-text-key} {
+        color : $u-text-color !important;
+    }
+
+}

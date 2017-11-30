@@ -1,0 +1,107 @@
+// *******************************************
+// *******************************************
+
+    // Property detail hero section
+    // sre.com/properties/:url
+
+// *******************************************
+// *******************************************
+
+// @vars
+$unit-touch           : $unit-touch; // settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+
+.property-hero {
+    position : relative;
+
+    @include min-screen($breakpoint-md) {
+        display     : flex;
+        align-items : stretch;
+    }
+
+}
+
+////////////////////////////////
+// Image slider
+////////////////////////////////
+.property-hero__image-slider {
+    position : relative;
+    z-index  : $stack-bot;
+
+    @include min-screen($breakpoint-md) {
+        flex  : 1 0 auto;
+        order : 1;
+    }
+
+}
+
+.property-hero__image-slider__viewport {
+    position : relative;
+}
+
+// mls watermark
+.property-hero__image-slider__mls-watermark {
+    position : absolute;
+    top      : rem-calc(4);
+    left     : rem-calc(4);
+    z-index  : $stack-top;
+    /*width    : rem-calc(48);*/
+    height   : rem-calc(48);
+}
+
+////////////////////////////////
+// hero nav
+////////////////////////////////
+
+// control view of photos, map, fullscreen slideshow
+.property-hero__nav {
+    display         : flex;
+    justify-content : flex-start;
+    align-items     : stretch;
+    height          : rem-calc($unit-touch);
+    background      : $gray-900;
+
+    @include min-screen($breakpoint-md) {
+        flex-direction  : column;
+        justify-content : center;
+        width           : rem-calc($unit-touch);
+        height          : auto;
+    }
+
+}
+
+.property-hero__nav__item--current {
+    background : $white;
+}
+
+.property-hero__nav__item__button__layout {
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    width           : rem-calc($unit-touch);
+    height          : rem-calc($unit-touch);
+}
+
+.property-hero__nav__item__button__icon {
+    width         : rem-calc(21);
+    height        : rem-calc(21);
+    fill          : $gray-500;
+
+    .property-hero__nav__item--current & {
+        fill : $gray-900;
+    }
+
+}
+
+.property-hero__nav__item__button__label {
+    display        : none;
+    font-size      : rem-calc(12);
+    color          : $gray-500;
+    text-transform : uppercase;
+
+    .property-hero__nav__item--current & {
+        color : $gray-900;
+    }
+
+}

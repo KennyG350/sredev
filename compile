@@ -1,0 +1,3 @@
+# NOTE: Removing `NODE_ENV=production` from before `npm run deploy` will expose debug features
+NODE_ENV=production npm run deploy
+mix phoenix.digest

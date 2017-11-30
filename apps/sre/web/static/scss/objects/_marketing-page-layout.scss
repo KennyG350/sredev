@@ -1,0 +1,67 @@
+// *******************************************
+// *******************************************
+
+    // Marketing page layout
+
+// *******************************************
+// *******************************************
+
+// @structure
+// <section class="marketing-page-layout">
+//   <div
+//     class="marketing-page-layout__hero"
+//     style="background-image: [Background-image]"
+//   >
+//     <div class="marketing-page-layout__hero__content">
+//       [CTA Content]
+//     </div>
+//   </div>
+//   <div class="marketing-page-layout__content">
+//     [Content]
+//   </div>
+// </section>
+
+// @vars
+$marketing-page-layout-mobile-edge-space  : $unit-sm-edge-space; // settings/layout-units
+$marketing-page-layout-desktop-edge-space : $unit-md-edge-space; // settings/layout-units
+
+// hero section
+.marketing-page-layout__hero {
+    display             : flex;
+    flex-flow           : row nowrap;
+    justify-content     : center;
+    align-items         : center;
+    height              : 80vh;
+    padding             : rem-calc(0 $marketing-page-layout-mobile-edge-space);
+    background-color    : $black;
+    background-position : center;
+    background-repeat   : no-repeat;
+    background-size     : cover;
+
+    @include min-screen($breakpoint-md) {
+        margin  : rem-calc(0 (-$marketing-page-layout-desktop-edge-space));
+        padding : rem-calc(0 $marketing-page-layout-desktop-edge-space);
+    }
+
+}
+
+// hero content
+.marketing-page-layout__hero__content {
+    max-width : rem-calc(600);
+    padding   : 0 rem-calc($marketing-page-layout-mobile-edge-space);
+
+    @include min-screen($breakpoint-md) {
+        padding : 0;
+    }
+
+}
+
+// content under hero section
+.marketing-page-layout__content {
+    padding : rem-calc(21 $marketing-page-layout-mobile-edge-space);
+
+    @include min-screen($breakpoint-md) {
+        padding : rem-calc(48 0);
+    }
+
+}

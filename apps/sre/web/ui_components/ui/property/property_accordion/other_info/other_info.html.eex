@@ -1,0 +1,26 @@
+<div class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Listing Info
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <div class="grid u-font14">
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= Sre.Listing.ViewHelper.listing_detail("MLS: ", @listing.mls_listing_id )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Parcel: ", @listing.parcel_number )%>
+        </ul>
+      </div>
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <li>
+            <strong class="strong">List Date:</strong>
+            <%= Sre.Listing.ViewHelper.date_listed @listing %>
+          </li>
+          <%= Sre.Listing.ViewHelper.listing_detail("Unit Number: ", @listing.unit_number )%>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /end .accordion__content -->
+</div>

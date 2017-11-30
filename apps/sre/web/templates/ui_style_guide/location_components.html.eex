@@ -1,0 +1,57 @@
+<h2 class="ui-kit-layout__page-header">
+  Location UI
+</h2>
+<section class="ui-kit-layout__page__container">
+  <div class="grid u-mbottom48">
+    <div class="grid__md--4">
+      <h4 class="sg-sub-header">Property Card:</h1>
+      <%= Sre.UI.Card.PropertyCard.render_template conn: @conn, listing: get_listing() %>
+      <h4 class="sg-sub-header u-mtop30">GreatSchools Rating:</h1>
+        <div class="gs-rating">
+          <div class="gs-rating__disc gs-rating__disc--gs-rating-good">
+            <span class="gs-rating__disc__score">
+              9
+            </span>
+            <div class="gs-rating__disc__sub">
+              <span class="gs-rating__disc__score-qualifier">
+                out of 10
+              </span>
+              <span class="gs-rating__disc__gs">
+                GreatSchools
+              </span>
+            </div>
+          </div>
+          <div class="gs-rating__info">
+            <div class="gs-rating__school">
+              Niu Valley Middle School
+              <div class="gs-rating__school__age">
+                6-8 &amp; ungraded
+              </div>
+            </div>
+          </div>
+        </div><!-- /end .gs-rating -->
+    </div>
+    <div class="grid__md--4">
+      <h4 class="sg-sub-header">Location Card:</h1>
+      <%= Sre.UI.Card.LocationCard.render_template conn: @conn %>
+    </div>
+  </div>
+
+  <h2 class="sg-header">
+    Map
+  </h2>
+
+  <div class="ui-google-map--shadow">
+    <%= Sre.UI.Maps.GoogleMap.render_template %>
+  </div>
+
+  <h2 class="sg-header u-mtop24">
+    Map Components
+  </h2>
+  <div class="map-pin">
+    <span class="map-pin__label">
+      $596K
+    </span>
+  </div>
+
+</section>

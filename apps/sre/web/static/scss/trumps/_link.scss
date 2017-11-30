@@ -1,0 +1,42 @@
+// *******************************************
+// *******************************************
+
+    // Link utilities
+
+// *******************************************
+// *******************************************
+
+// remove text-decoration
+.u-link-clean,
+.u-link-clean:hover,
+.u-link-clean:focus,
+.u-link-clean:active {
+    color           : inherit;
+    text-decoration : none !important;
+}
+
+
+// Link complex
+//
+// A common pattern is to have a link with several pieces of text and/or an
+// icon, where only one piece of text should display the underline when the
+// link is the subject of user interaction.
+//
+// Example HTML:
+//
+// <a class="u-linkComplex" href="#">
+//   Link complex
+//   <span class="u-linkComplexTarget">target</span>
+// </a>
+.u-link-complex,
+.u-link-complex:hover,
+.u-link-complex:focus,
+.u-link-complex:active {
+    text-decoration : none !important;
+}
+
+.u-link-complex:hover .u-link-complex-target,
+.u-link-complex:focus .u-link-complex-target,
+.u-link-complex:active .u-link-complex-target {
+    text-decoration : underline !important;
+}

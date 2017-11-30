@@ -1,0 +1,75 @@
+// *******************************************
+// *******************************************
+
+    // Accordion component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$accordion-large-bp    : $breakpoint-md; // settings/breakpoints
+$accordion-grid-sizes  : $unit-grid-sizes; // settings/layout-units
+$accordion-grid-gutter : $unit-grid-gutter; // settings/layout-units
+
+.accordion {
+    border-top : 1px solid $gray-300;
+}
+
+.accordion__section {
+    padding       : rem-calc(9);
+    border-bottom : 1px solid $gray-300;
+
+    @include min-screen($accordion-large-bp) {
+        display     : flex;
+        align-items : flex-start;
+        padding     : rem-calc(21 0);
+    }
+
+}
+
+// accordion header
+.accordion__section__header {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+
+    @include min-screen($accordion-large-bp) {
+        flex         : 0 0 map-get($accordion-grid-sizes, '3of12');
+        max-width    : map-get($accordion-grid-sizes, '3of12');
+        margin-right : rem-calc($accordion-grid-gutter);
+    }
+
+}
+
+.accordion__section__header__title {
+    font-size   : rem-calc(14);
+    color       : $gray-700;
+    @include sans-bold;
+
+    @include min-screen($accordion-large-bp) {
+        font-size : rem-calc(18);
+        color     : $gray-400;
+    }
+
+}
+
+// content container
+.accordion__content {
+    flex       : 1 1 auto;
+    overflow   : hidden;
+    transition : max-height 250ms $ease-in-out-quad;
+}
+
+// collapse modifier
+.accordion__section--collapse {
+
+    .accordion__content {
+        max-height : 0;
+    }
+
+}
+
+// expand modifier
+.accordion__section--expand {
+
+}

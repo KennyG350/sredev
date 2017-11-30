@@ -1,0 +1,88 @@
+// *******************************************
+// *******************************************
+
+    // Input components
+
+// *******************************************
+// *******************************************
+
+// @vars
+$input-default-height : $unit-touch; // settings/layout-units
+$input-max-width      : $unit-md-width; // settings/layout-units
+$input-edge-space     : $unit-default-spacing; // settings/layout-units
+$input-sizes          : $component-sizes; // settings/layout-units
+$input-shadows        : $shadows; // settings/stylistic
+$unit-default-spacing : $unit-default-spacing; // settings/layout-units
+
+@function get-input-size-keys($size, $unit) {
+    // scss-lint:disable NameFormat
+    @return map_get( // get value in size key
+        map_get( // get size key
+            $button-sizes,
+            $size
+        ),
+        $unit
+    );
+    // scss-lint:enable NameFormat
+}
+
+.input {
+    width         : 100%;
+    height        : rem-calc(get-input-size-keys('md', 'size'));
+    max-width     : rem-calc($input-max-width);
+    padding       : rem-calc(0 $input-edge-space);
+    border        : 1px solid $gray-300;
+    border-radius : 0;
+    background    : $white;
+    font-size     : 16px;
+    color         : $gray-800;
+    line-height   : normal !important;
+    transition    : box-shadow 250ms ease,
+                    outline 250ms ease;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        font-size : rem-calc(get-input-size-keys('md', 'font-size'));
+    }
+
+    &:focus {
+        box-shadow : $shadow-light;
+        outline    : 2px solid rgba($primary, .4);
+    }
+
+    @include placeholder {
+        font-size : 16px;
+        color     : $gray-500;
+        @include sans-light;
+
+        @include min-screen($breakpoint-md) {
+            font-size : rem-calc(get-input-size-keys('md', 'font-size'));
+        }
+
+    }
+
+}
+
+// disabled modifier
+.input--disabled {
+    background : $gray-050;
+}
+
+// input size modifiers
+@each $input-size-key, $input-size in $input-sizes {
+
+    .input--#{$input-size-key} {
+        height : rem-calc(get-input-size-keys($input-size-key, 'size'));
+
+        @include min-screen($breakpoint-md) {
+            font-size   : rem-calc(get-input-size-keys($input-size-key, 'font-size'));
+            line-height : rem-calc(get-input-size-keys($input-size-key, 'font-size'));
+        }
+
+        @include placeholder {
+            font-size : rem-calc(get-input-size-keys($input-size-key, 'font-size'));
+        }
+
+    }
+
+}

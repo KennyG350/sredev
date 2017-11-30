@@ -1,0 +1,99 @@
+// *******************************************
+// *******************************************
+
+    // Image slider component
+
+// *******************************************
+// *******************************************
+
+// @vars
+$mobile-edge-space    : $mobile-edge-space; // settings/layout-units
+$unit-md-edge-space   : $unit-md-edge-space; // settings/layout-units
+$unit-touch           : $unit-touch; // settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+$text-shadow          : $text-shadow; // settings/stylistic
+
+// container element
+.image-slider {
+    position : relative;
+}
+
+// viewport
+.image-slider__viewport {
+    overflow : hidden;
+}
+
+// slides list container element
+// this element slides to reveal appropriate element
+.image-slider__slides {
+    display     : flex;
+    align-items : flex-start;
+    transform   : translateX(0%);
+    transition  : transform 250ms $ease-in-out-quad;
+}
+
+.image-slider__slide {
+    position : relative;
+    flex     : 1 0 100%;
+
+    .image-slider--16by9 & {
+        padding-bottom : 56.25%;
+    }
+
+}
+
+// element with background image
+.image-slider__slide__image {
+    position            : absolute;
+    top                 : 0;
+    right               : 0;
+    bottom              : 0;
+    left                : 0;
+    background-position : bottom;
+    background-repeat   : no-repeat;
+    background-size     : cover;
+}
+
+// pager nav
+.image-slider__pager {
+    position        : absolute;
+    top             : 50%;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    width           : rem-calc($unit-touch);
+    height          : rem-calc($unit-touch);
+    margin          : rem-calc($unit-default-spacing);
+    transform       : translateY(-50%);
+    border          : 1px solid $gray-800;
+    background      : $gray-900;
+}
+
+.image-slider__pager--prev {
+    left : 0;
+}
+
+.image-slider__pager--next {
+    right : 0;
+}
+
+.image-slider__pager__icon {
+    width  : rem-calc(21);
+    height : rem-calc(21);
+    margin : 0;
+    fill   : $gray-500;
+}
+
+.image-slider__page-count {
+    position         : absolute;
+    right            : 0;
+    bottom           : 0;
+    left             : 0;
+    display          : block;
+    padding          : rem-calc(($unit-default-spacing * 2) $unit-default-spacing $unit-default-spacing);
+    /*background-image : linear-gradient(-180deg, rgba($black, 0) 0%, $black 100%);*/
+    color            : $white;
+    text-align       : center;
+    text-shadow      : $text-shadow;
+    @include sans-bold;
+}

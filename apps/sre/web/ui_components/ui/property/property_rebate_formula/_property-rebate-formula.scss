@@ -1,0 +1,21 @@
+// *******************************************
+// *******************************************
+
+    // Property rebate formula
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+
+.property-rebate-formula__total {
+    padding    : rem-calc($unit-default-spacing 0);
+    border-top : 1px solid $gray-800;
+}
+
+.property-rebate-formula__price {
+    padding       : rem-calc($unit-default-spacing 0);
+    border-bottom : 4px double $gray-800;
+}

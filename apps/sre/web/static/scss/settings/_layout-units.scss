@@ -1,0 +1,71 @@
+// *******************************************
+// *******************************************
+
+    // Units, sizes and measurements
+
+// *******************************************
+// *******************************************
+
+$unit-base-font-size                : 16;
+$unit-touch                         : 48;
+$unit-default-font-spacing          : 4;
+$unit-default-spacing               : $unit-default-font-spacing * 2; // 8
+$unit-default-content-width         : 1140;
+$unit-property-detail-content-width : 1670;
+$unit-readability-content-width     : 700;
+
+// grid uinits
+$unit-grid-col-count       : 12;
+$unit-grid-col-width-basis : 72;
+$unit-grid-gutter          : 24;
+$unit-grid-constraint      : $unit-default-content-width;
+
+// mobile units
+$unit-sm-edge-space    : $unit-default-spacing * 2; // 16
+$unit-sm-header-height : $unit-touch;
+
+// desktop units
+$unit-md-edge-space    : 30;
+$unit-md-width         : $unit-default-content-width;
+$unit-md-header-height : 60;
+$unit-md-hero-height   : 75vh;
+
+// grid widths
+$unit-grid-1of12  : 8.333333333333%;
+$unit-grid-2of12  : 16.666666666667%;
+$unit-grid-3of12  : 25%;
+$unit-grid-4of12  : 33.333333333333%;
+$unit-grid-5of12  : 41.666666666667%;
+$unit-grid-6of12  : 50%;
+$unit-grid-7of12  : 58.333333333333%;
+$unit-grid-8of12  : 66.666666666667%;
+$unit-grid-9of12  : 75%;
+$unit-grid-10of12 : 83.333333333333%;
+$unit-grid-11of12 : 91.666666666667%;
+$unit-grid-12of12 : 100%;
+$unit-grid-sizes  : (
+    '1of12'  : $unit-grid-1of12,
+    '2of12'  : $unit-grid-2of12,
+    '3of12'  : $unit-grid-3of12,
+    '4of12'  : $unit-grid-4of12,
+    '5of12'  : $unit-grid-5of12,
+    '6of12'  : $unit-grid-6of12,
+    '7of12'  : $unit-grid-7of12,
+    '8of12'  : $unit-grid-8of12,
+    '9of12'  : $unit-grid-9of12,
+    '10of12' : $unit-grid-10of12,
+    '11of12' : $unit-grid-11of12,
+    '12of12' : $unit-grid-12of12
+);
+
+// content contraints
+$unit-max-line-length : 720;
+
+// component sizes
+// Ex: Button and Input sizes
+$component-sizes : (
+    'sm' : ('size' : 30, 'font-size' : 12),
+    'md' : ('size' : $unit-touch, 'font-size' : 14),
+    'lg' : ('size' : 60, 'font-size' : 21),
+    'xl' : ('size' : 72, 'font-size' : 24)
+);

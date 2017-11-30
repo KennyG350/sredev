@@ -1,0 +1,54 @@
+// *******************************************
+// *******************************************
+
+    // Textarea components
+
+// *******************************************
+// *******************************************
+
+// @vars
+$textarea-default-height : $unit-touch; // settings/layout-units
+$textarea-max-width      : $unit-md-width; // settings/layout-units
+$textarea-edge-space     : $unit-default-spacing; // settings/layout-units
+$textarea-sizes          : $component-sizes; // settings/layout-units
+$textarea-shadows        : $shadows; // settings/stylistic
+
+@function get-textarea-size-keys($size, $unit) {
+    // scss-lint:disable NameFormat
+    @return map_get( // get value in size key
+        map_get( // get size key
+            $textarea-sizes,
+            $size
+        ),
+        $unit
+    );
+    // scss-lint:enable NameFormat
+}
+
+.textarea {
+    height     : auto;
+    min-height : rem-calc($textarea-default-height * 3);
+    padding    : rem-calc($textarea-edge-space);
+
+    @include placeholder {
+        font-size   : rem-calc(get-textarea-size-keys('md', 'font-size'));
+        color       : $gray-500;
+        @include sans-light;
+    }
+
+}
+
+// input size modifiers
+@each $textarea-size-key, $textarea-size in $textarea-sizes {
+
+    .textarea--#{$textarea-size-key} {
+        min-height : rem-calc(get-textarea-size-keys($textarea-size-key, 'size') * 3);
+        font-size  : rem-calc(get-textarea-size-keys($textarea-size-key, 'font-size'));
+
+        @include placeholder {
+            font-size : rem-calc(get-textarea-size-keys($textarea-size-key, 'font-size'));
+        }
+
+    }
+
+}

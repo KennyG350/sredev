@@ -1,0 +1,127 @@
+<footer class="footer u-text-center <%= @classname %>" role="contentinfo">
+  <div class="u-mauto u-size-max-width">
+    <nav class="footer__nav u-mbottom30">
+      <h1 class="u-hidden-visually">Sitemap:</h1>
+      <ul class="footer__nav__list">
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/">Listings</a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/solution">Homebuyer</a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/mortgage">Mortgage</a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/platform">Solutions</a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/testimonials">Testimonials</a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/contact">About Us</a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link u-link-clean u-text-white" href="/careers">Careers</a>
+        </li>
+        <%= if is_nil(@current_user) do %>
+          <li class="footer__nav__item elm-login-nav-item">
+            <a class="footer__nav__link u-link-clean u-text-white" href="/login">Sign Up/Login</a>
+          </li>
+        <% else %>
+          <li class="footer__nav__item">
+            <a class="footer__nav__link u-link-clean u-text-white" href="/mysre/edit-profile">My Profile</a>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="footer__social">
+      <h1 class="footer__social__h1 strong">
+        Connect With Us On
+      </h1>
+      <ul class="footer__social__nav u-flex u-flex-justify-center">
+        <li class="footer__social__nav__item">
+          <a href="https://www.facebook.com/sredotcom/" id="facebook"  target="_blank">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <ellipse fill="#3B5998" cx="15.562" cy="15.562" rx="15.562" ry="15.562"/>
+                <path d="M19.474 16.17h-2.777v10.174H12.49V16.17h-2v-3.574h2v-2.314c0-1.654.786-4.245 4.245-4.245l3.116.013v3.47h-2.26c-.37 0-.89.186-.89.975V12.6h3.144l-.368 3.57z" fill="#FFF"/>
+              </g>
+            </svg>
+          </a>
+        </li>
+       <!-- <li class="footer__social__nav__item">
+          <a href="#" id="google_plus">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <ellipse fill="#DC4E41" cx="15.562" cy="15.839" rx="15.562" ry="15.562"/>
+                <path d="M5.418 16.536c-.055 2.677 1.79 5.232 4.326 6.066 2.39.803 5.327.202 6.918-1.845 1.16-1.433 1.424-3.345 1.3-5.13-2.048-.02-4.094-.013-6.138-.01-.003.73 0 1.455.004 2.184 1.225.04 2.45.02 3.676.05-.31 1.06-1.014 2.05-2.084 2.43-2.064.91-4.7-.28-5.35-2.44-.783-2.07.5-4.58 2.62-5.18 1.315-.46 2.67.06 3.794.74.57-.53 1.103-1.1 1.626-1.68-1.277-1.062-2.92-1.72-4.607-1.58-3.312.04-6.21 3.1-6.085 6.41zm16.525-2.758c-.006.61-.012 1.223-.015 1.832-.613.006-1.222.01-1.832.012v1.826c.61.003 1.222.006 1.832.013.006.61.006 1.22.012 1.84h1.826c.003-.61.006-1.22.012-1.83l1.832-.01v-1.83c-.61 0-1.222-.002-1.832-.01-.003-.61-.01-1.22-.012-1.83h-1.823z" fill="#DC4E41"/>
+                <path d="M5.418 16.536c-.126-3.31 2.772-6.367 6.084-6.406 1.688-.144 3.33.51 4.608 1.58-.524.577-1.057 1.146-1.627 1.68-1.124-.684-2.478-1.205-3.793-.742-2.12.603-3.403 3.106-2.62 5.18.65 2.166 3.285 3.355 5.35 2.445 1.07-.383 1.774-1.37 2.083-2.43-1.225-.024-2.45-.008-3.676-.042-.003-.72-.006-1.45-.003-2.18 2.044 0 4.09-.01 6.136.01.126 1.79-.137 3.7-1.3 5.13-1.59 2.05-4.527 2.65-6.916 1.85-2.537-.83-4.38-3.38-4.326-6.06zm16.525-2.758h1.823c.003.61.01 1.223.012 1.832.61.006 1.223.01 1.832.012v1.826l-1.832.01c-.006.612-.01 1.222-.012 1.835-.61-.004-1.22 0-1.826 0-.006-.613-.006-1.223-.012-1.832-.61 0-1.222-.01-1.832-.01v-1.82c.61 0 1.22 0 1.832-.01.003-.61.01-1.22.015-1.83z" fill="#FFF"/>
+              </g>
+            </svg>
+          </a>
+        </li> -->
+        <li class="footer__social__nav__item">
+          <a href="https://www.instagram.com/sredotcom/" id="instagram" target="_blank">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <ellipse fill="#6A453B" cx="15.562" cy="15.839" rx="15.562" ry="15.562"/>
+                <path d="M21.95 6.52H9.175c-1.617 0-2.93 1.313-2.93 2.933v12.774c0 1.618 1.313 2.93 2.93 2.93H21.95c1.617 0 2.93-1.312 2.93-2.93V9.453c0-1.62-1.313-2.932-2.93-2.932zm-1.98 2.156l2.34-.005h.005c.225 0 .408.18.408.406v2.35c0 .224-.18.405-.405.405l-2.338.008c-.225 0-.405-.18-.405-.402l-.01-2.35c0-.225.18-.405.404-.408zm-7.264 5.562c.06-.105.125-.21.197-.31.597-.827 1.565-1.368 2.658-1.368 1.1 0 2.068.54 2.66 1.367.076.1.14.206.2.314.267.476.426 1.02.426 1.6 0 1.81-1.473 3.28-3.282 3.28-1.808 0-3.278-1.47-3.278-3.28 0-.58.155-1.124.424-1.6zm10.36 7.318c0 .985-.803 1.787-1.788 1.787H9.846c-.985 0-1.786-.802-1.786-1.787v-7.63h2.782c-.07.17-.13.348-.18.526-.128.44-.194.907-.194 1.387 0 2.81 2.285 5.092 5.093 5.092 2.81 0 5.1-2.286 5.1-5.096 0-.48-.07-.947-.194-1.388-.053-.18-.11-.356-.18-.526h2.782v7.63z" fill="#FFF"/>
+              </g>
+            </svg>
+          </a>
+        </li>
+        <li class="footer__social__nav__item">
+          <a href="https://www.linkedin.com/company/sre-matrix-inc-" id="linkedin"  target="_blank">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <ellipse fill="#007AB9" cx="15.562" cy="15.839" rx="15.562" ry="15.562"/>
+                <path d="M24.86 17.09v6.417h-3.72V17.52c0-1.502-.537-2.528-1.884-2.528-1.027 0-1.638.69-1.908 1.36-.097.24-.123.57-.123.907v6.245h-3.72s.05-10.138 0-11.188h3.72v1.585l-.024.036h.028v-.036c.494-.76 1.375-1.848 3.352-1.848 2.446 0 4.28 1.6 4.28 5.034zM9.614 6.928c-1.273 0-2.105.835-2.105 1.932 0 1.073.805 1.933 2.053 1.933h.024c1.297 0 2.103-.86 2.103-1.934-.023-1.1-.805-1.935-2.08-1.935zM7.73 23.508h3.72V12.32H7.73v11.187z" fill="#F1F2F2"/>
+              </g>
+            </svg>
+          </a>
+        </li>
+        <!-- <li class="footer__social__nav__item">
+          <a href="#" id="pinterest">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <ellipse fill="#CB2027" cx="15.562" cy="15.563" rx="15.562" ry="15.562"/>
+                <path d="M16.818 20.84c-1.176-.092-1.67-.675-2.593-1.235-.507 2.66-1.127 5.21-2.963 6.543-.567-4.02.832-7.04 1.482-10.247-1.108-1.863.133-5.615 2.47-4.69 2.873 1.137-2.49 6.93 1.11 7.655 3.76.756 5.294-6.522 2.963-8.89-3.368-3.418-9.804-.078-9.013 4.815.193 1.196 1.43 1.56.494 3.21-2.156-.478-2.8-2.178-2.716-4.445.133-3.71 3.334-6.308 6.544-6.668 4.06-.454 7.87 1.49 8.396 5.31.592 4.31-1.833 8.977-6.174 8.642z" fill="#F1F2F2"/>
+              </g>
+            </svg>
+          </a>
+        </li> -->
+        <li class="footer__social__nav__item">
+          <a href="https://twitter.com/sredotcom" id="twitter"  target="_blank">
+            <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <ellipse fill="#55ACEE" cx="15.564" cy="15.563" rx="15.563" ry="15.563"/>
+                <path d="M25.097 11.185c-.667.296-1.384.496-2.137.585.768-.46 1.358-1.188 1.636-2.058-.72.427-1.515.736-2.362.903-.68-.723-1.646-1.174-2.716-1.174-2.054 0-3.72 1.67-3.72 3.72 0 .296.033.58.096.85-3.09-.153-5.833-1.634-7.668-3.885-.32.55-.503 1.19-.503 1.872 0 1.29.657 2.43 1.655 3.096-.61-.02-1.184-.185-1.685-.465v.047c0 1.803 1.282 3.306 2.984 3.648-.312.085-.64.13-.98.13-.24 0-.473-.023-.7-.066.473 1.48 1.847 2.554 3.475 2.585-1.273.997-2.877 1.59-4.62 1.59-.3 0-.597-.016-.888-.05 1.646 1.055 3.602 1.67 5.703 1.67 6.842 0 10.584-5.668 10.584-10.585 0-.16 0-.32-.01-.48.73-.524 1.36-1.18 1.86-1.925z" fill="#F1F2F2"/>
+              </g>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p class="footer__legal u-font12 u-line16" itemscope itemtype="http://schema.org/Organization">
+      <%= copyright_year() %>
+      <span itemprop="name">SRE Matrix</span>.
+      All Rights reserved.<br />
+      CA BRE #01983715<br />
+      <br  />
+      <small class="footer__legal__equal-opportunity">
+        <svg class="footer__legal__equal-opportunity__svg" viewBox="0 0 50 35" xmlns="http://www.w3.org/2000/svg">
+          <g fill-rule="evenodd">
+            <path d="M24.745 0L0 12.13v5.687h2.77v17.09h43.757v-17.09h3.325V12.13L24.74 0h.005zM41.18 29.77H8.125V14.15l16.62-8.452 16.433 8.452v15.62z"/>
+            <path d="M32.31 19.663H16.986V14.15H32.31v5.513M32.31 27.568H16.986v-5.515H32.31v5.515"/>
+          </g>
+        </svg>
+        <span class="strong">
+          Equal Housing Opportunity
+        </span>
+      </small>
+      <!-- <a href="/privacy" class="u-text-gray-500">Privacy Policy</a> | <a href="/terms" class="u-text-gray-500">Terms of Use</a> -->
+      <a href="/privacy" class="u-text-white">Privacy Policy</a> | <a href="/terms" class="u-text-white">Terms of Use</a>
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+<div class="">
+
+  <div class="email-reset-form">
+
+    <%= form_for @changeset, user_management_email_path(@conn, :update, @current_user), fn(f) -> %>
+      <div class="">
+        <label for="">New Email Address</label>
+        <%= text_input f, :requested_email %>
+        <%= submit "Submit" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

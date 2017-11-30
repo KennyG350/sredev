@@ -1,0 +1,90 @@
+// *******************************************
+// *******************************************
+
+    // Search form component
+
+// *******************************************
+// *******************************************
+
+// @vars
+$unit-default-spacing : $unit-default-spacing; // settings/layout-units
+$unit-touch           : $unit-touch; // settings/layout-units
+
+// form container
+.search-form__form {
+    position    : relative;
+    z-index     : $stack-top;
+    display     : flex;
+    align-items : center;
+}
+
+// contains input partial and auto suggest
+.search-form__form__input-container {
+    position : relative;
+    flex     : 1 0 auto;
+}
+
+// input partial
+.search-form__input {
+    margin : 0;
+}
+
+// suggest list
+.search-form__form__suggest {
+    position : absolute;
+    top      : 100%;
+    left     : 0;
+    z-index  : $stack-top;
+    width    : 100%;
+
+    .list__item {
+        font-size   : rem-calc(12);
+        line-height : rem-calc(15);
+    }
+
+}
+
+// submit button
+.search-form__form__button {
+    background-color: $pop-color;
+    width  : rem-calc($unit-touch);
+    margin : rem-calc(0 0 0 $unit-default-spacing);
+
+    @include min-screen($breakpoint-md) {
+        width : auto;
+        padding : rem-calc($unit-default-spacing * 2);
+    }
+
+}
+
+// button icon
+.search-form__form__button__icon {
+    width  : rem-calc(20);
+    height : rem-calc(20);
+    margin : 0;
+    fill   : $white;
+
+    @include min-screen($breakpoint-md) {
+        margin-right : rem-calc($unit-default-spacing);
+    }
+
+}
+
+// button label text
+// hidden on small screens
+.search-form__button__label {
+    display     : none;
+    line-height : 0;
+
+    @include min-screen($breakpoint-md) {
+        display : block;
+    }
+
+    + .search-form__form__button__icon {
+        @include min-screen($breakpoint-md) {
+            margin-right : 0;
+            margin-left  : rem-calc($unit-default-spacing);
+        }
+    }
+
+}

@@ -1,0 +1,61 @@
+<div class="search elm-search-map-container">
+  <section id="searchProperties" class="search__properties">
+    <nav id="searchPropertiesFilters" class="search__properties__filters">
+      <%= Sre.UI.Property.Search.SearchFilters.render_template filters: @filters %>
+    </nav>
+    <div class="search__properties__results elm-search-properties-loading">
+      <div class="search__properties__results__nav">
+        <%= Sre.UI.Property.Search.SearchNav.render_template(
+          conn: @conn,
+          total_results: @total_results,
+          order_by: assigns[:order_by],
+          url_params: @url_params,
+          view: @view,
+          saved_search: @saved_search
+        ) %>
+      </div>
+      <div class="search__properties__results__list elm-search-result-scroll-target elm-search-result-list">
+        <div class="elm-search-properties-results search__properties__results__list__container">
+          <%= Sre.UI.Property.List.CardList.render_template(
+            conn: @conn,
+            current_page: @page,
+            total_results: @total_results,
+            listings: @listings
+          )%>
+        </div>
+        <%= Sre.UI.Footer.render_template classname: "desktop__footer search__properties__results__list__footer", current_user: @conn.assigns.current_user %>
+      </div>
+    </div>
+  </section>
+  <section class="search__map">
+    <%= Sre.UI.Maps.GoogleMap.render_template %>
+  </section>
+</div>
+<section class="search__property elm-search-property">
+  <div class="search__property__container">
+    <div id="searchPropertyHeader" class="search__property__header">
+      <div class="search__property__header__group">
+        <a href="tel:<%= Sre.Listing.ViewHelper.get_phone_number(@conn.assigns[:user_location]) %>" target="_blank" class="search__property__header__action strong elm-header-phone-number">
+          Call us at <%= Sre.Listing.ViewHelper.get_formatted_phone_number(@conn.assigns[:user_location]) %> for more info!
+        </a>
+      </div>
+      <div class="search__property__header__group">
+        <a href="#" target="_blank" class="search__property__header__action search__property__header__action--expand elm-listing-expand">
+          <%= Sre.UI.Svg.Icon.render_template icon: "launch" %>
+          Expand
+        </a>
+        <a href="#" class="search__property__header__action elm-search-property-close">
+          <%= Sre.UI.Svg.Icon.render_template icon: "close" %>
+          Close
+        </a>
+      </div>
+    </div>
+    <div class="search__property__loading elm-search-property-loading u-hidden">
+      <div class="search__property__loading__label">
+        Getting Property Info...
+      </div>
+    </div>
+    <div id="propertyScrollContent" class="search__property__content elm-search-property-contents"></div>
+  </div>
+  <div class="onclick-mask elm-search-property-close"></div>
+</section>

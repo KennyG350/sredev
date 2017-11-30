@@ -1,0 +1,27 @@
+<div class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Additional Info
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <div class="grid u-font14">
+      <div class="grid__sm--12">
+        <ul>
+          <li class="u-pleft24">
+            <strong class="strong">Listing Courtesy of:</strong>
+            <%= @listing.mls_agent_full_name %> with <%= @listing.mls_office_name %>
+          </li>
+          <li class="u-pleft24">
+            <strong class="strong">Listing Sourced by:</strong>
+            <%= @listing.feed.feed_connection.legal_name %>
+          </li>
+          <li class="u-pleft24">
+            <strong class="strong">Listing was last updated at:</strong>
+             <%= last_updated @listing %> UTC (<%= days_ago @listing %> days ago)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /end .accordion__content -->
+</div>

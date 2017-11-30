@@ -1,0 +1,22 @@
+<h2 class="ui-kit-layout__page-header">
+  Icons
+</h2>
+<section class="ui-kit-layout__page__container">
+    <h2 class="sg-header">
+        Form Elements
+    </h2>
+    <div class="grid">
+        <div class="grid__sm--12 grid__md--4">
+            <%= Sre.UI.Form.Input.render_template id: "input-1", label: "Text Input", type: "text", placeholder: "Input placeholder" %>
+            <%= Sre.UI.Form.Input.render_template id: "input-2", label: "Disabled Input", type: "text", placeholder: "Input placeholder", disabled?: true %>
+            <%= Sre.UI.Form.Select.render_template id: "select", label: "Select Input", options: [%{ :label => "Option 1", :value => "option1" }, %{ :label => "Option 2", :value => "option2" }] %>
+            <%= Sre.UI.Form.Textarea.render_template id: "textarea-1", label: "Textarea Input", placeholder: "Textarea placeholder" %>
+        </div>
+        <div class="grid__sm--12 grid__md--4">
+          <%= Sre.UI.Form.Input.render_template id: "input-3", label: "xLarge Input", type: "text", placeholder: "xLarge Input", size: "xl" %>
+          <%= Sre.UI.Form.Input.render_template id: "input-4", label: "Large Input", type: "text", placeholder: "Large Input", size: "lg" %>
+          <%= Sre.UI.Form.Input.render_template id: "input-5", label: "Medium Input", type: "text", placeholder: "Medium Input", size: "md" %>
+          <%= Sre.UI.Form.Input.render_template id: "input-6", label: "Small Input", type: "text", placeholder: "Small Input", size: "sm" %>
+        </div>
+    </div>
+</section>

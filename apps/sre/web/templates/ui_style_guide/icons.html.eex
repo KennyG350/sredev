@@ -1,0 +1,63 @@
+<h2 class="ui-kit-layout__page-header">
+  Icons
+</h2>
+<section class="ui-kit-layout__page__container">
+  <ul class="grid">
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "caret_left" %>
+      <span class="ui-kit-icon-example__label">caret_left</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "caret_down" %>
+      <span class="ui-kit-icon-example__label">caret_down</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "caret_right" %>
+      <span class="ui-kit-icon-example__label">caret_right</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "close" %>
+      <span class="ui-kit-icon-example__label">close</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "filter" %>
+      <span class="ui-kit-icon-example__label">filter</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "hamburger" %>
+      <span class="ui-kit-icon-example__label">hamburger</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "launch" %>
+      <span class="ui-kit-icon-example__label">launch</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "list" %>
+      <span class="ui-kit-icon-example__label">list</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "map" %>
+      <span class="ui-kit-icon-example__label">map</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "map_pin" %>
+      <span class="ui-kit-icon-example__label">map_pin</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "search" %>
+      <span class="ui-kit-icon-example__label">search</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "sre" %>
+      <span class="ui-kit-icon-example__label">sre</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "heart" %>
+      <span class="ui-kit-icon-example__label">heart</span>
+    </li>
+    <li class="grid__sm--12 grid__md--3 ui-kit-icon-example">
+      <%= Sre.UI.Svg.Icon.render_template icon: "heart_empty" %>
+      <span class="ui-kit-icon-example__label">heart_empty</span>
+    </li>
+  </ul>
+</section>

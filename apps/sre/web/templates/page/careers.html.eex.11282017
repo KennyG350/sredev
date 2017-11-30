@@ -1,0 +1,250 @@
+<hgroup class="testimonials-page__hgroup">
+
+    <hgroup class="marketing-page__hero v2">
+
+        <h1 class="homepage__hero__h3">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap">Careers</h1>
+
+    </hgroup>
+  
+<article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+
+<div class="branches-title mortpage-calctitle" align="center">
+    Alliance Real Estate Agencies (Agents)
+</div>
+
+
+
+
+
+   <div class="alignment"><br>
+    <ul class="ul-alignment">
+      <li class="bullets">Alliance Real Estate Agencies (Agents) will receive <strong class="strong">leads</strong> from the Multi-Solution Platform</li>
+      <br>
+      <li class="bullets">Alliance Real Estate Agencies (Agents) will provide <strong class="strong">full service</strong> for customer satisfaction</li>
+      <br>
+      <li class="bullets">Alliance Real Estate Agencies (Agents) may have their own team of agents</li>
+    </ul>
+  </div>
+
+
+  <div class="alliance-agency-box">
+  <h3 class="careersh3">2016 Transaction Amount of Honolulu Agency</h3>
+  <p style="color: white;"><span style="font-weight: bold; font-size: 20px;">$824,906,827</span><span style="font-size: 12px; margin-left: 5px;">by 6-agent team</span></p>
+  <p style="color: white; font-style: italic; font-size: 12px; margin-left: 10px; line-height: 1em;">*$137,484,470 on average per agent</p>
+  </div>
+  </article>
+
+<article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+<div class="branches-title mortpage-calctitle" align="center">
+    Alliance Mortgage Lenders (Brokers)
+</div><br>
+   <div class="alignment">
+    <ul class="ul-alignment">
+      <li class="bullets">Alliance Mortgage Lenders (Brokers) will receive <strong class="strong">leads</strong> from the Multi-Solution Platform</li>
+      <br>
+      <li class="bullets">Alliance Mortgage Lenders (Brokers) have the right to use the <a class="link" href="/solution">Smart Homebuyer Solution </a><strong class="strong">($20,000 on average*)</strong> which may be used for their client's expense such as closing costs</li>
+      <br>
+      <li class="bullets">Alliance Mortgage Lenders (Brokers) will provide the best mortgage loan and the most efficient service for customer satisfaction</li>
+      <br>
+       <font size=2rem>*Based on actual transactions by SRE in Hawaii for 2016</font>
+      <br>
+       <br>
+    </ul>
+  </div>
+
+<!-- <div class="contact-form-desktop contact-page__form panel u-mbottom48 elm-message-form">
+<article class="contact-page u-mauto u-size-max-width">
+  <form action="mailto:info@sre.com" method="post" enctype="text/plain">
+    <h1 class="h2 u-mbottom16 contact-page__h1 apply-here">
+      Apply Here
+    </h1>
+    <div class="panel__content">
+    <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "first_name",
+        label: "First Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "last_name",
+        label: "last Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "email",
+        label: "Email",
+        type: "email",
+        value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+      )%>
+      </div>
+       <div style="width: 50%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "phone",
+        label: "phone",
+        type: "tel",
+        value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+      )%>
+      </div>
+       <div style="width: 100%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "address",
+        label: "address",
+        type: "address",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "city",
+        label: "city",
+        type: "city",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 10%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "state",
+        label: "state",
+        type: "state",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 15%; float: left; padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "zip code",
+        label: "zip code",
+        type: "zip code",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "real estate license number",
+        label: "real estate license number",
+        type: "real estate license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 50%; float: left;padding-left: 20px;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "mortgage broker license number",
+        label: "mortgage broker license number",
+        type: "mortgage broker license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+          <div style="width: 50%; float: left;">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "referred_by",
+        label: "Referred by",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      </div>
+      <div style="width: 100%; float: left;">
+      <%= Sre.UI.Form.Textarea.render_template id: "message", label: "Message", placeholder: "" %>
+      <div class="u-text-right">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Send", classname: "button", id: "generic-contact"%>
+      </div>
+      </div>
+  </form>
+  </article>
+</div>
+
+<div class="contact-form-mobile contact-page__form panel u-mbottom48 elm-message-form">
+<article class="contact-page u-mauto u-size-max-width">
+  <form action="mailto:info@sre.com" method="post" enctype="text/plain">
+  <div class="apply-here">
+    <h1 class="h2 u-mbottom16 contact-page__h1">
+      Apply Here
+    </h1>
+  </div>
+    <div class="panel__content">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "first_name",
+        label: "First Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "last_name",
+        label: "last Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "email",
+        label: "Email",
+        type: "email",
+        value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "phone",
+        label: "phone",
+        type: "tel",
+        value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "address",
+        label: "address",
+        type: "address",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "city",
+        label: "city",
+        type: "city",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "state",
+        label: "state",
+        type: "state",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "zip code",
+        label: "zip code",
+        type: "zip code",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "real estate license number",
+        label: "real estate license number",
+        type: "real estate license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "mortgage broker license number",
+        label: "mortgage broker license number",
+        type: "mortgage broker license number",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Input.render_template(
+        id: "referred_by",
+        label: "Referred by",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      )%>
+      <%= Sre.UI.Form.Textarea.render_template id: "message", label: "Message", placeholder: "" %>
+      <div class="u-text-right">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Send", classname: "button", id: "generic-contact" %>
+      </div>
+    </div>
+    <div class="form-submit-error"></div>
+  </form>
+  </article>
+</div> -->
+
+<!-- <%= Sre.UI.Company.Overview.render_template(
+)%> -->
+
+<%= Sre.UI.Company.Branches.render_template(
+)%>

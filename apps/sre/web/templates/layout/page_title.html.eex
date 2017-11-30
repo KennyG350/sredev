@@ -1,0 +1,1 @@
+    <title><%= assigns[:page_title] || "SRE - Smart Real Estate - Real Estate Agency in San Diego and Hawaii - Biggest Savings for Homebuyers" %> | SRE.com</title>

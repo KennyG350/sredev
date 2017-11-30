@@ -1,0 +1,8 @@
+<h2 class="ui-kit-layout__page-header">
+  UI Kit
+</h2>
+<section class="ui-kit-layout__page__container">
+    <div class="logo">
+      <img src="<%= static_path(@conn, "/images/logo.png") %>">
+    </div>
+</section>

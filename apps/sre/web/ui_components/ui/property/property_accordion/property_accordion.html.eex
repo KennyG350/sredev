@@ -1,0 +1,21 @@
+<div class="accordion">
+  <%= Sre.UI.Property.PropertyAccordion.AdditionalInfo.render_template listing: @listing %>
+  <%= Sre.UI.Property.PropertyAccordion.InteriorFeatures.render_template listing: @listing %>
+  <%= Sre.UI.Property.PropertyAccordion.ExteriorFeatures.render_template listing: @listing %>
+  <%= Sre.UI.Property.PropertyAccordion.CommunityInfo.render_template listing: @listing %>
+  <%= if @listing.tax_amount do %>
+    <%= Sre.UI.Property.PropertyAccordion.TaxInfo.render_template listing: @listing %>
+  <% end %>
+  <%= Sre.UI.Property.PropertyAccordion.OtherInfo.render_template listing: @listing %>
+  <%= Sre.UI.Property.PropertyAccordion.Schools.render_template listing: @listing, schools: @schools %>
+
+  <div
+    id="ws-walkscore-tile"
+    class="walk__score u-mtop21 elm-walk-score"
+    data-lon="<%= @listing.longitude |> Sre.Listing.ViewHelper.number_to_string %>"
+    data-lat="<%= @listing.latitude |> Sre.Listing.ViewHelper.number_to_string %>"></div>
+  <div class="u-font10 u-line12 u-mtop21">
+  <div class="u-font10">
+    <%= @listing |> legal_text |> raw %>
+  </div>
+</div>

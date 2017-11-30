@@ -1,0 +1,256 @@
+<h2 class="ui-kit-layout__page-header">
+  Content Types
+</h2>
+<section class="ui-kit-layout__page__container">
+    <h4 class="sg-sub-header">Panels:</h1>
+    <div class="grid">
+        <div class="grid__sm--12 grid__md--4">
+            <div class="panel panel--shadow">
+                <div class="panel__header">
+                    <h3 class="h5">
+                        Panel Header
+                    </h3>
+                </div>
+                <div class="panel__content">
+                    <h5 class="h3 u-mbottom9">Panel Header</h5>
+                    <p class="p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis. Aenean ex neque, tincidunt quis eleifend vitae, aliquet ac dui.
+                    </p>
+                </div>
+                <div class="panel__footer">
+                    <div class="u-sans-light u-gray-400">
+                        Panel Footer
+                    </div>
+                </div>
+            </div><!-- /end .panel -->
+        </div>
+        <div class="grid__sm--12 grid__md--4">
+            <div class="panel panel--gray-050 panel--shadow">
+                <div class="panel__header panel__header--white">
+                    <h3 class="h5">
+                        Panel Header
+                    </h3>
+                </div>
+                <div class="panel__content">
+                    <h5 class="h3 u-mbottom9">Panel Header</h5>
+                    <p class="p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis. Aenean ex neque, tincidunt quis eleifend vitae, aliquet ac dui.
+                    </p>
+                </div>
+                <div class="panel__footer">
+                    <div class="u-sans-light u-gray-400">
+                        Panel Footer
+                    </div>
+                </div>
+            </div><!-- /end .panel -->
+        </div>
+        <div class="grid__sm--12 grid__md--4">
+            <div class="panel panel--gray-800 panel--shadow">
+                <div class="panel__header panel__header--gray-800">
+                    <h3 class="h5">
+                        Panel Header
+                    </h3>
+                </div>
+                <div class="panel__content">
+                    <h5 class="h3 u-mbottom9">Panel Header</h5>
+                    <p class="p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lobortis velit eget metus viverra convallis. Aliquam eget faucibus diam, id suscipit turpis. Aenean ex neque, tincidunt quis eleifend vitae, aliquet ac dui.
+                    </p>
+                </div>
+                <div class="panel__footer">
+                    <div class="u-sans-light u-gray-400 u-text-gray-300">
+                        Panel Footer
+                    </div>
+                </div>
+            </div><!-- /end .panel -->
+        </div>
+    <div>
+    <h4 class="sg-sub-header u-mtop30">Accordions:</h1>
+    <div class="accordion">
+        <article class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+            <h1 class="accordion__section__header">
+                <span class="accordion__section__header__title">
+                    Accordion (disable collapse)
+                </span>
+            </h1>
+            <div class="accordion__content">
+                <div class="grid u-font14">
+                    <div class="grid__sm--12 grid__md--6">
+                        <ul>
+                            <li>
+                                <strong class="strong">Model Features:</strong> N/A
+                            </li>
+                            <li>
+                                <strong class="strong">Garage Parking:</strong> 1
+                            </li>
+                            <li>
+                                <strong class="strong">Lot Features:</strong> Other
+                            </li>
+                            <li>
+                                <strong class="strong">Pool Features:</strong> None
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__sm--12 grid__md--6">
+                        <ul>
+                            <li>
+                                <strong class="strong">Unit Features:</strong>  Auto Garage Door Opener,Blinds,Ceiling Fan,Chandelier,Dishwasher,Disposal, Dryer,Lawn Sprinkler,Microwave,Range/Oven,Refrigerator,Satellite Dish,Security System,Washer
+                            </li>
+                            <li>
+                                <strong class="strong">View:</strong> Coastline,Diamond Head,Garden,Marina/Canal,Mountain,Ocean,Sunset
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /end .accordion__content -->
+        </article>
+        <article class="accordion__section accordion__section--collapse">
+            <h1 class="accordion__section__header">
+                <span class="accordion__section__header__title">
+                    Accordion (collapsed)
+                </span>
+            </h1>
+            <div class="accordion__content">
+                <div class="grid u-font14">
+                    <div class="grid__sm--12 grid__md--6">
+                        <ul>
+                            <li>
+                                <strong class="strong">Model Features:</strong> N/A
+                            </li>
+                            <li>
+                                <strong class="strong">Garage Parking:</strong> 1
+                            </li>
+                            <li>
+                                <strong class="strong">Lot Features:</strong> Other
+                            </li>
+                            <li>
+                                <strong class="strong">Pool Features:</strong> None
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__sm--12 grid__md--6">
+                        <ul>
+                            <li>
+                                <strong class="strong">Unit Features:</strong>  Auto Garage Door Opener,Blinds,Ceiling Fan,Chandelier,Dishwasher,Disposal, Dryer,Lawn Sprinkler,Microwave,Range/Oven,Refrigerator,Satellite Dish,Security System,Washer
+                            </li>
+                            <li>
+                                <strong class="strong">View:</strong> Coastline,Diamond Head,Garden,Marina/Canal,Mountain,Ocean,Sunset
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /end .accordion__content -->
+        </article>
+    </div><!-- /end .accordion -->
+    <h4 class="sg-sub-header u-mtop30">Tables:</h1>
+    <table class="table">
+        <thead class="thead">
+            <tr class="tr">
+                <th class="th thead__th">
+                    Address
+                </th>
+                <th class="th thead__th">
+                    Location
+                </th>
+                <th class="th thead__th">
+                    Price
+                </th>
+                <th class="th thead__th">
+                    Beds
+                </th>
+                <th class="th thead__th">
+                    Baths
+                </th>
+                <th class="th thead__th">
+                    SQFT
+                </th>
+                <th class="th thead__th">
+                    $/SQFT
+                </th>
+                <th class="th thead__th">
+                    On SRE
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr class="tr tbody__tr">
+                <td class="td tbody__td">
+                    123 North Kalani St.
+                </td>
+                <td class="td tbody__td">
+                    Honolulu, HI
+                </td>
+                <td class="td tbody__td">
+                    $450,000
+                </td>
+                <td class="td tbody__td">
+                    1
+                </td>
+                <td class="td tbody__td">
+                    2
+                </td>
+                <td class="td tbody__td">
+                    550
+                </td>
+                <td class="td tbody__td">
+                    $881
+                </td>
+                <td class="td tbody__td">
+                    12 days
+                </td>
+            </tr>
+            <tr class="tr tbody__tr">
+                <td class="td tbody__td">
+                    123 North Kalani St.
+                </td>
+                <td class="td tbody__td">
+                    Honolulu, HI
+                </td>
+                <td class="td tbody__td">
+                    $450,000
+                </td>
+                <td class="td tbody__td">
+                    1
+                </td>
+                <td class="td tbody__td">
+                    2
+                </td>
+                <td class="td tbody__td">
+                    550
+                </td>
+                <td class="td tbody__td">
+                    $881
+                </td>
+                <td class="td tbody__td">
+                    12 days
+                </td>
+            </tr>
+            <tr class="tr tbody__tr">
+                <td class="td tbody__td">
+                    123 North Kalani St.
+                </td>
+                <td class="td tbody__td">
+                    Honolulu, HI
+                </td>
+                <td class="td tbody__td">
+                    $450,000
+                </td>
+                <td class="td tbody__td">
+                    1
+                </td>
+                <td class="td tbody__td">
+                    2
+                </td>
+                <td class="td tbody__td">
+                    550
+                </td>
+                <td class="td tbody__td">
+                    $881
+                </td>
+                <td class="td tbody__td">
+                    12 days
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

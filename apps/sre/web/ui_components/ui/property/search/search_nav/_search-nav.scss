@@ -1,0 +1,255 @@
+// *******************************************
+// *******************************************
+
+    // Property search nav component
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$mobile-edge-space         : $unit-sm-edge-space;
+$search-filters-touch-size : $unit-touch;
+$grid-gutter               : $unit-grid-gutter;
+$index-app-notification    : $index-app-notification;
+
+// settings/breakpoints
+$desktop : $breakpoint-md;
+
+// container element
+.search-nav {
+    position        : relative;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
+    height          : 100%;
+    font-size       : rem-calc(12);
+
+    @include min-screen($breakpoint-md) {
+        font-size : rem-calc(14);
+    }
+
+}
+
+// left side
+.search-nav__main {
+    display     : flex;
+    align-items : center;
+    flex        : 1 0 auto;
+}
+
+// right side
+.search-nav__sub {
+    display     : flex;
+    align-items : center;
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+}
+
+// show filters on desktop button
+.search-nav__show-filters {
+    position   : fixed;
+    bottom     : 0;
+    left       : 0;
+    z-index    : $index-app-notification;
+    width      : 50%;
+    height     : rem-calc($unit-touch);
+    background : $primary;
+    font-size  : rem-calc(21);
+    color      : $white;
+    text-shadow : $text-shadow;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        position   : relative;
+        bottom     : 0;
+        left       : auto;
+        display    : inline-block;
+        width      : auto;
+        height     : auto;
+        margin     : rem-calc(0 10 0 0);
+        padding    : rem-calc(6 10);
+        font-size  : rem-calc(13);
+        @include sans-bold;
+    }
+
+}
+
+// result count
+.search-nav__results {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display      : block;
+        margin-right : rem-calc(6);
+    }
+
+}
+
+// sort form
+.search-nav__sort {
+    display : flex;
+    color   : $gray-600;
+
+    @include min-screen($breakpoint-md) {
+        margin-right : rem-calc(21);
+    }
+
+}
+
+// sort select container
+.search-nav__sort__select {
+    position : relative;
+}
+
+// sort select
+// 1. offset width of icon
+.search-nav__sort__select__input {
+    position           : relative;
+    z-index            : $stack-top;
+    padding            : 0;
+    padding-right      : rem-calc(15); // 1.
+    border             : 0;
+    background         : transparent;
+    font-size          : rem-calc(12);
+    color              : $gray-800;
+    -webkit-appearance : none;
+    -moz-appearance    : none;
+    appearance         : none;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        font-size : rem-calc(14);
+    }
+
+}
+
+// select icon
+// 1. index under <select> input
+.search-nav__sort__select__icon {
+    position  : absolute;
+    top       : 50%;
+    right     : 0;
+    z-index   : $stack-bot; // 1.
+    width     : rem-calc(10);
+    height    : rem-calc(10);
+    margin    : 0;
+    transform : translateY(-50%);
+}
+
+// show for mobile
+.search-nav__sort__label--mobile {
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+}
+
+// show for desktop
+.search-nav__sort__label--desktop {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display : inline-block;
+    }
+
+}
+
+// save search section
+.search-nav__save-search {
+    position : fixed;
+    right    : 0;
+    bottom   : 0;
+    z-index  : $index-app-notification;
+    width    : 50%;
+    height   : rem-calc($unit-touch);
+
+    @include min-screen($breakpoint-md) {
+        position : relative;
+        right    : auto;
+        bottom   : auto;
+        width    : auto;
+        height   : auto;
+    }
+
+}
+
+// save search options dropdown
+.search-nav__save-search__save-search__dropdown {
+    position : absolute;
+    right    : 0;
+    bottom   : 100%;
+    z-index  : $stack-top;
+    display  : none;
+    width    : 100vw;
+    margin   : 0;
+    padding  : rem-calc($unit-default-spacing);
+
+    @include min-screen($breakpoint-md) {
+        top       : 100%;
+        bottom    : auto;
+        width     : auto;
+        min-width : rem-calc(300);
+    }
+
+    .search-nav__save-search--show-save-options & {
+        display : block;
+    }
+
+}
+
+// save search button
+.search-nav__save-search__save-button {
+    width       : 100%;
+    height      : rem-calc($unit-touch);
+    padding     : rem-calc($unit-default-spacing ($unit-default-spacing * 2));
+    background  : $gray-300;
+    font-size   : rem-calc(21);
+    color       : $gray-600;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        width     : auto;
+        height    : auto;
+        font-size : rem-calc(13);
+        border     : 1px solid $gray-300;
+        background : transparent;
+    }
+
+    .search-nav__save-search--saved & {
+        display : none;
+    }
+
+}
+
+// save search label
+.search-nav__save-search__save-label {
+    display         : none;
+    flex-flow       : column;
+    justify-content : center;
+    align-items     : center;
+    width           : 100%;
+    height          : rem-calc($unit-touch);
+    padding         : rem-calc($unit-default-spacing ($unit-default-spacing * 2));
+    background      : $white;
+    font-size       : rem-calc(21);
+    color           : $gray-800;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        width     : auto;
+        height    : auto;
+        padding   : rem-calc(($unit-default-spacing / 2) ($unit-default-spacing * 2));
+        border    : 1px solid $gray-300;
+        font-size : rem-calc(13);
+    }
+
+    .search-nav__save-search--saved & {
+        display : flex;
+    }
+
+}

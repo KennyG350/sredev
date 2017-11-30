@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Server Error</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <div
+      class="error-page-layout"
+      style="background-image: url(<%= static_path(@conn, "/images/error/desktop-500.jpg") %>);"
+    >
+    <div class="error-page-layout__content 500-page">
+      <div class="error-page-layout__content__layout">
+        <div class="error-page-layout__content__message">
+          <h1 class="error-page-layout__error-code error-code">
+            <span class="error-code__title">
+              Error
+            </span>
+            <span class="error-code__code">
+              500
+            </span>
+          </h1>
+          <p class="error-page-layout__tagline">
+            Something went wrong!
+          </p>
+          <p class="error-page-layout__cta">
+            But don't worry, we've already been notified about this error.
+          </p>
+          <p class="error-page-layout__sub">
+            If the problem persists feel free to contact us
+            <a href="mailto:support@sre.com" class="u-text-primary strong">
+              support@sre.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.alignment {
+    margin-left: 50px;
+}
+
+.bullets {
+    list-style-type: square;
+    /*list-style-position: outside;*/
+   /* margin-left: 1.5em;*/
+    /*margin-right: 100px;*/
+    font-size: 18px;
+    text-align: left;
+    }
+
+.alliance-agency-box {
+    //background-color: #1392ca;
+    background-color: #00b3e6;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 34%;
+    padding: 0 20px 10px 20px;
+    margin-bottom: 30px;
+    }
+
+    .careersh3 {
+    color: #fff;
+    padding-top: 10px;
+    }
+
+   @media only screen and (max-width: 844px) {
+  .alliance-agency-box {width: 100%;}
+  .contact-form-mobile {display : block!important;}
+  .contact-form-desktop {display: none!important;}
+   }
+
+   @media only screen and (min-width: 845px) {
+       .contact-form-mobile {display: none!important;}
+   }
+
+   @media only screen and (max-width: 767px) {
+       .contact-form-mobile {margin-top: 50px;}
+   }
+
+   .apply-here {
+       text-align: left;
+       margin-top: 10px;
+       margin-left: 10px;
+   }
+   //

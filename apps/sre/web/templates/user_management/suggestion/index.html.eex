@@ -1,0 +1,22 @@
+<div class="user-page">
+  <%= render Sre.UserManagement.UserView, "nav.html" %>
+  <section class="user-page__main">
+    <h1 class="user-page__main__section-header">
+      Your Agent Suggestions
+    </h1>
+
+    <%= if Enum.count(@suggestions) > 0 do %>
+      <ul class="grid">
+        <%= for listing <- @suggestions do %>
+        <li class="grid__sm--12 grid__md--6 u-mbottom24">
+          <a href="/properties/<%= listing.url %>" class="u-link-clean elm-listing-link">
+            <%= Sre.UI.Card.PropertyCard.render_template listing: listing %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No Suggestions as yet..</p>
+    <% end %>
+  </section>
+</div>

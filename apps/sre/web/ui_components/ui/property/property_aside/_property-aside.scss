@@ -1,0 +1,163 @@
+// *******************************************
+// *******************************************
+
+    // Property aside component
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$grid-gutter           : $unit-grid-gutter;
+$unit-default-spacing  : $unit-default-spacing;
+$unit-sm-header-height : $unit-sm-header-height;
+$unit-touch            : $unit-touch;
+$unit-sm-edge-space    : $unit-sm-edge-space;
+
+$property-aside-desktop-header-height : $property-desktop-header-height; // templates.layout/property-desktop
+$shadow                               : $shadow; // settings/stylistic
+
+.property-aside {
+    padding : rem-calc($grid-gutter $unit-sm-edge-space);
+}
+
+// favorite button
+.property-aside__favorite {
+    width         : 100%;
+    height        : rem-calc($unit-touch);
+    margin-bottom : rem-calc($unit-default-spacing * 2);
+    overflow      : hidden;
+    border        : 2px solid $gray-400;
+
+    &.property-aside__favorite--favorited {
+        border : 2px solid $primary;
+    }
+
+    &.property-aside__favorite--desktop-only {
+        display: none;
+
+        @include min-screen($breakpoint-md) {
+            display: inline-block;
+        }
+    }
+
+    &.property-aside__favorite--mobile-only {
+        display: inline-block;
+
+        @include min-screen($breakpoint-md) {
+            display: none;
+        }
+    }
+}
+
+// flexbox layout container in button
+.property-aside__favorite__layout {
+    display   : flex;
+    flex-flow : column;
+    height    : 100%;
+}
+
+// favorite & favorited content
+.property-aside__favorite__content {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex            : 1 0 100%;
+    width           : 100%;
+    font-size       : rem-calc(18);
+    color           : $gray-400;
+
+    .property-aside__favorite--favorited & {
+        color : $primary;
+    }
+
+    &:first-child {
+        display : none;
+
+        .property-aside__favorite--favorited & {
+            display : flex;
+        }
+
+    }
+
+}
+
+.property-aside__favorite__content__icon {
+    margin-right : rem-calc($unit-default-spacing);
+    fill         : $gray-400;
+
+    .property-aside__favorite--favorited & {
+        fill : $primary;
+    }
+
+}
+
+.property-aside__price {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display         : flex;
+        justify-content : space-between;
+        margin-bottom   : rem-calc($unit-default-spacing * 4);
+        padding-bottom  : rem-calc($unit-default-spacing * 2);
+        font-size       : rem-calc(24);
+        border-bottom   : 4px double $gray-800;
+    }
+
+}
+
+.property-aside__rebate-formula {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display       : block;
+        margin-bottom : rem-calc($unit-default-spacing * 4);
+    }
+
+}
+
+.property-aside__contact {
+    position   : fixed;
+    top        : 0;
+    right      : 0;
+    bottom     : rem-calc($unit-touch);
+    left       : 0;
+    z-index    : $stack-top;
+    padding    : rem-calc($unit-sm-edge-space);
+    transform  : translateX(-100%);
+    background : $white;
+    transition : transform 300ms $ease-in-out-quad;
+
+    @include min-screen($breakpoint-md) {
+        position   : relative;
+        top        : auto;
+        right      : auto;
+        bottom     : auto;
+        left       : auto;
+        z-index    : auto;
+        padding    : 0;
+        transform  : none !important;
+        transition : none;
+    }
+
+    .property-aside--mobile-contact-form-visible & {
+        transform : translateX(0);
+    }
+
+}
+
+.property-aside__contact__mobile-trigger {
+    position   : fixed;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : $stack-top;
+    margin     : 0;
+    transform : translateZ(0);
+    box-shadow : $shadow;
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+}

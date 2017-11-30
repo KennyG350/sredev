@@ -1,0 +1,32 @@
+{
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "deploy": "node ./scripts/elm-make.js && ./node_modules/brunch/bin/brunch build --production",
+    "watch": "./node_modules/brunch/bin/brunch watch --stdin",
+    "build": "./node_modules/brunch/bin/brunch build",
+    "lint": "eslint ./web/static/js"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.5.4",
+    "autoprefixer-brunch": "^1.8.5",
+    "brunch": "2.9.1",
+    "buble-brunch": "^1.0.1",
+    "clean-css-brunch": "~2.0.0",
+    "css-brunch": "~2.6.1",
+    "elm": "0.18.0",
+    "elm-brunch": "^0.7.0",
+    "elm-test": "^0.18.2",
+    "eslint": "^3.1.1",
+    "javascript-brunch": "~2.0.0",
+    "node-elm-compiler": "^4.2.0",
+    "phoenix": "file:../../deps/phoenix",
+    "phoenix_html": "file:../../deps/phoenix_html",
+    "postcss-brunch": "^2.0.5",
+    "process-env-brunch": "^1.4.5",
+    "sass-brunch": "=2.9.0",
+    "sassdash": "^0.8.2",
+    "uglify-js-brunch": "~2.0.1",
+    "uuid": "^3.0.1"
+  }
+}

@@ -1,0 +1,193 @@
+// *******************************************
+// *******************************************
+
+    // Search filters component
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$mobile-edge-space    : $unit-sm-edge-space;
+$unit-touch            : $unit-touch;
+$grid-gutter          : $unit-grid-gutter;
+$unit-default-spacing : $unit-default-spacing;
+
+// settings/z-indexes
+$stack-top : $stack-top;
+$stack-sub : $stack-sub;
+
+// settings/breakpoints
+$desktop : $breakpoint-md;
+
+$search-filters-rooms-inputs-breakpoint : 1320;
+
+// search filters header with close button
+// only shows on smaller devices
+.search-filters__header {
+    display       : flex;
+    height        : rem-calc($unit-touch);
+    padding       : rem-calc(0 $mobile-edge-space);
+    border-bottom : 1px solid $gray-200;
+    line-height   : 0;
+
+    @include min-screen($breakpoint-md) {
+        display : none;
+    }
+
+    .icon {
+        margin : 0;
+    }
+
+}
+
+// contains filters main section
+// viewport scroll on small screens
+.search-filters__main {
+    height                     : calc(100vh - #{rem-calc($unit-touch)});
+    padding-bottom             : rem-calc($unit-default-spacing * 10); // offsets fixed form controls on bottom
+    overflow                   : hidden;
+    overflow-y                 : auto;
+    -webkit-overflow-scrolling : touch;
+
+    @include min-screen($breakpoint-md) {
+        position       : relative;
+        padding-bottom : rem-calc(16); // offsets positioned form controls
+        height         : auto;
+    }
+
+}
+
+// contains input sections
+.search-filters__section {
+    padding       : rem-calc(($unit-default-spacing * 4) $mobile-edge-space);
+    border-bottom : 1px solid $gray-200;
+
+    @include min-screen($breakpoint-md) {
+        padding : rem-calc(($unit-default-spacing * 4) 0);
+    }
+
+}
+
+// section labels
+.search-filters__section__label {
+    display       : block;
+    width         : 100%;
+    margin-bottom : rem-calc($unit-default-spacing * 2);
+    text-align    : center;
+
+    @include min-screen($breakpoint-md) {
+        display       : inline-block;
+        width         : auto;
+        margin-bottom : 0;
+        text-align    : left;
+    }
+
+}
+
+// contains advanced search and
+// clear filters buttons
+.search-filters__form-options {
+    display         : flex;
+    justify-content : space-between;
+    padding         : rem-calc($unit-sm-edge-space $unit-sm-edge-space 0);
+}
+
+// form controls section
+.search-filters__form-controls {
+    position        : absolute;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    z-index         : $stack-top;
+    display         : flex;
+    justify-content : flex-end;
+    padding         : rem-calc($unit-default-spacing);
+    border-top      : 1px solid $gray-200;
+    background      : $white;
+
+    @include min-screen($breakpoint-md) {
+        position   : relative;
+        margin     : 0;
+        padding    : rem-calc($unit-default-spacing 0);
+        background : $white;
+    }
+
+}
+
+// form control buttons
+.search-filters__form-controls__button {
+    flex   : 0 1 rem-calc(200);
+    margin : rem-calc(0 ($unit-default-spacing / 2));
+}
+
+// clear filters button
+.search-filters__clear-filters {
+    padding : rem-calc(0 ($unit-default-spacing * 2));
+}
+
+// price range slider
+.search-filters__price-range-slider-container {
+    margin-top    : rem-calc($unit-default-spacing * 5);
+    margin-bottom : rem-calc($unit-default-spacing * 3);
+
+    @include min-screen($breakpoint-md) {
+        margin-top    : 0;
+        margin-bottom : 0;
+    }
+
+}
+
+// contains property type inputs
+.search-filters__property-type-input-container {
+    display         : flex;
+    justify-content : center;
+
+    @include min-screen($breakpoint-md) {
+        justify-content : flex-start;
+    }
+
+}
+
+// SQFT select input
+.search-filters__sqft-select {
+    margin-bottom : rem-calc($unit-default-spacing * 3);
+
+    @include min-screen($breakpoint-md) {
+        margin-bottom : 0;
+    }
+
+}
+
+// rooms inputs container
+.search-filters__rooms-container {
+    display   : flex;
+    flex-flow : column;
+    flex-wrap : wrap;
+
+    @include min-screen(rem-calc($search-filters-rooms-inputs-breakpoint)) {
+        flex-flow       : row;
+        justify-content : space-between;
+    }
+
+}
+
+// rooms inputs
+.search-filters__rooms-inputs {
+    display         : flex;
+    justify-content : center;
+    margin-bottom   : rem-calc($unit-default-spacing * 3);
+
+    @include min-screen(rem-calc($search-filters-rooms-inputs-breakpoint)) {
+        margin-right : rem-calc($unit-default-spacing * 2);
+    }
+
+    &:last-child {
+
+        @include min-screen(rem-calc($search-filters-rooms-inputs-breakpoint)) {
+            margin-right : 0;
+        }
+
+    }
+
+}

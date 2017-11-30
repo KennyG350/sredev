@@ -1,0 +1,20 @@
+// *******************************************
+// *******************************************
+
+    // Label components
+
+// *******************************************
+// *******************************************
+
+.label {
+    display        : flex;
+    font-size      : rem-calc(12);
+    text-transform : uppercase;
+    line-height    : rem-calc(16);
+    @include sans-bold;
+
+    &[for] {
+        cursor : pointer;
+    }
+
+}

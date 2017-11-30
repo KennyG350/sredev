@@ -1,0 +1,7 @@
+<div>
+  <p><%= @first_name %> <%= @last_name %> sent a message:</p>
+  <br />
+  <br />
+  <p><b>Message:</b> <%= @message || "NA" %></p>
+  <p>They can be reached at <%= @phone %> or <%= @email %></p>
+</div>

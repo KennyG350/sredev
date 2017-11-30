@@ -1,0 +1,80 @@
+image: isaiahdw/knledg-phoenix-app
+
+cache:
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+  - _build/
+  - deps/
+
+before_script:
+  - mix local.rebar --force
+  - mix local.hex --force
+  - mix deps.get
+
+stages:
+  - lint
+  - test
+  - deploy
+
+lint:
+  stage: lint
+  script:
+    - mix credo
+    - make install # So `make elm` can run
+    - make elm
+
+test:
+  stage: test
+  script:
+    - npm install -g elm-test@0.18.2
+    - make install # So make elm-test` can run
+    # - make elm-test
+
+deploy_qa:
+  stage: deploy
+  type: deploy
+  script:
+    - apt-get update -yq
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=sre-com-qa --api-key=$HEROKU_QA_API_KEY
+  only:
+    - develop
+  environment: qa
+
+deploy_staging:
+  stage: deploy
+  type: deploy
+  script:
+    - apt-get update -yq
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=sre-com-staging --api-key=$HEROKU_STAGING_API_KEY
+  only:
+    - master
+  environment: staging
+
+deploy_beta:
+  stage: deploy
+  type: deploy
+  script:
+    - apt-get update -yq
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=sre-com-beta --api-key=$HEROKU_BETA_API_KEY
+  only:
+    - master
+  environment: beta
+
+deploy_production:
+  stage: deploy
+  type: deploy
+  script:
+    - apt-get update -yq
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=sre-com-prod --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+    - tags
+  when: manual
+  environment: production

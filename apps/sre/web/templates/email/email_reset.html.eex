@@ -1,0 +1,13 @@
+<div class="">
+  <h1>Your Reset Password Link</h1>
+  <div class="">
+    You requested that your passord be changed.  Please click the link to proceeed.
+  </div>
+  <p>
+    <a href="<%= @reset_link %>" /> Click Here </a>
+  </p>
+  <div class="">
+    Thank You
+    SRE.com
+  </div>
+</div>

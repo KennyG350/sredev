@@ -1,0 +1,17 @@
+// *******************************************
+// *******************************************
+
+    // Media query breakpoints - Desktop
+
+// *******************************************
+// *******************************************
+
+// media sizes
+$breakpoint-sm  : 20em; // 320px
+$breakpoint-md : 48em; // 768px
+
+// breakpoint list
+$breakpoints : (
+    'sm' : $breakpoint-sm,
+    'md' : $breakpoint-md
+);

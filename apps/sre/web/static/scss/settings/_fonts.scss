@@ -1,0 +1,64 @@
+// *******************************************
+// *******************************************
+
+    // Font-family definitions
+
+// *******************************************
+// *******************************************
+
+// Open Sans
+$open-sans : 'open-sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+
+///////////////////////////////
+// Font Variables
+///////////////////////////////
+
+// Use these only when removing an element from it's flow
+$sans                : $open-sans;
+$sans-light-weight   : 300;
+$sans-bold-weight    : 700;
+$sans-regular-weight : 400;
+
+@mixin sans($important: null) {
+    $is-important: null;
+
+    @if ($important) {
+        $is-important: !important;
+    }
+
+    font-family : $sans $is-important;
+    font-style  : normal $is-important;
+}
+
+@mixin sans-light($important: null) {
+    $is-important: null;
+
+    @if ($important) {
+        $is-important: !important;
+    }
+
+    @include sans($is-important);
+    font-weight : $sans-light-weight $is-important;
+}
+
+@mixin sans-regular($important: null) {
+    $is-important: null;
+
+    @if ($important) {
+        $is-important: !important;
+    }
+
+    @include sans($is-important);
+    font-weight : $sans-regular-weight $is-important;
+}
+
+@mixin sans-bold($important: null) {
+    $is-important: null;
+
+    @if ($important) {
+        $is-important: !important;
+    }
+
+    @include sans($is-important);
+    font-weight : $sans-bold-weight $is-important;
+}

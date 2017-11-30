@@ -1,0 +1,265 @@
+// *******************************************
+// *******************************************
+
+    // Marketing page layout component
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-default-spacing          : $unit-default-spacing;
+$unit-md-edge-space            : $unit-md-edge-space;
+$marketing-page-hero-md-height : 250;
+
+////////////////////////////////////////
+// Hero section
+////////////////////////////////////////
+.marketing-page__hero {
+    margin          : rem-calc(0 (-$unit-sm-edge-space));
+    padding         : rem-calc(($unit-default-spacing * 4) $unit-sm-edge-space);
+    background      : $gray-900 url('/images/buy-hero-mobile.jpg') center no-repeat;
+    background-size : cover;
+    color           : $white;
+    text-align      : center;
+
+    @include min-screen($breakpoint-md) {
+        display          : flex;
+        flex-direction   : column;
+        justify-content  : center;
+        min-height       : rem-calc($marketing-page-hero-md-height);
+        margin           : rem-calc(0 (-$unit-md-edge-space));
+        padding          : rem-calc(($unit-default-spacing * 4) 0);
+        background-image : url('/images/buy-hero.jpg');
+    }
+}
+.marketing-page__hero.v2 {
+        background      : $white url('/images/homepage-hero-lg.jpg') cover;
+        //center no-repeat -> cover
+        //background      : #00b3e6;
+
+    @include min-screen($breakpoint-md) {
+        background-image : url('/images/homepage-hero-lg.jpg');
+        //background : #00b3e6;
+    }
+}
+
+.marketing-page__hero__h1 {
+    max-width     : rem-calc($unit-max-line-length);
+    margin        : 0 auto;
+    margin-bottom : rem-calc($unit-default-spacing);
+    font-size     : rem-calc(21);
+    line-height   : rem-calc(21 * 1.25);
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(27);
+        line-height : rem-calc(27 * 1.35);
+    }
+
+}
+
+.marketing-page__hero__h2 {
+    max-width : rem-calc($unit-max-line-length);
+    margin    : 0 auto;
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(24);
+        line-height : rem-calc(24 * 1.25);
+    }
+
+}
+
+////////////////////////////////////////
+// Page sections
+////////////////////////////////////////
+.marketing-page__section {
+    padding : rem-calc(($unit-default-spacing * 6) 0);
+
+    @include min-screen($breakpoint-md) {
+        margin        : rem-calc(0 (-$unit-md-edge-space));
+        padding-right : rem-calc($unit-md-edge-space);
+        padding-left  : rem-calc($unit-md-edge-space);
+    }
+
+}
+
+.marketing-page__section--white {
+
+    @include min-screen($breakpoint-md) {
+        border-top    : 1px solid $gray-200;
+        border-bottom : 0px solid $gray-200;
+        background    : $white;
+    }
+
+}
+
+.marketing-page__section__h1 {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    max-width       : rem-calc(600);
+    margin          : 0 auto;
+    margin-bottom   : rem-calc($unit-default-spacing);
+    font-size       : rem-calc(21);
+    text-align      : center;
+    line-height     : rem-calc(21 * 1.25);
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(27);
+        line-height : rem-calc(27 * 1.25);
+    }
+
+}
+
+.marketing-page__section__h1__sre {
+    width  : rem-calc(60);
+    margin : rem-calc(0 $unit-default-spacing);
+    fill   : $primary-dark;
+}
+
+.marketing-page__section__subtext {
+    max-width     : rem-calc(600);
+    margin        : 0 auto;
+    margin-bottom : rem-calc($unit-default-spacing * 2);
+    text-align    : center;
+}
+
+.marketing-page__section__subtext--wide {
+    max-width : rem-calc(720);
+}
+
+/////////////////////////////////////////////
+// Contact section
+/////////////////////////////////////////////
+.marketing-page__section--contact {
+    padding-bottom : 0;
+}
+
+.marketing-page__contact {
+
+    @include min-screen($breakpoint-md) {
+        display       : flex;
+        align-items   : stretch;
+    }
+
+}
+
+.marketing-page__contact__content {
+    position : relative;
+    @include clearfix;
+
+    @include min-screen($breakpoint-md) {
+        padding-right : rem-calc($unit-grid-gutter * 2);
+    }
+}
+
+.marketing-page__contact__content__agent {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        float        : left;
+        display      : block;
+        margin-right : rem-calc($unit-grid-gutter * 2);
+        margin-bottom: -9px;
+    }
+
+}
+
+.marketing-page__contact__content__h1 {
+    display : block;
+    @include min-screen($breakpoint-md) {
+        display : block;
+        margin-top : rem-calc(72);
+        font-size  : rem-calc(18);
+        line-height: rem-calc(22);
+    }
+
+}
+
+.marketing-page__contact__form {
+    display: block;
+    flex : 1 0 25%;
+}
+
+
+.marketing-page__contact__content {
+    flex : 1 0 50%;
+
+    * {
+
+        @include min-screen($breakpoint-md) {
+            justify-content : flex-start;
+            text-align      : left;
+        }
+
+    }
+
+
+}
+
+/////////////////////////////////////////////
+// Marketing info panels
+/////////////////////////////////////////////
+// container
+.marketing-page__info-panel {
+    margin-bottom : rem-calc(30);
+
+    @include min-screen($breakpoint-md) {
+        display     : flex;
+        align-items : stretch;
+    }
+
+    &:last-of-type {
+        margin-bottom : 0;
+    }
+}
+// text info section
+.marketing-page__info-panel__article {
+    padding : rem-calc($unit-default-spacing);
+
+    @include min-screen($breakpoint-md) {
+        flex    : 0 1 $unit-grid-4of12;
+        padding : rem-calc($unit-grid-gutter);
+    }
+
+}
+// image
+.marketing-page__info-panel__img {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display             : block;
+        flex                : 1 1 $unit-grid-8of12;
+        background-position : center;
+        background-repeat   : no-repeat;
+        background-size     : cover;
+    }
+
+}
+
+.marketing-page__info-panel__rebate-amount {
+    display    : inline-block;
+    margin     : rem-calc($unit-default-spacing 0);
+    padding    : rem-calc($unit-default-spacing);
+    background : $red;
+    color      : $white;
+}
+
+.h1-smart {
+font-size:25px;
+line-height: 28px;
+font-weight: bold;
+color: white;
+}
+.drop-15 {
+    padding-bottom: 15px;
+}
+
+.marketing-page__hero .subtext {
+    font-size: 8px;
+    text-align: right;
+    margin-right: 8%;
+    padding-top: 1rem;
+}

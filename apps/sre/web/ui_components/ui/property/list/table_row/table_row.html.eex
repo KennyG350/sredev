@@ -1,0 +1,15 @@
+<td class="td tbody__td">
+  <a class="u-hidden-visually" href="/properties/<%= @listing.url %>">
+    <%= Sre.Listing.ViewHelper.street_address @listing %> - View More Details
+  </a>
+
+  <%= Sre.Listing.ViewHelper.street_address @listing %>
+</td>
+
+<td class="td tbody__td"><%= @listing.city %>, <%= @listing.state %></td>
+<td class="td tbody__td">$<%= Sre.Listing.ViewHelper.get_list_price @listing %></td>
+<td class="td tbody__td"><%= Sre.Listing.ViewHelper.number_to_string @listing.bedrooms %></td>
+<td class="td tbody__td"><%= Sre.Listing.ViewHelper.number_to_string @listing.baths %></td>
+<td class="td tbody__td"><%= Sre.Listing.ViewHelper.number_to_string @listing.living_area %></td>
+<td class="td tbody__td"><%= Sre.Listing.ViewHelper.price_per_sqft @listing %></td>
+<td class="td tbody__td"><%= Sre.Listing.ViewHelper.days_on_market @listing %> days</td>

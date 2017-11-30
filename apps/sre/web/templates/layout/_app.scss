@@ -1,0 +1,64 @@
+// *******************************************
+// *******************************************
+
+    // Desktop region layout
+    // header, content, footer
+
+// *******************************************
+// *******************************************
+
+// @vars
+$app-header-sm-height      : $unit-sm-header-height; // settings/layout-units
+$app-header-md-height      : $unit-md-header-height; // settings/layout-units
+$app-header-sm-edge-space  : $unit-sm-edge-space; // settings/layout-units
+$app-header-md-edge-space  : $unit-md-edge-space; // settings/layout-units
+$desktop-content-min-width : $unit-md-width; // settings/layout-units
+
+// container element
+// 1. flexbox sticky footer stuff
+//    https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+.app {
+    position       : relative;
+    display        : flex; // 1.
+    flex-direction : column; // 1.
+    min-height     : 50vh; // 1.
+    $background    : $gray-050;
+
+    // fix IE11 flexbox problem
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display : block;
+    }
+
+}
+
+// header region
+.app__header {
+    position : relative;
+    z-index  : $index-app-header;
+    height   : rem-calc($app-header-sm-height);
+    padding  : rem-calc(0 $app-header-sm-edge-space);
+
+    @include min-screen($breakpoint-md) {
+        height  : rem-calc($app-header-md-height);
+        padding : rem-calc(0 $app-header-md-edge-space);
+    }
+
+}
+
+// content region
+// 1. flexbox sticky footer stuff
+.app__main {
+    flex    : 1 1 auto; // 1.
+    padding : rem-calc(0 $app-header-sm-edge-space);
+
+    @include min-screen($breakpoint-md) {
+        padding : rem-calc(0 $app-header-md-edge-space);
+    }
+
+}
+
+// footer region
+.app__footer {
+    padding    : rem-calc($app-header-md-edge-space);
+    border-top : 1px solid $white;
+}

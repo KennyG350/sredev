@@ -1,0 +1,62 @@
+<h2 class="ui-kit-layout__page-header">
+  Buttons
+</h2>
+<section class="ui-kit-layout__page__container">
+    <h1 class="sg-sub-header">Buttons Color Themes:</h1>
+    <div class="grid">
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template classname: "button--expand" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--primary", disabled?: true %>
+      </div>
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--secondary" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--secondary", disabled?: true %>
+      </div>
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--gray-300" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--gray-300", disabled?: true %>
+      </div>
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--gray-800" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--gray-800", disabled?: true %>
+      </div>
+
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--symbolic-warning" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--symbolic-warning", disabled?: true %>
+      </div>
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--symbolic-error" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default Button", classname: "button--expand button--symbolic-error", disabled?: true %>
+      </div>
+
+    </div>
+
+    <h1 class="sg-sub-header">Buttons Style Themes:</h1>
+    <div class="grid u-mbottom48">
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Outlined", classname: "button--expand button--outline" %>
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Outlined Disabled", classname: "button--expand button--outline", disabled?: true %>
+      </div>
+
+      <div class="grid__md--2">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "CTA Button", classname: "button--expand button--cta" %>
+      </div>
+
+      <div class="grid__md--4">
+        <%= Sre.UI.Button.SocialButton.render_template network: "facebook", classname: "button--expand" %>
+        <%= Sre.UI.Button.SocialButton.render_template network: "google", classname: "button--expand" %>
+      </div>
+
+      <div class="grid__md--4">
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "xLarge Button", classname: "button--xl button__primary" %>
+        <br />
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Large Button", classname: "button--lg button__primary" %>
+        <br />
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Default" %>
+        <br />
+        <%= Sre.UI.Button.ButtonDefault.render_template value: "Small Button", classname: "button--sm button__primary" %>
+        <br />
+      </div>
+    </div>
+</section>

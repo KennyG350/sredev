@@ -1,0 +1,6 @@
+<div>
+  <p><%= @first_name%> <%= @last_name %> <%= if (@property_address != nil), do: "is inquiring about our property at " <> @property_address, else: "is interested in buying a home" %></p>
+  <br />
+  <p>They can be reached at <%= @phone %> or <%= @email %></p>
+  <p><b>Message:</b> <%= @message || "N/A" %></p>
+</div>

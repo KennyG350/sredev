@@ -1,0 +1,87 @@
+<div class="property-hero">
+  <div class="property-hero__image-slider image-slider image-slider--16by9 elm-image-slider-16by9-container">
+    <%= Sre.UI.Property.PropertyDetailsMap.render_template listing: @listing %>
+    <div class="property-hero__image-slider__viewport image-slider__viewport">
+      <%= if Sre.Listing.ViewHelper.show_co_branding? @listing do %>
+        <img class="property-hero__image-slider__mls-watermark" src="<%= Sre.Listing.ViewHelper.get_mls_logo @listing %>" alt="watermark" />
+      <% end %>
+      <ul class="image-slider__slides elm-image-slider-transform-container">
+        <%= for image <- get_all_photo_paths @listing do %>
+          <li class="image-slider__slide elm-image-slider-image">
+            <div class="image-slider__slide__image" style="background-image: url('<%= image %>');"></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <button
+      class="image-slider__pager image-slider__pager--prev elm-image-slider-prev"
+      type="button"
+    >
+      <span class="u-hidden-visually">Previous Photo</span>
+      <%= Sre.UI.Svg.Icon.render_template(
+        icon: "caret_left",
+        classes: ["image-slider__pager__icon"]
+      )%>
+    </button>
+    <button
+      class="image-slider__pager image-slider__pager--next elm-image-slider-next"
+      type="button"
+    >
+      <span class="u-hidden-visually">Next Photo</span>
+      <%= Sre.UI.Svg.Icon.render_template(
+        icon: "caret_right",
+        classes: ["image-slider__pager__icon"]
+      )%>
+    </button>
+    <%= if length(@listing.photos) === 0 do %>
+      <span></span>
+    <% else %>
+      <span class="image-slider__page-count">
+        <span class="elm-image-slider-current-photo">1</span>
+
+        of
+
+        <span class="elm-image-slider-photo-count" data-photo-count="<%= length(@listing.photos) %>">
+          <%= length(@listing.photos) %>
+        </span>
+      </span>
+    <% end %>
+
+  </div>
+  <ul class="property-hero__nav">
+    <li class="property-hero__nav__item property-hero__nav__item--current elm-property-hero-nav-item-photos">
+      <button
+        class="property-hero__nav__item__button elm-property-hero-view-photos"
+        type="button"
+      >
+        <span class="u-hidden-visually">Show Photos</span>
+        <span class="property-hero__nav__item__button__layout">
+          <%= Sre.UI.Svg.Icon.render_template(
+            icon: "camera",
+            classes: ["property-hero__nav__item__button__icon"]
+          )%>
+          <span class="property-hero__nav__item__button__label">
+            Photos
+          </span>
+        </span>
+      </button>
+    </li>
+    <li class="property-hero__nav__item elm-property-hero-nav-item-map">
+      <button
+        class="property-hero__nav__item__button elm-property-hero-view-map"
+        type="button"
+      >
+        <span class="u-hidden-visually">Show Map</span>
+        <span class="property-hero__nav__item__button__layout">
+          <%= Sre.UI.Svg.Icon.render_template(
+            icon: "map",
+            classes: ["property-hero__nav__item__button__icon"]
+          )%>
+          <span class="property-hero__nav__item__button__label">
+            Map
+          </span>
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>

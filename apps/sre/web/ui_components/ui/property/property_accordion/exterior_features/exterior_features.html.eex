@@ -1,0 +1,33 @@
+<div class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Exterior Features
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <div class="grid u-font14">
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= Sre.Listing.ViewHelper.listing_detail("SQFT: ", @listing.living_area )%>
+          <li>
+            <strong class="strong">Lot Size:</strong>
+            <%= @listing.square_footage |> Sre.Listing.ViewHelper.to_acres |> Sre.Listing.ViewHelper.render_ACR %>
+          </li>
+          <%= Sre.Listing.ViewHelper.listing_detail("Subtype: ", @listing.subtype )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Architectural Style: ", @listing.architectural_style )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Lot Features: ", @listing.lot_features )%>
+        </ul>
+      </div>
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= Sre.Listing.ViewHelper.listing_detail("Parking: ", @listing.parking_features )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Exterior Materials: ", @listing.construction_materials )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Pool: ", @listing.pool_features )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Additional Parking: ", @listing.parking_additional )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Roof: ", @listing.roof )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Stories: ", @listing.stories )%>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /end .accordion__content -->
+</div>

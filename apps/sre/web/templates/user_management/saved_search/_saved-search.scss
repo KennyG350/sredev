@@ -1,0 +1,25 @@
+// *******************************************
+// *******************************************
+
+    // Saved search page component
+    // /mysre/saved-search
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+
+// edit search button and dropdown container
+.saved-search__edit {
+    position : relative;
+}
+
+.saved-search__edit__dropdown {
+    position : absolute;
+    top      : 100%;
+    right    : 0;
+    width    : rem-calc(300);
+    padding  : rem-calc($unit-default-spacing * 2);
+}

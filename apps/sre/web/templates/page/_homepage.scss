@@ -1,0 +1,335 @@
+// *******************************************
+// *******************************************
+
+    // Homepage page-specific styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$homepage-hero-sm-height : 200;
+// settings/layout-units
+$unit-sm-edge-space      : $unit-sm-edge-space;
+$unit-md-edge-space      : $unit-md-edge-space;
+$unit-default-spacing    : $unit-default-spacing;
+$unit-grid-4of12         : $unit-grid-4of12;
+$unit-grid-9of12         : $unit-grid-9of12;
+
+// container element
+.homepage {
+    display        : flex;
+    flex-direction : column;
+
+    > * {
+        order : 1;
+    }
+
+}
+
+////////////////////////////////////
+// Hero section
+////////////////////////////////////
+
+// hero section container
+.homepage__hero {
+    position : relative;
+    z-index  : $stack-bot;
+}
+
+// hero background image
+.homepage__hero__image {
+    height          : 60vh;
+    min-height      : rem-calc(320);
+    margin          : rem-calc(0 (-$unit-sm-edge-space) ($unit-default-spacing * 4));
+    border-bottom   : 1px solid $gray-200;
+    background      : $gray-900 url('/images/homepage-hero-sm.jpg') center no-repeat;
+    background-size : cover;
+
+    @include min-screen($breakpoint-md) {
+        height           : 50vh;
+        margin           : rem-calc(0 (-$unit-md-edge-space));
+        background-image : url('/images/homepage-hero-lg.jpg');
+    }
+
+}
+
+.homepage__hero__logo {
+    position : absolute;
+    top      : rem-calc(16);
+    left     : 0;
+}
+
+// contains header, search for and blockquote
+// used to vertically center over
+// hero image at md breakpoint
+.homepage__hero__md-content-container {
+
+    @include min-screen($breakpoint-md) {
+        position  : absolute;
+        top       : 50%;
+        left      : 50%;
+        min-width : rem-calc(600);
+        max-width : rem-calc(800);
+        transform : translate(-50%, -50%);
+    }
+
+}
+
+
+.homepage__hero__h1-content-container {
+    position    : absolute;
+    top         : 50%;
+    left        : 50%;
+    width       : 100%;
+    transform   : translate(-50%, -50%);
+    color       : $white;
+    text-align  : center;
+    text-shadow : $text-shadow;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        position      : relative;
+        top           : auto;
+        left          : auto;
+        margin-bottom : rem-calc(24);
+        transform     : none;
+    }
+
+}
+// Smart Homebuyers
+.homepage__hero__h1 {
+    margin-bottom : rem-calc(8);
+    font-size     : rem-calc(24);
+
+    @include min-screen($breakpoint-md) {
+        font-size     : rem-calc(48);
+        line-height   : rem-calc(48);
+    }
+
+}
+
+// Our Clients save $20,000...
+.homepage__hero__h2 {
+    margin-bottom : rem-calc(8);
+    font-size     : rem-calc(16);
+
+    @include min-screen($breakpoint-md) {
+        font-size     : rem-calc(24);
+        line-height   : rem-calc(24);
+    }
+
+}
+
+// Human Assisted e-Commerce
+.homepage__hero__h3 {
+    margin-bottom : rem-calc(8);
+    font-size     : rem-calc(16);
+
+    @include min-screen($breakpoint-md) {
+        font-size     : rem-calc(24);
+        line-height   : rem-calc(24);
+    }
+
+}
+
+// testimonial section
+.homepage__hero__cta__blockquote {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        position    : absolute;
+        top         : 100%;
+        left        : 0;
+        z-index     : $stack-sub;
+        display     : block;
+        width       : $unit-grid-9of12;
+        font-size   : rem-calc(13);
+        line-height : rem-calc(18);
+    }
+
+}
+
+// cta button
+.homepage__hero__cta__button {
+    margin-top    : rem-calc($unit-default-spacing * 2);
+    padding-right : rem-calc($unit-default-spacing * 2);
+    padding-left  : rem-calc($unit-default-spacing * 2);
+    background    : rgba($black, .4) !important;
+    color         : $white !important;
+}
+
+// search form in hero section
+.homepage__hero__cta__search-form {
+
+    .tab__link {
+        color : $gray-800;
+
+        @include min-screen($breakpoint-md) {
+            color : $white;
+        }
+
+    }
+
+    .tab--current {
+        border-color : $gray-800;
+
+        @include min-screen($breakpoint-md) {
+            border-color : $white;
+        }
+
+    }
+
+}///////////////////TOM'S NEW CSSS////////////////
+
+.homepage__red-listing {
+    color: #be2a2a;
+    padding-top: 7px;
+}
+
+.homepage_coin {
+    width: 150px;
+    padding-bottom: 5px;
+    
+    @include min-screen($breakpoint-md) {
+        width : 200px;
+        padding-bottom: 0px;
+    }
+}
+.homepage_coin_placement {
+    margin-top: -110px;
+    left: 50%;
+    margin-left: -75px;
+    z-index:1; 
+    position: relative;
+    width: 150px;
+
+    @include min-screen($breakpoint-md) {
+        margin-top: -150px;
+        left: 50%;
+        margin-left: -100px;
+        z-index:1; 
+        position: relative;
+        width: 200px;
+    }
+}
+.homepage_seemore {
+    margin-top: 10px;
+    left: 50%;
+    margin-left: -96px; 
+    z-index: 100;
+    position: relative;
+    width: 192px;
+
+       @include min-screen($breakpoint-md) {  
+        margin-top: 30px;
+        left: 50%;
+        margin-left: -96px;
+        z-index: 100; 
+        position: relative;
+        width: 192px;
+    }
+ }   
+
+ .show {
+ display : block!important;
+}
+
+////////////////////////////////////
+// Mission statement section
+////////////////////////////////////
+.homepage__mission {
+    order : 2;
+    padding : rem-calc($unit-touch 0);
+
+    @include min-screen($breakpoint-sm) {
+        order : 1;
+    }
+
+}
+
+////////////////////////////////////
+// Feed locations
+////////////////////////////////////
+.homepage__feeds {
+
+    margin-top   : rem-calc(0 (-$unit-sm-edge-space));
+    background    : $white;
+    position      : relative;
+    margin        : rem-calc(0 (-$unit-sm-edge-space));
+
+    @include min-screen($breakpoint-md) {
+        padding-top : rem-calc($unit-touch $unit-md-edge-space);
+        margin      : rem-calc(0 (-$unit-md-edge-space));
+    }
+
+}
+
+////////////////////////////////////
+// Testimonial section
+////////////////////////////////////
+.homepage__testimonial {
+    order : 1;
+
+    @include min-screen($breakpoint-md) {
+        padding : rem-calc($unit-touch 0);
+    }
+
+}
+
+////////////////////////////////////
+// Cardlist component
+// Nearby homes, trending cities, etc.
+////////////////////////////////////
+.homepage__cardlist {
+    display                    : flex;
+    margin                     : rem-calc(0 (-$unit-sm-edge-space));
+    padding                    : rem-calc($unit-sm-edge-space);
+    overflow                   : hidden;
+    overflow-x                 : auto;
+    -webkit-overflow-scrolling : touch;
+
+    @include min-screen($breakpoint-md) {
+        flex-wrap : wrap;
+        overflow  : auto;
+    }
+
+}
+
+// cardlist item
+.homepage__cardlist__card {
+    flex    : 1 0 auto;
+    width   : 100%;
+    padding : rem-calc(0 $unit-default-spacing);
+
+    @include min-screen($breakpoint-md) {
+        flex-basis : auto;
+        width      : $unit-grid-4of12;
+        padding    : rem-calc($unit-default-spacing);
+    }
+
+    &:first-child {
+        margin-left : rem-calc(-$unit-default-spacing);
+
+        @include min-screen($breakpoint-md) {
+            margin-left  : 0;
+            padding-left : rem-calc($unit-default-spacing);
+        }
+    }
+    &:last-child {
+        margin-right : rem-calc(-$unit-default-spacing);
+
+        @include min-screen($breakpoint-md) {
+            margin-right  : 0;
+            padding-right : rem-calc($unit-default-spacing);
+        }
+    }
+}
+
+.homepage__cardlist__card--sm-11of12 {
+    flex-basis : auto;
+
+    @include min-screen($breakpoint-md) {
+        width : $unit-grid-4of12;
+    }
+
+}

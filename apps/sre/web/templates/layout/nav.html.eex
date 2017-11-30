@@ -1,0 +1,20 @@
+<ul>
+  <li class="<%= if @conn.request_path == "/properties", do: "active" %>">
+    <a class="mdl-navigation__link" href="/properties">Properties</a>
+  </li>
+  <li class="<%= if @conn.request_path == "/savings", do: "active" %>">
+    <a class="mdl-navigation__link" href="/savings">Savings</a>
+  </li>
+  <li class="<%= if @conn.request_path == "/buying", do: "active" %>">
+    <a class="mdl-navigation__link" href="/buying">Buying</a>
+  </li>
+  <li class="<%= if @conn.request_path == "/selling", do: "active" %>">
+    <a class="mdl-navigation__link" href="/selling">Selling</a>
+  </li>
+  <li class="<%= if @conn.request_path == "/solution", do: "active" %>">
+    <a class="mdl-navigation__link" href="/solution">Solution</a>
+  </li>
+  <li class="<%= if @conn.request_path == "/contact", do: "active" %>">
+    <a class="mdl-navigation__link" href="/contact">Contact</a>
+  </li>
+</ul>

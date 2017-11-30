@@ -1,0 +1,61 @@
+// *******************************************
+// *******************************************
+
+    // Testimonials page specific styles
+    // /testimonials
+
+// *******************************************
+// *******************************************
+
+// @vars
+
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+
+.testimonials_header {
+    font-size: 30px!important;
+}
+
+.testimonials-page__hgroup {
+    margin-bottom : rem-calc($unit-default-spacing * 3);
+    text-align    : center;
+}
+
+.testimonials-page__hgroup__h1 {
+    margin-bottom : rem-calc($unit-default-spacing);
+    font-size     : rem-calc(21);
+    line-height   : rem-calc(24);
+
+    @include min-screen($breakpoint-md) {
+        font-size   : rem-calc(27);
+        line-height : rem-calc(32);
+    }
+
+}
+
+.testimonials-page__hgroup__h2 {
+    display     : flex;
+    flex-flow   : column;
+    align-items : center;
+
+    @include min-screen($breakpoint-md) {
+        flex-flow       : row;
+        justify-content : center;
+        font-size       : rem-calc(21);
+        line-height     : rem-calc(24);
+    }
+
+}
+
+.testimonials-page__hgroup__h2__total {
+    margin-top : rem-calc($unit-default-spacing);
+    padding    : rem-calc($unit-default-spacing * 2);
+    background : $primary;
+    color      : $white;
+
+    @include min-screen($breakpoint-md) {
+        margin-left : rem-calc($unit-default-spacing);
+        padding     : rem-calc($unit-default-spacing ($unit-default-spacing * 2));
+    }
+
+}

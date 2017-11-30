@@ -1,0 +1,15 @@
+// *******************************************
+// *******************************************
+
+    // Truncates text and adds an ellipsis
+    // to represent overflow
+
+// *******************************************
+// *******************************************
+
+@mixin overflow-ellipses {
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    overflow      : hidden;
+    word-wrap     : normal;
+}

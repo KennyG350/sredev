@@ -1,0 +1,32 @@
+// *******************************************
+// *******************************************
+
+    // Error code component
+
+// *******************************************
+// *******************************************
+
+.error-page-layout__error-code {
+    display         : flex;
+    flex-flow       : column;
+    justify-content : center;
+    align-items     : center;
+    width           : rem-calc(200);
+    height          : rem-calc(200);
+    border-radius   : 50%;
+    background      : rgba($black, .75);
+    color           : $white;
+}
+
+.error-code__title {
+    font-size      : rem-calc(18);
+    text-transform : uppercase;
+    line-height    : rem-calc(18);
+}
+
+
+.error-code__code {
+    font-size   : rem-calc(72);
+    line-height : rem-calc(72);
+    @include sans-bold;
+}

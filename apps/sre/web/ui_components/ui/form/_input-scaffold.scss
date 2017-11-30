@@ -1,0 +1,27 @@
+// *******************************************
+// *******************************************
+
+    // Input component scaffolding
+
+// *******************************************
+// *******************************************
+
+// @vars
+$input-scaffold-default-margin : $unit-default-spacing; // settings/layout-units
+
+// container element
+.input-scaffold {
+    position      : relative;
+    margin-bottom : rem-calc($input-scaffold-default-margin);
+}
+
+// label
+.input-scaffold__label {
+    margin-bottom : rem-calc(3);
+
+    .input-scaffold--disabled & {
+        opacity : .6;
+        cursor  : default;
+    }
+
+}

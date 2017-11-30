@@ -1,0 +1,143 @@
+// *******************************************
+// *******************************************
+
+    // Sell page specific styles
+    // /sell
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-default-spacing          : $unit-default-spacing;
+$unit-md-edge-space            : $unit-md-edge-space;
+$marketing-page-hero-md-height : 250;
+
+////////////////////////////////////////
+// Sell calculator
+////////////////////////////////////////
+.sell-page__calculator {
+    max-width : rem-calc(740);
+    margin    : 0 auto;
+
+    @include min-screen($breakpoint-md) {
+        display         : flex;
+        flex-wrap       : wrap;
+        justify-content : space-between;
+    }
+
+    > * {
+
+        @include min-screen($breakpoint-md) {
+            width : 45%;
+        }
+
+    }
+
+}
+
+.sell-page__calculator__total-savings {
+    margin     : rem-calc(($unit-default-spacing * 2) 0);
+    font-size  : rem-calc(21);
+    text-align : center;
+    @include sans-light;
+
+    @include min-screen($breakpoint-md) {
+        flex          : 1 0 100%;
+        margin-top    : 0;
+        margin-bottom : rem-calc($unit-default-spacing * 5);
+        font-size: rem-calc(27);
+    }
+
+}
+
+.sell-page__calculator__total-savings__total {
+    font-size : rem-calc(27);
+}
+
+.sell-page__calculator__input__h1 {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display         : flex;
+        justify-content : flex-start;
+        margin-bottom   : rem-calc($unit-default-spacing * 2);
+        text-align      : left;
+    }
+
+}
+
+.sell-page__calculator__breakdown {
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+
+    // highlight around SRE totals
+    &::before {
+        content  : '';
+        position : absolute;
+        top      : 0;
+        right    : 50%;
+        bottom   : 0;
+        left     : 0;
+        border   : 1px solid $primary;
+
+        @include min-screen($breakpoint-md) {
+            right  : 52%;
+            margin : rem-calc(-10 0 0 -10);
+        }
+
+    }
+
+}
+
+.sell-page__calculator__breakdown__h2 {
+    display     : flex;
+    align-items : center;
+    font-size   : rem-calc(18);
+}
+
+.sell-page__calculator__breakdown__h2__sre {
+    width  : rem-calc(50);
+    margin : rem-calc(0 $unit-default-spacing);
+    fill   : $primary-dark;
+}
+
+.sell-page__calculator__breakdown__row {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : flex-start;
+    padding         : rem-calc($unit-default-spacing ($unit-default-spacing * 2));
+
+    > * {
+        flex  : 0 0 auto;
+        width : 45%;
+    }
+
+}
+
+.sell-page__calculator__breakdown__row--header {
+    order : -1;
+}
+
+.sell-page__calculator__breakdown__row--highlight {
+    order   : -1;
+    margin  : rem-calc(($unit-default-spacing * 2) 0);
+    padding : rem-calc(($unit-default-spacing * 2));
+
+    @include min-screen($breakpoint-md) {
+        order         : 0;
+        margin-bottom : 0;
+    }
+
+    .sell-page__calculator__breakdown__row__column {
+        font-size   : rem-calc(21);
+        line-height : rem-calc(24);
+    }
+
+}
+
+.sell-page__calculator__breakdown__row__column {
+    font-size   : rem-calc(13);
+    line-height : rem-calc(16);
+}

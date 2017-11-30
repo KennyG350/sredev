@@ -1,0 +1,42 @@
+<div class="property-header width-constraint--max-xl width-constraint">
+  <div class="property-header__layout" itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
+    <div class="property-header__location">
+      <div class="property-header__location__line1 u-text-truncate strong" itemprop="streetAddress" itemprop="addressLocality">
+        <%= Sre.Listing.ViewHelper.street_address @listing %>
+      </div>
+      <div class="property-header__location__line2 u-text-truncate u-text-gray-500 strong">
+        <span itemprop="addressLocality"><%= @listing.city %></span>, <span itemprop="addressRegion"><%= @listing.state %></span> <span itemprop="postalCode"><%= @listing.zip_code %></span>
+      </div>
+    </div>
+    <ul class="property-header__meta property-meta">
+      <li class="property-meta__item">
+        <div class="strong">
+          <%= Sre.Listing.ViewHelper.format_number @listing.bedrooms %>
+        </div>
+        <div class="u-text-gray-700">
+          Beds
+        </div>
+      </li>
+      <li class="property-meta__item">
+        <div class="strong">
+          <%= Sre.Listing.ViewHelper.format_number @listing.baths %>
+        </div>
+        <div class="u-text-gray7500">
+          Bath
+        </div>
+      </li>
+      <li class="property-meta__item">
+        <div class="strong">
+          <%= if @listing.living_area do %>
+            <%= Sre.Listing.ViewHelper.format_number @listing.living_area %>
+          <% else %>
+            <%= @listing.square_footage |> Sre.Listing.ViewHelper.to_acres %>
+          <% end %>
+        </div>
+        <div class="u-text-gray-700">
+          <%= if @listing.living_area do "SQFT" else "ACR" end%>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

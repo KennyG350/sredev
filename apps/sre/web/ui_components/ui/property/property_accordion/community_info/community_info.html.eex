@@ -1,0 +1,26 @@
+<div class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Community Info
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <div class="grid u-font14">
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= Sre.Listing.ViewHelper.listing_detail("Features: ", @listing.community_features )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Association Name: ", @listing.association_name )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("HOA Fees: ", @listing.association_fee_total, :money)%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Fee Includes: ", @listing.association_fee_includes )%>
+        </ul>
+      </div>
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <!--<%= Sre.Listing.ViewHelper.listing_detail("Pets: ", @listing.are_pets_allowed )%>-->
+          <%= Sre.Listing.ViewHelper.listing_detail("Unit Total: ", @listing.units_in_building )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Restrictions: ", @listing.restrictions )%>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /end .accordion__content -->
+</div>

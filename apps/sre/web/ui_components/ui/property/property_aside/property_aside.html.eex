@@ -1,0 +1,34 @@
+<div id="property_aside" class="property-aside">
+  <%= Sre.UI.Property.PropertyDetailsFavoriteButton.render_template(
+    listing: @listing,
+    classname: "property-aside__favorite--desktop-only"
+  ) %>
+
+  <%= if Sre.Listing.ViewHelper.has_rebate @listing do %>
+  <%=
+    Sre.UI.Property.PropertyRebateFormula.render_template(
+      classname: "property-aside__rebate-formula",
+      listing: @listing
+  )%>
+  <% else %>
+  <h1 class="property-aside__price">
+    <div class="property-aside__price__label u-text-upper">
+      List Price
+    </div>
+    <div class="property-aside__price__value strong">
+      $<%= get_list_price(@listing) %>
+    </div>
+  </h1>
+  <% end %>
+  <div class="property-aside__contact">
+    <h2 class="h5 u-mbottom16 property-aside__content__header">
+      Tell me more about this property
+    </h2>
+    <%= Sre.UI.Property.PropertyContactForm.render_template(listing: @listing, user: assigns[:user]) %>
+  </div>
+  <%= Sre.UI.Button.ButtonDefault.render_template(
+    value: "Contact",
+    classname: "property-aside__contact__mobile-trigger button--expand elm-contact-form-btn",
+    id: "tour_cta"
+  )%>
+</div>

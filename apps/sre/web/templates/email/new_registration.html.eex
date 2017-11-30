@@ -1,0 +1,11 @@
+<div>
+  <p>Hello <%= @name%></p>
+  <br>
+  <p>You recently created an account at SRE.com
+    Please verify your email by clicking the link below: </p>
+  <%= link @verify_link, to: @verify_link %>
+
+  <br>
+  Thank You,
+  SRE.com
+</div>

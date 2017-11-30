@@ -1,0 +1,209 @@
+<article class="marketing-page buy-page">
+  <hgroup class="marketing-page__hero">
+    <h1 class="marketing-page__hero__h1">
+      Smart Homebuyers
+    </h1>
+    <h1 class="marketing-page__hero__h1">
+      SRE rebates to homebuyers all of our brokerage commission that exceeds 1% of the purchase price and provides full service for customer satisfaction.
+    </h1>
+  </hgroup>
+  <section class="marketing-page__section marketing-page__section--white">
+    <div class="u-mauto u-size-max-width">
+      <h1 class="marketing-page__section__h1">
+        How much can I save with SRE?
+      </h1>
+      <div class="buy-page__calculator__savings u-mbottom16">
+          Estimated Rebate with SRE:
+
+          <strong class="strong u-text-primary elm-buy-calculator-estimated-rebate">
+            $10,000
+          </strong>
+      </div>
+      <div class="buy-page__calculator elm-buy-calculator-slider">
+        <div class="buy-page__calculator__range">
+          <div class="buy-page__calculator__range__touch-target elm-buy-calculator-touch-target"></div>
+          <div class="buy-page__calculator__range__limit buy-page__calculator__range__limit--min">
+            <span class="buy-page__calculator__range__label elm-buy-calculator-limit-min">
+              $100,000
+            </span>
+          </div>
+          <!--
+            Label for knob
+            positioned in the absolute center of the calculator range
+            move left and right using transform: translateX()
+          -->
+          <div class="buy-page__calculator__label elm-buy-calculator-slider-label">
+            <div class="buy-page__calculator__label__heading u-text-nowrap">
+              Purchase Price
+            </div>
+            <div class="buy-page__calculator__label__input u-text-nowrap u-sans-light elm-buy-calculator-purchase-price">
+              $500,000
+            </div>
+          </div>
+          <!--
+            Contains input and knob
+            positioned in the absolute center of the calculator range
+            move left and right using transform: translateX()
+          -->
+          <div class="buy-page__calculator__value elm-buy-calculator-slider-knob">
+            <button
+              type="button"
+              class="buy-page__calculator__value__knob"
+            >
+            </button>
+          </div>
+          <div class="buy-page__calculator__range__limit buy-page__calculator__range__limit--max">
+            <span class="buy-page__calculator__range__label elm-buy-calculator-limit-max">
+              $5,000,000
+            </span>
+          </div>
+        </div><!-- /end .buy-page__calculator__range -->
+        <p class="p u-text-center u-font12 u-line16">
+        Estimated Rebates are calculated assuming the traditional 6% brokerage commission rate. SRE rebates to homebuyers all of our brokerage commission that exceeds 1% of the purchase price and provides full service for customer satisfaction. Rebate amounts may vary depending on actual purchase price and commission rate. Rebates not available where prohibited by law.</p>
+      </div><!-- /end .buy-page__calculator -->
+      <form class="elm-buy-calculator-geosuggest-form buy-page__calculator__geosuggest">
+        <div class="search-form__form__input-container u-mbottom16">
+          <div class="input-scaffold search-form__input search-form__buy__input">
+            <label for="buy_search" class="label input-scaffold__label">Location</label>
+            <input
+              id="buy_search"
+              type="text"
+              name="buy_search"
+              placeholder="Search another location"
+              value="<%= Sre.Location.ViewHelper.get_user_location(assigns[:user_location]) %>"
+              autocomplete="off"
+              class="input input-scaffold__input input--text input--md elm-buy-calculator-geosuggest-input"
+            >
+          </div>
+          <div class="search-form__form__suggest search-form__suggest elm-buy-calculator-geosuggest"></div>
+        </div>
+      </form>
+      <div class="marketing-page__section__subtext">
+        <a
+          class="a strong elm-buy-calculator-search-link"
+          id="buy_search"
+          href="<%= Sre.Location.ViewHelper.location_search_url(assigns[:user_location], @min_price, @max_price) %>"
+        >
+          <span class="elm-buy-calculator-number-of-homes">
+            <%= @nearby_listings_count %>
+          </span>
+          homes in
+          <span class="elm-buy-calculator-location">
+            <%= if Sre.Location.ViewHelper.has_user_location(assigns[:user_location]) do
+              Sre.Location.ViewHelper.get_user_location(assigns[:user_location])
+            end %>
+          </span>
+          match your search
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="marketing-page__section elm-buy-calculator-search-results-container"
+    <%= if length(@nearby_listings) == 0 do %>
+      style="display: none"
+    <% end %>
+  >
+    <div class="u-mauto u-size-max-width">
+      <h1 class="marketing-page__section__h1">
+        Homes in Your Price Range
+      </h1>
+
+      <div class="elm-buy-calculator-search-results">
+        <%= Sre.UI.Property.List.HomepageList.render_template listings: @nearby_listings, conn: @conn %>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-hero testimonial-hero--2">
+    <blockquote class="testimonial-hero__blockquote">
+      <div class="testimonial-hero__blockquote__content">
+        <p class="strong">
+          "I got full service from SRE and we closed in 30 days. If I buy again I will definitely go with SRE. I am highly recommending SRE."
+        </p>
+        <footer class="testimonial-hero__blockquote__footer">
+          <cite class="testimonial-hero__blockquote__footer__cite">
+            <strong class="strong">
+              G.P.
+            </strong>
+            Metro Honolulu
+          </cite>
+          <div class="testimonial-hero__blockquote__footer__rebate">
+            <strong class="strong">
+              Saved
+            </strong>
+            <span class="testimonial-hero__blockquote__footer__rebate__amount strong">
+              $26,500
+            </span>
+          </div>
+        </footer>
+      </div>
+    </blockquote>
+  </section>
+  <section class="marketing-page__section marketing-page__section--contact">
+    <div class="u-mauto u-size-max-width">
+      <div class="marketing-page__contact">
+        <div class="marketing-page__contact__content">
+          <img
+            class="marketing-page__contact__content__agent"
+            alt="Image of an SRE Agent"
+            src="<%= static_path(@conn, "/images/contact-agent-1.png") %>"
+          />
+          <h1 class="marketing-page__section__h1 marketing-page__contact__content__h1">
+            Contact an Agent
+          </h1>
+          <p class="marketing-page__section__subtext">
+            We’re here to help with all your real estate needs.
+          </p>
+        </div>
+        <form class="marketing-page__contact__form elm-message-form">
+          <%= Sre.UI.Form.Input.render_template(
+            id: "first_name",
+            label: "First Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Input.render_template(
+            id: "last_name",
+            label: "Last Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Input.render_template(
+            id: "email",
+            label: "Email",
+            type: "email",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Input.render_template(
+            id: "phone",
+            label: "phone",
+            type: "tel",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Textarea.render_template(
+            id: "message",
+            label: "Message",
+            placeholder: "",
+            classname: "u-mbottom16"
+          )%>
+          <div class="grid end--md">
+            <div class="grid__sm--12 grid__md--7">
+              <%= Sre.UI.Button.ButtonDefault.render_template(
+                value: "Send",
+                classname: "button button--expand u-mbottom0",
+                id: "buying-contact"
+              )%>
+            </div>
+          </div>
+          <div class="form-submit-error"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</article>

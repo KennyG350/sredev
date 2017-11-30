@@ -1,0 +1,148 @@
+<section
+  class="homepage"
+>
+  <div class="homepage__hero"> <img
+      class="homepage__hero__logo"
+      alt="SRE | Smart Real Estate"
+      src="<%= static_path(@conn, "/images/homepage-hero-logo.svg") %>"
+    />
+    <div class="homepage__hero__image"></div>
+    <div class="homepage__hero__md-content-container">
+      <div class="homepage__hero__h1-content-container">
+      <h1 style="font-size: 18px; margin-bottom: 5px;">Homebuyer Solution</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Homebuyers </h1>
+        <h1 class="homepage__hero__h2"> Our Clients save $20,000 on average when buying a home with SRE.
+          Nationwide, that&rsquo;s a potential savings of $40 billion. </h1>
+          <div class="homepage_seemore"><a href="/solution" class="button"> <span class="button__layout"> Learn More </span> </a></div>
+      </div>
+    </div>
+  </div>
+  <section class="marketing-page__section marketing-page__section--white">
+    <div class="homepage_coin_placement"><img class="homepage_coin" alt="" src="<%= static_path(@conn, "/images/SRE-COIN2.png") %>"/> </div>
+    <div class="u-mauto u-size-max-width">
+      <h1 class="marketing-page__section__h1 elm-buy-anchor"> How much can I save with SRE? </h1>
+      <div class="buy-page__calculator__savings u-mbottom16"> Estimated Rebate with SRE: <strong class="strong u-text-primary elm-buy-calculator-estimated-rebate"> $10,000 </strong> </div>
+      <div class="buy-page__calculator elm-buy-calculator-slider">
+        <div class="buy-page__calculator__range">
+          <div class="buy-page__calculator__range__touch-target elm-buy-calculator-touch-target"></div>
+          <div class="buy-page__calculator__range__limit buy-page__calculator__range__limit--min"> <span class="buy-page__calculator__range__label elm-buy-calculator-limit-min"> $100,000 </span> </div>
+          <!--
+            Label for knob
+            positioned in the absolute center of the calculator range
+            move left and right using transform: translateX()
+          -->
+          <div class="buy-page__calculator__label elm-buy-calculator-slider-label">
+            <div class="buy-page__calculator__label__heading u-text-nowrap"> Purchase Price </div>
+            <div class="buy-page__calculator__label__input u-text-nowrap u-sans-light elm-buy-calculator-purchase-price"> $500,000 </div>
+          </div>
+          <!--
+            Contains input and knob
+            positioned in the absolute center of the calculator range
+            move left and right using transform: translateX()
+          -->
+          <div class="buy-page__calculator__value elm-buy-calculator-slider-knob" style="left: 47%">
+            <button
+              type="button"
+              class="buy-page__calculator__value__knob"
+            > </button>
+          </div>
+          <div class="buy-page__calculator__range__limit buy-page__calculator__range__limit--max"> <span class="buy-page__calculator__range__label elm-buy-calculator-limit-max"> $10,000,000 </span> </div>
+        </div>
+        <!-- /end .buy-page__calculator__range -->
+        <p class="p u-text-center u-font12 u-line16"> Estimated Rebates are calculated assuming the traditional 6% brokerage commission rate. SRE rebates to homebuyers all of our brokerage commission that exceeds 1% of the purchase price and provides full service for customer satisfaction. Rebate amounts may vary depending on actual purchase price and commission rate. Rebates not available where prohibited by law.</p>
+      </div>
+      <!-- /end .buy-page__calculator -->
+      <form
+        class="search-form__form search-form__buy elm-buy-calculator-geosuggest-form buy-page__calculator__geosuggest"
+        data-initial-bounds="<%= Sre.Location.ViewHelper.get_user_location_bounds(assigns[:user_location]) %>"
+        data-location="<%= Sre.Location.ViewHelper.get_user_location(assigns[:user_location]) %>"
+      >
+        <div class="search-form__form__input-container"> <%= Sre.UI.Form.Input.render_template(
+            id: "buy_search",
+            classname: "search-form__input search-form__buy__input elm-buy-calculator-geosuggest-input",
+            type: "text",
+            placeholder: "Search a location / property"
+          ) %>
+          <div class="search-form__form__suggest search-form__suggest elm-buy-calculator-geosuggest"></div>
+        </div>
+        <button type="submit" class="search-form__form__button button"> <span class="button__layout"> <%= Sre.UI.Svg.Icon.render_template(
+              icon: "search",
+              classes: ["search-form__form__button__icon"])
+            %> <span class="search-form__button__label"> Search </span> </span> </button>
+      </form>
+    </div>
+  </section>
+  <section class="homepage__feeds">
+    <h1 class="marketing-page__section__h1 u-mauto u-size-readability u-text-center u-mbottom16 u-mtop28"><!-- LISTINGS GUIDE MAP -->
+      Listings Guide Map </h1>
+    <div class="u-mauto">
+      <h1 class="h4 u-mauto u-size-readability u-text-center u-mbottom8 homepage__red-listing"><!-- LISTINGS NUMBER -->
+        2,104,904 Listings Nationwide </h1>
+      <div class="elm-feed-data" data-feeds="<%= @feeds_json %>"></div>
+      <div class="elm-feed-map-continental-us" style="height: 350px; margin-bottom: 10px"></div>
+      <div class="elm-feed-map-hawaii" style="height: 200px;"></div>
+    </div>
+  </section>
+  <section class="homepage__testimonial">
+    <h1 class="h3 u-mauto u-size-readability u-text-center u-mbottom16"> Testimonials </h1>
+    <div class="u-text-center"> <a href="/testimonials" class="button"> <span class="button__layout"> Learn More </span> </a> </div>
+    <div class="testimonial-tiles">
+      <div class="testimonial-tiles__tile testimonial-tiles__tile--tile1">
+        <blockquote class="testimonial-tiles__blockquote">
+          <div class="testimonial-tiles__quote"> &quot;It was awesome to see the rebate of over $12,500 applied towards our closing cost on the day of our signing! It practically covered all of the closing costs!&quot; </div>
+          <div class="testimonial-tiles__quote-info"> <span class="testimonial-tiles__author"> <strong class="u-sans-bold">S.B.</strong> Metro Honolulu </span>
+            <div> <span class="testimonial-tiles__rebate"> Received </span> <span class="testimonial-tiles__rebate__amount"> $12,500 </span> </div>
+          </div>
+        </blockquote>
+      </div>
+      <div class="testimonial-tiles__tile testimonial-tiles__tile--tile2">
+        <blockquote class="testimonial-tiles__blockquote">
+          <div class="testimonial-tiles__quote"> &quot;I got full service from SRE and we closed in 30 days. If I buy again I will definitely go with SRE. I am highly recommending SRE.&quot; </div>
+          <div class="testimonial-tiles__quote-info"> <span class="testimonial-tiles__author"> <strong class="u-sans-bold">G.P.</strong> Metro Honolulu </span>
+            <div> <span class="testimonial-tiles__rebate"> Received </span> <span class="testimonial-tiles__rebate__amount"> $26,500 </span> </div>
+          </div>
+        </blockquote>
+      </div>
+      <div class="testimonial-tiles__tile testimonial-tiles__tile--tile3">
+        <blockquote class="testimonial-tiles__blockquote">
+          <div class="testimonial-tiles__quote"> &quot;This rebate is such an important amount which I can utilize very effectively. I will recommend SRE to our friends and other investors.&quot; </div>
+          <div class="testimonial-tiles__quote-info"> <span class="testimonial-tiles__author"> <strong class="u-sans-bold">V.C.</strong> Metro Honolulu </span>
+            <div> <span class="testimonial-tiles__rebate"> Received </span> <span class="testimonial-tiles__rebate__amount"> $525,375 </span> </div>
+          </div>
+        </blockquote>
+      </div>
+      <div class="testimonial-tiles__tile testimonial-tiles__tile--tile4">
+        <blockquote class="testimonial-tiles__blockquote">
+          <div class="testimonial-tiles__quote"> &quot;We have experience working with realtors. This is my first time using SRE. It was truly a pleasure working with SRE and we would recommend them for your next real estate needs.&quot; </div>
+          <div class="testimonial-tiles__quote-info"> <span class="testimonial-tiles__author"> <strong class="u-sans-bold">D.C.</strong> La Jolla, CA </span>
+            <div> <span class="testimonial-tiles__rebate"> Received </span> <span class="testimonial-tiles__rebate__amount"> $40,500 </span> </div>
+          </div>
+        </blockquote>
+      </div>
+      <div class="testimonial-tiles__tile testimonial-tiles__tile--tile5">
+        <blockquote class="testimonial-tiles__blockquote">
+          <div class="testimonial-tiles__quote"> &quot;We were so fortunate to find SRE in the Sunday paper. I called the SRE agent right away. SRE was prompt and very reliable, accomodating our search for a new home. Thank you SRE.&quot; </div>
+          <div class="testimonial-tiles__quote-info"> <span class="testimonial-tiles__author"> <strong class="u-sans-bold">D.L.</strong> Fallbrook, CA </span>
+            <div> <span class="testimonial-tiles__rebate"> Received </span> <span class="testimonial-tiles__rebate__amount"> $8,400 </span> </div>
+          </div>
+        </blockquote>
+      </div>
+      <div class="testimonial-tiles__tile testimonial-tiles__tile--tile6">
+        <blockquote class="testimonial-tiles__blockquote">
+          <div class="testimonial-tiles__quote"> &quot;SRE helped me buy a house in Santee, CA. SRE is very well organized and I would strongly recommend them to anyone that needs to buy or sell homes.&quot; </div>
+          <div class="testimonial-tiles__quote-info"> <span class="testimonial-tiles__author"> <strong class="u-sans-bold">M.V.</strong> San Diego, CA </span>
+            <div> <span class="testimonial-tiles__rebate"> Received </span> <span class="testimonial-tiles__rebate__amount"> $7,761 </span> </div>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <%= Sre.UI.Company.Overview.render_template(
+  )%>
+
+  <section class="marketing-page__section marketing-page__section--contact">
+    <%= Sre.UI.Company.Branches.render_template(
+    )%>
+  </section>
+</section>

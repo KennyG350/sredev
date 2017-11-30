@@ -1,0 +1,47 @@
+// *******************************************
+// *******************************************
+
+    // Property meta info list component
+
+// *******************************************
+// *******************************************
+
+.property-meta {
+    display         : flex;
+    flex-wrap       : wrap;
+    justify-content : center;
+    align-items     : stretch;
+    font-size       : rem-calc(12);
+    text-align      : center;
+    line-height     : rem-calc(14);
+}
+
+.property-meta__item {
+    position        : relative;
+    display         : inline-flex;
+    flex-flow       : column;
+    justify-content : center;
+    align-items     : center;
+    flex            : 1 1 auto;
+
+    &::before,
+    &::after {
+        content     : '';
+        position    : absolute;
+        top         : 0;
+        bottom      : 0;
+        left        : 0;
+        border-left : 1px solid $gray-100;
+    }
+
+    &::after {
+        margin-left       : 1px;
+        border-left-color : rgba($white, .7);
+    }
+
+    &:first-child::before,
+    &:first-child::after {
+        display : none;
+    }
+
+}

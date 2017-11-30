@@ -1,0 +1,120 @@
+<hgroup class="testimonials-page__hgroup">
+    <hgroup class="marketing-page__hero">
+    <h1 class="h1-smart drop-15"> Smart Homebuyer Solution </h1>
+    <div>
+    <h1 class="marketing-page__hero__h2">SRE has developed an innovative Smart Homebuyer Solution by using information technology and collaborating with our partners.</h4>
+  </hgroup><article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+  <h1 class="h2 u-mbottom16">
+    Smart Homebuyer Solution
+  </h1>
+  <h2 class="h3">
+    Biggest Savings System
+  </h2>
+  <p class="p">
+    SRE rebates to our clients all of our real estate brokerage commission exceeding 1% of the purchase price while providing full-service for customer satisfaction. Our clients save $20,000 on average when buying a home with SRE.
+     <div class="u-text-center"> <a href="/testimonials" class="button"> <span class="button__layout"> See More </span> </a> </div>
+  </p>
+  <h2 class="h3">
+    Nationwide Service Network
+  </h2>
+  <p class="p">
+    SRE has established a nationwide branch network where our agents at your nearest branch office will provide full services for customer satisfaction.
+  </p>
+  <h2 class="h3">
+    Smart One-Stop Shop
+  </h2>
+  <p class="p">
+    SRE has developed a beneficial One-Stop Shop for Homebuyers by collaborating with our partners in mortgage home loan, insurance, escrow, appraisal, and other companies.
+  </p>
+</article>
+<div class="u-mauto u-size-max-width" align="left">
+    <div class="mortgage-branch-margins" align="left">
+    <hr>
+    <div class="grid">
+        <div class="grid__md--12 mortpage-calctitle" align="center">SRE Branch Offices </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Alabama) LLC</li>
+              <li>SRE Matrix (Alaska) LLC</li>
+              <li>SRE Matrix (Arizona) Inc.</li>
+              <li>SRE Matrix (Arkansas) LLC</li>
+              <li>SRE Matrix Inc. (California)</li>
+              <li>SRE Matrix (Colorado) LLC</li>
+              <li>SRE Matrix (Connecticut) LLC</li>
+              <li>SRE Matrix (Delaware) LLC</li>
+              <li>SRE Matrix (Dist. of Columbia) LLC</li>
+              <li>BBK Realty and Management LLC (Florida)</li>
+              <li>SRE Matrix (Georgia) LLC</li>
+              <li>SRE Matrix Inc. (Hawaii)</li>
+              <li>SRE Matrix (Idaho) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Illinois) LLC</li>
+              <li>SRE Matrix Indiana LLC</li>
+              <li>SRE Matrix (Iowa) LLC</li>
+              <li>SRE Matrix (Kansas) LLC</li>
+              <li>SRE Matrix (Kentucky) LLC</li>
+              <li>SRE Matrix (Louisiana) LLC</li>
+              <li>SRE Matrix (Maine) LLC</li>
+              <li>SRE Matrix (Maryland) LLC</li>
+              <li>SRE Matrix (Massachusetts) LLC</li>
+              <li>SRE Matrix (Michigan) LLC</li>
+              <li>SRE Minneapolis LLC (Minnesota)</li>
+              <li>SRE Matrix (Mississippi) LLC</li>
+              <li>SRE Matrix (Missouri) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Montana) LLC</li>
+              <li>SRE Matrix (Nebraska) LLC</li>
+              <li>SRE Matrix Inc. (Nevada)</li>
+              <li>SRE Matrix (New Hampshire) LLC</li>
+              <li>SRE Matrix (New Jersey) LLC</li>
+              <li>SRE Matrix (New Mexico) LLC</li>
+              <li>SRE Matrix (New York) LLC</li>
+              <li>SRE Matrix (North Carolina) LLC</li>
+              <li>SRE Matrix (North Dakota) LLC</li>
+              <li>SRE Matrix, LLC (Ohio)</li>
+              <li>SRE Matrix (Oklahoma) LLC</li>
+              <li>SRE Matrix (Oregon) LLC</li>
+              <li>SRE Matrix (Pennsylvania) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Rhode Island) LLC</li>
+              <li>SRE Matrix (South Carolina) LLC</li>
+              <li>SRE Matrix (South Dakota) LLC</li>
+              <li>SRE Matrix (Tennessee) LLC</li>
+              <li>SRE Matrix (Texas) LLC</li>
+              <li>Utah Real Estate Information, PLLC (Utah)</li>
+              <li>SRE Matrix (Vermont) LLC</li>
+              <li>SRE Matrix (Virginia) LLC</li>
+              <li>SRE Washington LLC (Washington)</li>
+              <li>SRE Matrix (West Virginia) LLC</li>
+              <li>SRE Matrix (Wisconsin) LLC</li>
+              <li>SRE Matrix (Wyoming) LLC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mortpage-calctitle" align="center">SRE Concierge Center</div>
+
+    <div class="contact-page__offices__office u-font12 u-text-gray-700 u-line14 mortgage-bot-20" align="center">
+      <p class="mortgage-add-top">17550 N. Perimeter Dr. Ste 250 Scottsdale, AZ 85255</span><br>
+      Tel: <a class="a u-link-clean" href="tel:+14807710636">480.771.0636</a>
+      Email: <a class="a u-link-clean" href="mailto:info@sre.com">info@sre.com</a></p>
+    </div>
+  </div>

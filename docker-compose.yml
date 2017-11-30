@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  web:
+    image: isaiahdw/knledg-phoenix-app:1.1
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./:/app"

@@ -1,0 +1,79 @@
+// *******************************************
+// *******************************************
+
+    // Location search component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$location-search-border-color : $header-border-color; // ui/header/header
+
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+$unit-touch           : $unit-touch;
+
+// container element
+.location-search {
+    position     : relative;
+    display      : flex;
+    align-items  : stretch;
+    flex         : 1 0 auto;
+    margin-left  : rem-calc(9);
+    padding-left : rem-calc(9);
+    border-left  : 1px solid $location-search-border-color;
+}
+
+.location-search__prefix-icon {
+    align-self : center;
+    width      : rem-calc(20);
+    height     : rem-calc(20);
+    margin     : 0;
+    fill       : $gray-300;
+}
+
+// input container element
+.location-search__input {
+    flex        : 1 0 auto;
+    margin-left : rem-calc($unit-default-spacing);
+    border      : 0;
+    background  : transparent;
+    font-size   : 16px;
+    color       : $gray-800;
+    @include sans-bold;
+
+    @include min-screen($breakpoint-md) {
+        min-width   : rem-calc(200);
+        font-size   : rem-calc(13);
+        line-height : rem-calc(13);
+    }
+
+    &:focus {
+        outline : none;
+    }
+
+    @include placeholder {
+        color : $gray-400;
+        @include sans-regular;
+    }
+
+}
+
+// button
+.location-search__button {
+
+    @include min-screen($breakpoint-md) {
+        width      : rem-calc($unit-touch * .75);
+        height     : rem-calc($unit-touch * .75);
+        margin-top : rem-calc(12);
+        border     : 1px solid $primary;
+    }
+
+}
+
+// button icon
+.location-search__button__icon {
+    width  : rem-calc(16);
+    height : rem-calc(16);
+    margin : 0;
+}

@@ -1,0 +1,28 @@
+<%= unless @total_results > 0 do %>
+  <p>No Results Found</p>
+<% end %>
+<ul class="search__properties__results__list__layout">
+  <%= for listing <- @listings do %>
+  <li class="search__properties__results__list__layout__item">
+    <a href="/properties/<%= listing.url %>" class="u-link-clean elm-listing-link">
+      <%= Sre.UI.Card.PropertyCard.render_template listing: listing %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+
+<%= Sre.UI.Property.List.Pagination.render_template(
+  total_results: @total_results,
+  current_page: @current_page,
+  per_page: Application.get_env(:sre, :listings_per_page_per_view)[:card],
+  classname: "search__results__pagination"
+) %>
+
+
+<div class="u-font10 u-line12 u-mtop21">
+  <%= for disclaimer <- Sre.Listing.ViewHelper.get_uniq_discliamers(@listings) do %>
+      <div class="u-font10">
+        <%= raw(disclaimer) %>
+      </div>
+  <% end %>
+</div>

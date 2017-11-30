@@ -1,0 +1,41 @@
+<form class="property-contact-form elm-property-contact-form" method="post" action="">
+  <input type="hidden" name="listing_id" value="<%= @listing.id %>">
+
+  <div class="grid">
+    <div class="grid__sm--12 grid__md--6">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "first_name",
+        label: "First Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+      ) %>
+    </div>
+    <div class="grid__sm--12 grid__md--6">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "last_name",
+        label: "Last Name",
+        type: "text",
+        value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+      ) %>
+    </div>
+  </div>
+  <%= Sre.UI.Form.Input.render_template(
+    id: "email",
+    label: "Email",
+    type: "email",
+    value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+  ) %>
+  <%= Sre.UI.Form.Input.render_template(
+    id: "phone",
+    label: "Phone",
+    type: "text",
+    value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+  ) %>
+  <%= Sre.UI.Form.Textarea.render_template(
+    id: "message",
+    label: "Message",
+    placeholder: "I'm interested in #{Sre.Listing.ViewHelper.street_address @listing}..."
+  ) %>
+  <%= Sre.UI.Button.ButtonDefault.render_template value: "Send Message", classname: "button--expand button u-font21", id: "property-contact" %>
+  <div class="form-submit-error"></div>
+</form>

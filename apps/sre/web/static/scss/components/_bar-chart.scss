@@ -1,0 +1,25 @@
+// *******************************************
+// *******************************************
+
+    // Bar chart component
+
+// *******************************************
+// *******************************************
+
+.bar-chart {
+    position : relative;
+
+    * {
+        position : relative;
+        z-index  : $stack-top;
+    }
+
+}
+
+.bar-chart__bar {
+    position : absolute;
+    top      : 0;
+    bottom   : 0;
+    left     : 0;
+    z-index  : $stack-bot;
+}

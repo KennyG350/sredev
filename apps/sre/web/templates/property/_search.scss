@@ -1,0 +1,432 @@
+// *******************************************
+// *******************************************
+
+    // Property search page
+    // sre.com/properties?
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$mobile-header-height                  : $unit-sm-header-height;
+$desktop-header-height                 : $unit-md-header-height;
+$mobile-edge-space                     : $unit-sm-edge-space;
+$unit-md-edge-space                    : $unit-md-edge-space;
+$grid-gutter                           : $unit-grid-gutter;
+$search-width-5of12                    : $unit-grid-5of12;
+$search-width-7of12                    : $unit-grid-7of12;
+$unit-property-detail-content-width    : $unit-property-detail-content-width;
+// settings/z-indexes
+$search-filters-index                  : $index-drawer;
+$index-modal                           : $index-modal;
+$shadow                                : $shadow; // settings/stylistic
+
+$search-desktop-property-header-height : $desktop-header-height * .75;
+$search-results-breakpoint-1           : 1240;
+
+// show mobile filters modifier
+// added to <body> element
+.search--mobile-filters-visible {
+    overflow : hidden;
+}
+
+// container element
+// 1. use fixed positioning to fix scrolling viewport overflow
+.search {
+    min-height : calc(100vh - #{rem-calc($mobile-header-height)});
+
+    @include min-screen($breakpoint-md) {
+        position    : fixed; // 1.
+        top         : rem-calc($desktop-header-height);
+        right       : 0;
+        bottom      : 0;
+        left        : 0;
+        display     : flex;
+        align-items : stretch;
+        height      : calc(100vh - #{rem-calc($desktop-header-height)});
+        min-height  : 0;
+        margin      : 0;
+        overflow    : hidden;
+    }
+
+}
+
+// loading placeholder
+.search__property__loading {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    height          : 100%;
+    background      : $gray-050;
+}
+
+.search__property__loading__label {
+    font-size   : rem-calc(21);
+    color       : $gray-400;
+    text-shadow : $text-shadow-white;
+    @include sans-bold;
+}
+
+// list of property results and filters
+.search__properties {
+
+    @include min-screen($breakpoint-md) {
+        position     : relative;
+        flex         : 0 0 $search-width-7of12;
+        width        : $search-width-7of12;
+        height       : calc(100vh - #{rem-calc($desktop-header-height)}) !important;
+        max-width    : rem-calc(1024);
+        overflow     : hidden;
+        border-right : 1px solid $gray-200;
+    }
+
+    .search--mobile-map-visible & {
+      height   : calc(100vh - #{rem-calc($unit-sm-header-height * 1.5)});
+      overflow : hidden;
+    }
+
+}
+
+// search properties filters
+// off canvas on mobile
+// fixed to top of property list on desktop
+.search__properties__filters {
+    position   : fixed;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : $search-filters-index;
+    transform  : translateY(120%);
+    background : $white;
+    transition : transform 350ms $ease-in-out-quad;
+
+    @include min-screen($breakpoint-md) {
+        position      : absolute;
+        top           : 0;
+        right         : 0;
+        bottom        : auto;
+        left          : 0;
+        height        : 0;
+        padding       : rem-calc(0 $grid-gutter);
+        transform     : none;
+        overflow      : hidden;
+        border-bottom : 1px solid $gray-100;
+        transition    : height 350ms $ease-in-out-quad;
+    }
+
+    // show filters modifier
+    // added to <body> element
+    .search--filters-visible & {
+        transform : translateY(0);
+        overflow : scroll;
+
+        @include min-screen($breakpoint-md) {
+            height   : calc(100vh - #{rem-calc($desktop-header-height)});
+        }
+
+    }
+
+}
+
+// property search results section
+// contains results nav and list
+// js sets height and vertical offset
+.search__properties__results {
+
+    @include min-screen($breakpoint-md) {
+        height   : calc(100vh - #{rem-calc($desktop-header-height)});
+        overflow : hidden;
+    }
+
+    &::before {
+        content    : '';
+        position   : absolute;
+        top        : 0;
+        right      : 0;
+        bottom     : 0;
+        left       : 0;
+        z-index    : $index-modal;
+        opacity    : 0;
+        visibility : hidden;
+        background : rgba($gray-050, .9);
+        transition : opacity 300ms ease,
+                     visibility 300ms ease;
+    }
+
+}
+
+// loading modifier
+.search__properties__results--loading::before {
+    opacity    : 1;
+    visibility : visible;
+}
+
+
+// property results nav
+.search__properties__results__nav {
+    margin        : rem-calc(0 (-$mobile-edge-space));
+    padding       : rem-calc(3 $mobile-edge-space);
+    border-bottom : 1px solid $gray-200;
+
+    @include min-screen($breakpoint-md) {
+        height  : rem-calc($desktop-header-height);
+        margin  : 0;
+        padding : rem-calc(0 ($unit-default-spacing * 2));
+    }
+
+}
+
+// property search results list
+// scrollable section
+// 1. set height 100% viewport height + header height + search nav height
+// 2. results list scrolls, not the page
+.search__properties__results__list {
+    overflow : hidden;
+
+    @include min-screen($breakpoint-md) {
+        display    : flex;
+        flex-flow  : column;
+        height     : calc(100vh - #{rem-calc($desktop-header-height * 2)}); // 1.
+        padding    : rem-calc(0 $grid-gutter);
+        overflow   : hidden;
+        overflow-y : auto; // 2.
+    }
+
+}
+
+.search__properties__results__list__container {
+    flex : 1 0 auto;
+}
+
+// footer rendered at the bottom of results list
+.search__properties__results__list__footer {
+
+    @include min-screen($breakpoint-md) {
+        margin      : rem-calc($grid-gutter (-$grid-gutter) 0);
+        padding-top : rem-calc($grid-gutter);
+    }
+
+}
+
+.search__properties__results__list__layout {
+
+    @include min-screen(rem-calc($search-results-breakpoint-1)) {
+        display   : flex;
+        flex-wrap : wrap;
+    }
+
+}
+
+.search__properties__results__list__layout__item {
+    padding : rem-calc($unit-default-spacing 0);
+
+    @include min-screen(rem-calc($search-results-breakpoint-1)) {
+        flex      : 1 0 50%;
+        max-width : 50%;
+        padding   : rem-calc($unit-default-spacing / 2);
+    }
+
+}
+
+// results pagination
+.search__results__pagination {
+    margin : rem-calc(30 0);
+}
+
+// map container
+.search__map {
+    position   : fixed;
+    top        : rem-calc($unit-sm-header-height + 31);
+    right      : 0;
+    bottom     : 0;
+    left       : 0;
+    z-index    : $stack-top;
+    transform  : translateX(-100%);
+    background : $primary;
+    transition : transform 300ms $ease-in-out-quad;
+
+    @include min-screen($breakpoint-md) {
+        position   : relative;
+        top        : auto;
+        right      : auto;
+        bottom     : auto;
+        left       : auto;
+        z-index    : auto;
+        display    : block;
+        flex       : 1 1 $search-width-5of12;
+        height     : calc(100vh - #{rem-calc($desktop-header-height)});
+        transform  : none !important;
+        transition : none !important;
+    }
+
+    .search--mobile-map-visible & {
+        transform : translateX(0);
+    }
+
+}
+
+// property overlay
+.search__property {
+    position                   : fixed;
+    top                        : 0;
+    right                      : 0;
+    bottom                     : 0;
+    left                       : 0;
+    z-index                    : $index-modal;
+    opacity                    : 0;
+    visibility                 : hidden;
+    overflow                   : auto;
+    -webkit-overflow-scrolling : touch;
+    background                 : $gray-050;
+    transition                 : opacity 300ms ease,
+                                 visibility 30ms ease;
+
+    @include min-screen($breakpoint-md) {
+        top        : rem-calc($app-header-md-height);
+        padding    : rem-calc(0 $unit-sm-edge-space);
+        background : rgba($black, .3);
+    }
+
+}
+
+// visibility modifier
+.search__property--visible {
+    opacity    : 1;
+    visibility : visible;
+}
+
+// page content
+.search__property__container {
+    position  : relative;
+    z-index   : $stack-top;
+    max-width : rem-calc($unit-property-detail-content-width);
+    margin    : 0 auto;
+
+    @include min-screen($breakpoint-md) {
+        height     : calc(100vh - #{rem-calc($unit-md-header-height)});
+        opacity    : 0;
+        transform  : translateY(100px);
+        box-shadow : $shadow;
+        background : $white;
+        transition : transform 200ms $ease-in-out-quad,
+                     opacity 100ms ease;
+    }
+
+    .search__property--visible & {
+
+        @include min-screen($breakpoint-md) {
+            opacity   : 1;
+            transform : translateY(0);
+        }
+
+    }
+
+    // fix property container styles when
+    // rendered in overlay
+    // see _property.scss
+    .property {
+        margin : 0;
+
+        @include min-screen($breakpoint-md) {
+            border-right : 0;
+            border-left  : 0;
+            background   : transparent;
+        }
+
+    }
+
+    // scroll left side when page is rendered
+    // in overlay
+    // see _property.scss
+    .property__viewport {
+
+        @include min-screen($breakpoint-md) {
+            height                     : calc(100vh - #{rem-calc($unit-md-header-height)});
+            overflow                   : hidden;
+            overflow-y                 : auto;
+            -webkit-overflow-scrolling : touch;
+        }
+
+    }
+
+}
+
+// page header
+.search__property__header {
+    position        : relative;
+    z-index         : $stack-top;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : stretch;
+    height          : rem-calc($mobile-header-height);
+    padding         : 0;
+    border          : 1px solid $gray-200;
+    background      : $white;
+
+    @include min-screen($breakpoint-md) {
+        height     : rem-calc($search-desktop-property-header-height);
+        box-shadow : $shadow;
+    }
+
+}
+
+.search__property__header__group {
+    display     : flex;
+    align-items : stretch;
+
+    &:first-child > :first-child {
+        border-left : 0;
+    }
+
+}
+
+// action items
+.search__property__header__action {
+    display         : flex;
+    align-items     : center;
+    padding         : rem-calc(0 9);
+    border-left     : 1px solid $gray-100;
+    font-size       : rem-calc(13);
+    color           : $gray-800;
+    text-decoration : none;
+
+    @include min-screen($md) {
+        padding : rem-calc(0 $mobile-edge-space);
+    }
+
+    .icon {
+        width  : rem-calc(13);
+        height : rem-calc(13);
+        margin : rem-calc(0 6 0 0);
+        fill   : $gray-800;
+    }
+
+}
+
+// expand property to new page action
+.search__property__header__action--expand {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display : flex;
+    }
+}
+
+.search__property__content {
+    background : $white;
+
+    @include min-screen($breakpoint-md) {
+        background : $gray-050;
+    }
+
+    .property__viewport {
+
+        @include min-screen($breakpoint-md) {
+            height : calc(100vh - #{rem-calc($search-desktop-property-header-height + $unit-md-header-height)});
+        }
+
+    }
+
+}

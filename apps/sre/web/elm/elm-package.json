@@ -1,0 +1,32 @@
+{
+    "version": "1.0.0",
+    "summary": "Elm components for sre.com",
+    "repository": "https://github.com/user/project.git",
+    "license": "BSD3",
+    "source-directories": [
+        "./apps",
+        "./routes",
+        "./lib",
+        "./ui"
+    ],
+    "exposed-modules": [],
+    "dependencies": {
+        "elm-community/elm-test": "3.1.0 <= v < 4.0.0",
+        "elm-community/list-extra": "4.0.0 <= v < 5.0.0",
+        "elm-community/maybe-extra": "3.0.0 <= v < 4.0.0",
+        "elm-lang/core": "5.0.0 <= v < 6.0.0",
+        "elm-lang/html": "2.0.0 <= v < 3.0.0",
+        "elm-lang/http": "1.0.0 <= v < 2.0.0",
+        "elm-lang/keyboard": "1.0.0 <= v < 2.0.0",
+        "elm-lang/mouse": "1.0.1 <= v < 2.0.0",
+        "elm-lang/navigation": "2.0.1 <= v < 3.0.0",
+        "elm-lang/svg": "2.0.0 <= v < 3.0.0",
+        "elm-lang/virtual-dom": "2.0.2 <= v < 3.0.0",
+        "eskimoblood/elm-color-extra" : "4.0.0 <= v < 5.0.0",
+        "evancz/url-parser": "2.0.0 <= v < 3.0.0",
+        "ggb/numeral-elm": "1.2.3 <= v < 2.0.0",
+        "jinjor/elm-debounce": "2.1.1 <= v < 3.0.0",
+        "knledg/touch-events": "2.1.1 <= v < 3.0.0"
+    },
+    "elm-version": "0.18.0 <= v < 0.19.0"
+}

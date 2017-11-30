@@ -1,0 +1,24 @@
+<%= Sre.UI.Button.FavoritePropertyButton.render_template(
+  listing: @listing,
+  classname: "property-aside__favorite " <> @classname,
+  favorited_classname: "property-aside__favorite--favorited"
+) %>
+  <div class="property-aside__favorite__layout">
+    <span class="property-aside__favorite__content property-aside__favorite__content--favorited">
+      <%= Sre.UI.Svg.Icon.render_template icon: "heart", classes: ["property-aside__favorite__content__icon"] %>
+      Favorited
+      <span class="u-hidden-visually">
+        Unfavorite this listing:
+        <%= Sre.Listing.ViewHelper.street_address @listing %>
+      </span>
+    </span>
+    <span class="property-aside__favorite__content property-aside__favorite__content--favorite">
+      <%= Sre.UI.Svg.Icon.render_template icon: "heart_empty", classes: ["property-aside__favorite__content__icon"] %>
+      Favorite
+      <span class="u-hidden-visually">
+        Favorite this listing:
+        <%= Sre.Listing.ViewHelper.street_address @listing %>
+      </span>
+    </span>
+  </div>
+</button>

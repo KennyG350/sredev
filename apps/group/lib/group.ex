@@ -1,0 +1,2 @@
+defmodule Group do
+end

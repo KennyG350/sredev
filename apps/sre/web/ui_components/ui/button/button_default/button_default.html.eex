@@ -1,0 +1,13 @@
+<%= if @disabled? do %>
+  <button class="button button--disabled <%= @classname %>" disabled>
+    <span class="button__layout" <%= if assigns[:id] do %>id="<%= @id %>"<% end %>>
+          <%= @value %>
+    </span>
+  </button>
+<% else %>
+  <button class="button <%= @classname %>" type="<%= @type %>">
+    <span class="button__layout" <%= if assigns[:id] do %>id="<%= @id %>"<% end %>>
+        <%= @value %>
+    </span>
+  </button>
+<% end %>

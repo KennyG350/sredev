@@ -1,0 +1,30 @@
+.btn-see-more {
+margin-top: 10px;
+}
+
+a.link {
+    color: $sre-primary;
+}
+
+.smart-one-stop-shop {
+margin-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .hr {display: none;}
+  .fintech-page__contact__content__agent {margin-top: 40px;}
+   }
+
+.mobile {
+display : block!important;
+@include min-screen($breakpoint-md) {
+     display : none!important;
+}
+}
+
+.desktop {
+display : none!important;
+@include min-screen($breakpoint-md) {
+     display : block!important;
+}
+}

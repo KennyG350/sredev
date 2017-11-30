@@ -1,0 +1,27 @@
+<div class="search-form <%= @classname %>">
+  <form class="search-form__form search-form__buy elm-search-form-buy">
+    <div class="search-form__form__input-container">
+      <%= Sre.UI.Form.Input.render_template(
+        id: "buy_search",
+        classname: "search-form__input search-form__buy__input elm-search-form-buy-input",
+        type: "text",
+        placeholder: "Where would you like to live?"
+      ) %>
+      <div class="search-form__form__suggest search-form__suggest elm-search-form-buy-suggest"></div>
+    </div>
+    <button
+      class="search-form__form__button button"
+      type="submit"
+    >
+      <span class="button__layout">
+        <%= Sre.UI.Svg.Icon.render_template(
+          icon: "search",
+          classes: ["search-form__form__button__icon"])
+        %>
+        <span class="search-form__button__label">
+          Search
+        </span>
+      </span>
+    </button>
+  </form>
+</div><!-- /end .search-form -->

@@ -1,0 +1,88 @@
+// *******************************************
+// *******************************************
+
+    // App footer component
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-sm-edge-space   : $unit-sm-edge-space;
+$unit-md-edge-space   : $unit-md-edge-space;
+$unit-default-spacing : $unit-default-spacing;
+
+// container element
+.footer {
+
+     background : #00b3e6;
+     color: white;
+
+     @include min-screen($breakpoint-md) {
+        //background : $gray-900;
+        //color      : $gray-050;
+        background : #00b3e6;
+        color      : $white;
+    }
+
+}
+
+// sitemap nav
+.footer__nav__list {
+    display : none;
+
+    @include min-screen($breakpoint-md) {
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+    }
+
+}
+
+
+// social nav
+.footer__social {
+
+    @include min-screen($breakpoint-md) {
+        margin        : rem-calc(30 0);
+        padding       : rem-calc(30 0);
+        border-top    : 1px solid rgba($white, .1);
+        border-bottom : 1px solid rgba($white, .1);
+    }
+
+}
+
+.footer__nav__item {
+    padding : rem-calc(0 $unit-default-spacing);
+}
+
+.footer__social__h1 {
+    font-size : rem-calc(21);
+}
+
+.footer__social__nav {
+    margin : rem-calc(($unit-default-spacing * 2) 0);
+}
+
+.footer__social__nav__item {
+    flex : 1 0 auto;
+
+    @include min-screen($breakpoint-md) {
+        flex-grow : 0;
+        margin    : rem-calc(0 $unit-default-spacing);
+    }
+
+}
+
+.footer__legal__equal-opportunity {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    margin-bottom   : rem-calc($unit-default-spacing * 2);
+}
+
+.footer__legal__equal-opportunity__svg {
+    width        : rem-calc(21);
+    margin-right : rem-calc($unit-default-spacing);
+    fill         : $gray-300;
+}

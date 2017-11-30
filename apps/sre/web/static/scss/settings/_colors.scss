@@ -1,0 +1,107 @@
+// *******************************************
+// *******************************************
+
+    // Color vars
+
+// *******************************************
+// *******************************************
+
+/////////////////////////////////////////////
+// Non-semantic color var names
+// DON'T USE !!!
+/////////////////////////////////////////////
+
+$white               : #fff;
+$black               : #20242b;
+$sre-primary         : #00b3e6;
+$sre-primary-dark    : #1392ca;
+$sre-secondary       : #14e29e;
+$sre-secondary-light : #0cf3a7;
+$green               : #4caf50;
+$mid-green           : #43A047;
+$orange              : #fd7037;
+$red                 : #f55948;
+
+/////////////////////////////////////////////
+// Semantic color var names
+/////////////////////////////////////////////
+
+// grays
+$white    : $white;
+$gray-050 : #f0f1f5;
+$gray-100 : #e6e7eb;
+$gray-200 : #d7d9e0;
+$gray-300 : #ced1d9;
+$gray-400 : #acb1bf;
+$gray-500 : #9297a6;
+$gray-600 : #7b808c;
+$gray-700 : #676b73;
+$gray-800 : #464951;
+$gray-900 : #2d313b;
+$black    : $black;
+
+// gray color list
+$gray-colors : (
+    'white'    : $white,
+    'gray-050' : $gray-050,
+    'gray-100' : $gray-100,
+    'gray-200' : $gray-200,
+    'gray-300' : $gray-300,
+    'gray-400' : $gray-400,
+    'gray-500' : $gray-500,
+    'gray-600' : $gray-600,
+    'gray-700' : $gray-700,
+    'gray-800' : $gray-800,
+    'gray-900' : $gray-900,
+    'black'    : $black
+);
+
+// themtatic colors
+$primary      : $sre-primary;
+$primary-dark : $sre-primary-dark;
+
+// thematic color list
+$thematic-colors : (
+    'primary'      : $primary,
+    'primary-dark' : $primary-dark,
+);
+
+// symbolic colors
+$symbolic-success : $green;
+$symbolic-warning : $orange;
+$symbolic-error   : $red;
+$symbolic-wealth  : $mid-green;
+
+// symbolic color list
+$symbolic-colors : (
+    'symbolic-success' : $symbolic-success,
+    'symbolic-warning' : $symbolic-warning,
+    'symbolic-error'   : $symbolic-error
+);
+
+// ALL colors
+$all-colors : _merge(
+    $gray-colors,
+    _merge($thematic-colors, $symbolic-colors)
+);
+
+// 3rd party colors
+$facebook-blue        : #3b5998;
+$facebook-dark-blue   : #284074;
+$google-plus-red      : #cf4332;
+$google-plus-dark-red : #c8311e;
+
+// Mr. S. colors
+$pop-color            : #be2a2a;
+
+// GreatSchools rating colors
+$gs-rating-good   : #60ac6d;
+$gs-rating-ok     : #f1ad17;
+$gs-rating-poor   : #c55047;
+$gs-rating-na     : #999;
+$gs-rating-colors : (
+    'gs-rating-good'    : $gs-rating-good,
+    'gs-rating-ok'      : $gs-rating-ok,
+    'gs-rating-poor' : $gs-rating-poor,
+    'gs-rating-na'      : $gs-rating-na
+);

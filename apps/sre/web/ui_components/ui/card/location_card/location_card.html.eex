@@ -1,0 +1,4 @@
+<div class="card location-card">
+  <h2 class="location-card__header u-sans-bold"><%= @location %></h2>
+  <img class="location-card__img" src="<%= static_path(@conn,  @image_path) %>" alt="<%= @location %>">
+</div>

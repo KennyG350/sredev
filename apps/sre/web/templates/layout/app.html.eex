@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="x-dns-prefetch-control" content="on"/>
+    <link rel="dns-prefetch" href="<%= Application.get_env(:sre, :photo_cdn)%>"/>
+    <link rel="dns-prefetch" href="https://use.typekit.net"/>
+    <link rel="dns-prefetch" href="https://maps.googleapis.com"/>
+    <link rel="dns-prefetch" href="https://cdn.auth0.com"/>
+    <meta charset="utf-8">
+    <%= render "page_title.html", assigns %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="<%= assigns[:page_description] %>">
+    <meta name="author" content="SRE Technologies Inc">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="google-site-verification" content="hMR7o3j_2v8sQe43QLVeabJnoaLO24GnQBKs3Xxgu0I" />
+
+    <%= unless allow_indexing() do %>
+    <meta name="robots" content="noindex, nofollow">
+    <% end %>
+
+    <%= if tracking_enabled() do %>
+    <%= render "google_tag_manager_head.html" %>
+    <% end %>
+
+    <%= if rollbar_tracking() do %>
+    <%= render "rollbar.html" %>
+    <% end %>
+
+    <script src="https://use.typekit.net/iez8edm.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+    <%= if Sre.Location.ViewHelper.has_user_location(assigns[:user_location]) do %>
+    <meta content="<%= Sre.Location.ViewHelper.get_user_lat(assigns[:user_location]) %>" name="user-lat" />
+    <meta content="<%= Sre.Location.ViewHelper.get_user_lng(assigns[:user_location]) %>" name="user-lng" />
+    <meta content="<%= Sre.Location.ViewHelper.get_user_location(assigns[:user_location]) %>" name="user-location" />
+    <meta content="<%= Sre.Location.ViewHelper.get_user_location_bounds(assigns[:user_location]) %>" name="user-location-bounds" />
+    <% end %>
+  </head>
+
+  <body>
+    <%= if tracking_enabled() do %>
+    <%= render "google_tag_manager_body.html" %>
+    <% end %>
+
+    <div class="app">
+      <%= Sre.UI.Header.render_template(
+        classname: if @conn.request_path == "/" do "app__header header--transparent" else "app__header" end,
+        request_path: @conn.request_path,
+        filters: assigns[:filters],
+        current_user: @conn.assigns[:current_user],
+        conn: @conn,
+        show_location_search: @conn.assigns[:show_location_search]
+      )%>
+      <main class="app__main" role="main">
+        <%= render @view_module, @view_template, assigns %>
+      </main>
+      <%= if @conn.request_path != "/properties" do %>
+        <%= Sre.UI.Footer.render_template classname: "app__footer", current_user: @conn.assigns[:current_user] %>
+      <% end %>
+    </div> <!-- /container -->
+
+    <%= if tracking_enabled() do %>
+    <%= render "tracking.html" %>
+    <% end %>
+
+    <% user_id = get_current_user(@current_user).id %>
+    <script>
+      window.__USERDATA__ = {
+        id: <%= user_id %>
+      };
+    </script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr2OMyr8hGc0wliypBVimL8sjJcVvwcNo&libraries=geometry,places"></script>
+    <script src="https://cdn.auth0.com/js/lock/10.6/lock.min.js"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

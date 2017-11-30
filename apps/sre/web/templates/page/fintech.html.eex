@@ -1,0 +1,280 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.4/numeral.min.js"></script>
+<script type="text/javascript">
+
+function validNumber(fieldinput){
+var unicode=fieldinput.charCode? fieldinput.charCode : fieldinput.keyCode;
+if ((unicode!=8) && (unicode!=46)) { //if the key isn't the backspace key (which we should allow)
+if (unicode<48||unicode>57) //if not a number
+return false; //disable key press
+}
+}
+
+function myPayment()
+{
+// Reset error messages to blank
+document.getElementById('loanError').innerHTML = '';
+document.getElementById('dpError').innerHTML = '';
+document.getElementById('rateError').innerHTML = '';
+document.getElementById('yearsError').innerHTML = '';
+
+// Form validation checking
+if ((document.mortgagecalc.loan.value === null) || (document.mortgagecalc.loan.value.length === 0) || (isNaN(document.mortgagecalc.loan.value) === true))
+{
+document.getElementById('monthlyPayment').innerHTML = 'Please enter the missing information.';
+document.getElementById('loanError').innerHTML = 'Numeric value required. Example: 265000';
+} else if ((document.mortgagecalc.dppercent.value === null) || (document.mortgagecalc.dppercent.value.length === 0) || (isNaN(document.mortgagecalc.dppercent.value) === true))
+{
+document.getElementById('monthlyPayment').innerHTML = 'Please enter the missing information.';
+document.getElementById('dpError').innerHTML = 'Numeric value required. Example: 30%';
+} else if ((document.mortgagecalc.rate.value === null) || (document.mortgagecalc.rate.value.length === 0) || (isNaN(document.mortgagecalc.rate.value) === true))
+{
+document.getElementById('monthlyPayment').innerHTML = 'Please enter the missing information.';
+document.getElementById('rateError').innerHTML = 'Numeric value required. Example: 3.5';
+} else if ((document.mortgagecalc.years.value === null) || (document.mortgagecalc.years.value.length === 0) || (isNaN(document.mortgagecalc.years.value) === true))
+{
+document.getElementById('monthlyPayment').innerHTML = 'Please enter the missing information.';
+document.getElementById('yearsError').innerHTML = 'Numeric value required. Example: 30';
+} else
+{
+// Set variables from form data
+var financed = document.mortgagecalc.loan.value
+var loanprincipal = document.mortgagecalc.loan.value - (financed * (document.mortgagecalc.dppercent.value * .01));
+var months = document.mortgagecalc.years.value * 12;
+var interest = document.mortgagecalc.rate.value / 1200;
+var downpayment = financed * (document.mortgagecalc.dppercent.value * .01)
+var payments = (loanprincipal * interest / (1 - (Math.pow(1/(1 + interest), months))));
+var downpayments = numeral(downpayment).format('$0,0');
+var payments2 = numeral(payments).format('$0,0');
+
+// Calculate mortgage payment and display result
+document.getElementById('monthlyPayment').innerHTML = 'Your estimated monthly mortgage payment will be ' + (payments2)+'.';
+document.getElementById('downPayment').innerHTML = 'Your down payment will be ' + (downpayments) +'.';
+document.getElementById('friendlyReminder').style.display = 'block';
+}
+
+// payment = principle * monthly interest/(1 - (1/(1+MonthlyInterest)*Months))
+
+}
+function myPaymentReset()
+{
+// Reset everything to default/null/blank
+document.getElementById('monthlyPayment').innerHTML = '';
+document.getElementById('downPayment').innerHTML = '';
+document.getElementById('friendlyReminder').style.display = 'none';
+document.getElementById('loanError').innerHTML = '';
+document.getElementById('dpError').innerHTML = '';
+document.getElementById('rateError').innerHTML = '';
+document.getElementById('yearsError').innerHTML = '';
+document.mortgagecalc.loan.value = null;
+document.mortgagecalc.dppercent.value = '20';
+document.mortgagecalc.rate.value = null;
+document.mortgagecalc.years.value = '30';
+}
+</script>
+
+<article class="marketing-page sell-page">
+  <hgroup class="marketing-page__hero">
+    <h1 class="marketing-page__hero__h1"> Smart Mortgage Robot </h1>
+    <h1 class="marketing-page__hero__h1">SRE is developing a Smart Mortgage Robot by using financial technology for Homebuyers and our partners in mortgage loan lending.</h1>
+    <!--<h4>Currently our agents are working with mortgage brokers to help you identify the best home loan.</h4>-->
+  </hgroup>
+  <div class="u-mauto u-size-max-width">
+    <div class="mortgage-margins" align="center">
+      <form name="mortgagecalc" method="POST">
+        <div class="grid mortgage-input_bottom-margin">
+          <div class="grid__md--12 mortpage-calctitle">Mortgage Calculator</div>
+          <div class="grid__sm--12 grid__md--3 mortgage_labelPad">
+            <div class="label">Total Cost of Home</div>
+            <!--START LOAN AMMOUNT -->
+            <input type="text" label="Mortgage Amount" onkeypress="return validNumber(event)" class="input input-scaffold__input input" name="loan" size="10" placeholder="100000">
+            <div class="mortgage-lh-14"><span class="smpc-error" id="loanError"></span></div></div>
+          <div class="grid__sm--12 grid__md--3 mortgage_labelPad">
+            <div class="label">Select Down Payment</div>
+            <select name="dppercent" onkeypress="return validNumber(event)" class="input input-scaffold__input input--select input--md">
+              <option value="0">0%</option>
+              <!-- START DOWN PAYMENT PERCENTAGE -->
+              <option value="5">5%</option>
+              <option value="10">10%</option>
+              <option value="15">15%</option>
+              <option value="20" selected >20%</option>
+              <option value="25">25%</option>
+              <option value="30">30%</option>
+              <option value="35">35%</option>
+              <option value="40">40%</option>
+            </select>
+            <span class="smpc-error" id="dpError"></span> </div>
+          <div class="grid__sm--12 grid__md--3 mortgage_labelPad"><!-- START INTEREST RATE INPUT -->
+            <div class="label">Interest Rate (%)</div>
+            <input type="text" class="input input-scaffold__input input" onkeypress="return validNumber(event)" name="rate" size="4" placeholder="3.9">
+            <div class="mortgage-lh-14"><span class="smpc-error" id="rateError"></span> </div></div>
+          <div class="grid__sm--12 grid__md--3 mortgage_labelPad"><!-- START TERMS DROPDOWN -->
+            <div class="label">Select Term</div>
+            <select name="years" onkeypress="return validNumber(event)" class="input input-scaffold__input input--select input--md">
+              <option value="5">5 years</option>
+              <option value="10">10 years</option>
+              <option value="15">15 years</option>
+              <option value="20">20 years</option>
+              <option value="25">25 years</option>
+              <option value="30" selected>30 years</option>
+              <option value="40">40 years</option>
+            </select>
+            <span class="smpc-error" id="yearsError"></span> </div>
+        </div>
+        <button class="button u-mbottom0 mortgage-page_bttn" type="button" onClick="return myPayment()" value="Calculate"> <span class="button__layout" > Calculate </span> </button>
+        <button class="button u-mbottom0 mortgage-page_bttn" type="button" onClick="return myPaymentReset()" value="Reset"> <span class="button__layout" > Reset </span> </button>
+      </form>
+      <div class="small mortgage-instructions">Instructions: Enter numbers and decimal points. No commas or other characters.</div>
+        <p class="smpc-monthlypayment mortgage-top-20" id="monthlyPayment"> </p>
+        <p class="smpc-monthlypayment mortgage-bottom-20" id="downPayment"> </p>
+      <p class="smpc-friendlyreminder" id="friendlyReminder">This is your principal + interest payment, or in other words, what you send to the bank each month. But remember, you will also have to budget for homeowners insurance, real estate taxes, and if you are providing less than a 20% down payment, Private Mortgage Insurance (PMI). These additional costs will increase your monthly outlay.</p>
+    </div>
+  <section class="fintech-page__section fintech-page__section--contact">
+    <div class="u-mauto u-size-max-width">
+      <div class="fintech-page__contact">
+        <div class="fintech-page__contact__content"> <img
+            class="fintech-page__contact__content__agent"
+            alt="Image of an SRE Agent"
+            src="<%= static_path(@conn, "/images/contact-agent-1.png") %>"
+          />
+          <h1 class="fintech-page__section__h1 fintech-page__contact__content__h1"> Currently, our agents are collaborating with mortgage loan lenders to help Homebuyers identify the best home loan.</h1>
+          <!--<p class="marketing-page__section__subtext"> Our agents at your nearest office will provide full services for customer satisfaction. <br />
+            <br />
+          </p>-->
+          <!--<p class="marketing-page__section__subtext"> SRE has regional branch offices nationwide and our agents at your nearest office will provide full services for customer satisfaction. </p>-->
+        </div>
+        <form id="contact_form" class="fintech-page__contact__form elm-message-form">
+          <%= Sre.UI.Form.Input.render_template(
+            id: "first_name",
+            label: "First Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+          )%> <%= Sre.UI.Form.Input.render_template(
+            id: "last_name",
+            label: "Last Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+          )%> <%= Sre.UI.Form.Input.render_template(
+            id: "email",
+            label: "Email",
+            type: "email",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+          )%> <%= Sre.UI.Form.Input.render_template(
+            id: "phone",
+            label: "phone",
+            type: "tel",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+          )%> <%= Sre.UI.Form.Textarea.render_template(
+            id: "message",
+            label: "Message",
+            placeholder: "",
+            classname: "u-mbottom16"
+          )%>
+          <div class="grid end--md">
+            <div class="grid__sm--12 grid__md--7"> <%= Sre.UI.Button.ButtonDefault.render_template(
+                value: "Send",
+                classname: "button button--expand u-mbottom0",
+                id: "buying-contact"
+              )%> </div>
+          </div>
+          <div class="form-submit-error"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div class="u-mauto u-size-max-width">
+    <div class="mortgage-branch-margins" align="left">
+    <hr>
+      <div class="grid">
+        <div class="grid__md--12 mortpage-calctitle" align="center">SRE Branch Offices </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Alabama) LLC</li>
+              <li>SRE Matrix (Alaska) LLC</li>
+              <li>SRE Matrix (Arizona) Inc.</li>
+              <li>SRE Matrix (Arkansas) LLC</li>
+              <li>SRE Matrix Inc. (California)</li>
+              <li>SRE Matrix (Colorado) LLC</li>
+              <li>SRE Matrix (Connecticut) LLC</li>
+              <li>SRE Matrix (Delaware) LLC</li>
+              <li>SRE Matrix (Dist. of Columbia) LLC</li>
+              <li>BBK Realty and Management LLC (Florida)</li>
+              <li>SRE Matrix (Georgia) LLC</li>
+              <li>SRE Matrix Inc. (Hawaii)</li>
+              <li>SRE Matrix (Idaho) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Illinois) LLC</li>
+              <li>SRE Matrix Indiana LLC</li>
+              <li>SRE Matrix (Iowa) LLC</li>
+              <li>SRE Matrix (Kansas) LLC</li>
+              <li>SRE Matrix (Kentucky) LLC</li>
+              <li>SRE Matrix (Louisiana) LLC</li>
+              <li>SRE Matrix (Maine) LLC</li>
+              <li>SRE Matrix (Maryland) LLC</li>
+              <li>SRE Matrix (Massachusetts) LLC</li>
+              <li>SRE Matrix (Michigan) LLC</li>
+              <li>SRE Minneapolis LLC (Minnesota)</li>
+              <li>SRE Matrix (Mississippi) LLC</li>
+              <li>SRE Matrix (Missouri) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Montana) LLC</li>
+              <li>SRE Matrix (Nebraska) LLC</li>
+              <li>SRE Matrix Inc. (Nevada)</li>
+              <li>SRE Matrix (New Hampshire) LLC</li>
+              <li>SRE Matrix (New Jersey) LLC</li>
+              <li>SRE Matrix (New Mexico) LLC</li>
+              <li>SRE Matrix (New York) LLC</li>
+              <li>SRE Matrix (North Carolina) LLC</li>
+              <li>SRE Matrix (North Dakota) LLC</li>
+              <li>SRE Matrix, LLC (Ohio)</li>
+              <li>SRE Matrix (Oklahoma) LLC</li>
+              <li>SRE Matrix (Oregon) LLC</li>
+              <li>SRE Matrix (Pennsylvania) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Rhode Island) LLC</li>
+              <li>SRE Matrix (South Carolina) LLC</li>
+              <li>SRE Matrix (South Dakota) LLC</li>
+              <li>SRE Matrix (Tennessee) LLC</li>
+              <li>SRE Matrix (Texas) LLC</li>
+              <li>Utah Real Estate Information, PLLC (Utah)</li>
+              <li>SRE Matrix (Vermont) LLC</li>
+              <li>SRE Matrix (Virginia) LLC</li>
+              <li>SRE Washington LLC (Washington)</li>
+              <li>SRE Matrix (West Virginia) LLC</li>
+              <li>SRE Matrix (Wisconsin) LLC</li>
+              <li>SRE Matrix (Wyoming) LLC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mortpage-calctitle" align="center">SRE Concierge Center</div>
+
+    <div class="contact-page__offices__office u-font12 u-text-gray-700 u-line14 mortgage-bot-20" align="center">
+      <p class="mortgage-add-top">17550 N. Perimeter Dr. Ste 250 Scottsdale, AZ 85255</span><br>
+      Tel: <a class="a u-link-clean" href="tel:+14807710636">480.771.0636</a>
+      Email: <a class="a u-link-clean" href="mailto:info@sre.com">info@sre.com</a></p>
+    </div>
+  </div>
+</article>

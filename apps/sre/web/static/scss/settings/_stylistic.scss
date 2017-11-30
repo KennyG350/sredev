@@ -1,0 +1,35 @@
+// *******************************************
+// *******************************************
+
+    // Stylistic settings
+
+// *******************************************
+// *******************************************
+
+// box shadows
+$shadow           : 0 5px 25px rgba($black, .3);
+$shadow-inset     : inset 0 0 4px rgba($black, .5);
+$shadow-light     : 0 0 9px rgba($black, .22);
+$shadow-hard      : 2px 2px 0 rgba($black, .22);
+$shadow-hard-left : -2px -2px 0 rgba($black, .22);
+$shadows          : (
+    'shadow'             : $shadow,
+    'shadow-inset'       : $shadow-inset,
+    'shadow--light'      : $shadow-light,
+    'shadow--hard'       : $shadow-hard,
+    'shadow--hard--left' : $shadow-hard-left
+);
+
+// text-shadows
+$text-shadow        : 1px 1px rgba($black, .3);
+$text-shadow-offset : -1px -1px rgba($black, .3);
+$text-shadow0       : 0 0 rgba($black, 0);
+$text-shadow-white  : 1px 1px rgba($white, .65);
+$text-shadow-blur   : 0 2px 4px rgba($black, .5);
+$text-shadows       : (
+    'shadow'         : $text-shadow,
+    'shadow--offset' : $text-shadow-offset,
+    'shadow0'        : $text-shadow0,
+    'shadow--white'  : $text-shadow-white,
+    'shadow--blur'   : $text-shadow-blur
+);

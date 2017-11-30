@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Server Error</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <div
+      class="error-page-layout"
+      style="background-image: url(<%= static_path(@conn, "/images/error/desktop-404.jpg") %>);"
+    >
+      <div class="error-page-layout__content 404-page">
+        <div class="error-page-layout__content__layout">
+          <div class="error-page-layout__content__message">
+            <h1 class="error-page-layout__error-code error-code u-text-white">
+              <span class="error-code__title">
+                Error
+              </span>
+              <span class="error-code__code">
+                404
+              </span>
+            </h1>
+            <p class="error-page-layout__tagline u-text-white">
+              Looks like you<br />
+              made a wrong turn.
+            </p>
+            <p class="error-page-layout__cta u-text-white">
+              Find your way back on track:
+            </p>
+            <ul class="error-page-layout__links">
+              <li>
+                <a href="/" class="u-text-primary strong">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/properties" class="u-text-primary strong">
+                  Search
+                </a>
+              </li>
+              <li>
+                <a href="/buy" class="u-text-primary strong">
+                  Buy
+                </a>
+              </li>
+              <li>
+                <a href="/sell" class="u-text-primary strong">
+                  Sell
+                </a>
+              </li>
+              <li>
+                <a href="/contact" class="u-text-primary strong">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

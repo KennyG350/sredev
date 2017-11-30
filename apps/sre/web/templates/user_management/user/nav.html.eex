@@ -1,0 +1,32 @@
+<nav class="user-page__nav">
+    <ul class="user-page__nav__menu">
+        <li class="user-page__nav__menu__item">
+        <%= link(
+            "Your Profile",
+            to: "/mysre/edit-profile",
+            class: "user-page__nav__menu__link"
+        )%>
+        </li>
+        <li class="user-page__nav__menu__item">
+        <%= link(
+            "Favorites",
+            to: "/mysre/favorites",
+            class: "user-page__nav__menu__link"
+        )%>
+        </li>
+        <li class="user-page__nav__menu__item">
+        <%= link(
+            "Saved Searches",
+            to: "/mysre/saved-search",
+            class: "user-page__nav__menu__link"
+        )%>
+        </li>
+        <li class="user-page__nav__menu__item">
+        <%= link(
+            "Agent Suggestions",
+            to: "/mysre/agent-suggestions",
+            class: "user-page__nav__menu__link"
+        )%>
+        </li>
+    </ul>
+</nav>

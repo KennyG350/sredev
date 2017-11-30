@@ -1,0 +1,35 @@
+<div class="accordion__section accordion__section--disable-collapse accordion__section--expand">
+  <h1 class="accordion__section__header">
+    <span class="accordion__section__header__title">
+      Interior Features
+    </span>
+  </h1>
+  <div class="accordion__content">
+    <div class="grid u-font14">
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= Sre.Listing.ViewHelper.listing_detail("Appliances: ", @listing.inclusions )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Garage Spaces: ", @listing.garage_spaces )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("View: ", @listing.view )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Year built: ", @listing.year_built, :no_format)%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Amenities: ", @listing.amenities )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Fireplace: ", @listing.fireplaces )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Foundation: ", @listing.foundation_details )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Basement: ", @listing.basement )%>
+        </ul>
+      </div>
+      <div class="grid__sm--12 grid__md--6">
+        <ul>
+          <%= Sre.Listing.ViewHelper.listing_detail("Unit Features: ", @listing.unit_features )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Laundry: ", @listing.laundry )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Flooring: ", @listing.flooring )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Cooling: ", @listing.cooling )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Heating: ", @listing.heating )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Gas: ", @listing.gas )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Sewer: ", @listing.sewer )%>
+          <%= Sre.Listing.ViewHelper.listing_detail("Utilities: ", @listing.utilities )%>
+        </ul>
+      </div>
+    </div>
+  </div><!-- /end .accordion__content -->
+</div>

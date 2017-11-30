@@ -1,0 +1,55 @@
+<article class="testimonials-page__hgroup">
+
+    <hgroup class="marketing-page__hero v2">
+
+        <h1 class="homepage__hero__h3">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Homebuyer Solution</h1>
+
+    </hgroup>
+
+<!-- 
+<div class="homepage__hero__h1-content-container">
+    <hgroup class="marketing-page__hero v2">
+      <div class="homepage__hero__h1-content-container">
+        <h1 style="font-size: 18px; margin-bottom: 5px;">Human Assisted e-Commerce</h1>
+        <h1 class="homepage__hero__h1 u-text-nowrap"> Smart Homebuyer Solution</h1>
+      </div>
+    </hgroup>
+</div>
+-->
+
+<article class="info-page-layout u-mauto u-mtop24 u-size-max-width">
+
+<div class="branches-title mortpage-calctitle" align="center">
+    $20,000 Rebate on Average*
+</div>
+
+  <p class="p">
+      SRE rebates to Homebuyers, all of our brokerage commission exceeding 1% of the purchase price. Our clients save $20,000 on average* when buying a home with SRE.<br>
+      <font size=2rem>*Based on actual transactions by SRE in Hawaii for 2016</font>
+  </p>
+<div class="u-text-center btn-see-more"> <a href="/testimonials" class="button"> <span class="button__layout">Testimonials</span> </a> </div>
+<br>
+
+<div class="branches-title mortpage-calctitle" align="center">
+    Full-Service
+</div>
+
+    <p class="p">
+      <strong class="strong">Alliance Real Estate Agencies* (Agents)</strong> will provide full-service for customer satisfaction.<br>
+      <font size=2rem><a class="link" href="/careers">*Agreement Required</a></font>
+    </p>
+
+    <!-- <div class="u-text-center btn-see-more"> <a href="/careers" class="button"> <span class="button__layout"> Apply Here </span> </a> </div> -->
+<br>
+
+<! -->
+
+</article>
+</article>
+
+<!-- <%= Sre.UI.Company.Overview.render_template(
+)%> -->
+
+<%= Sre.UI.Company.Branches.render_template(
+)%>

@@ -1,0 +1,12 @@
+/_build
+/cover
+/deps
+erl_crash.dump
+*.ez
+.env
+elm-stuff
+.DS_Store
+npm-debug.log
+dbs
+GeoIP2-City.mmdb
+.iex.exs

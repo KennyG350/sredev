@@ -1,0 +1,45 @@
+// *******************************************
+// *******************************************
+
+    // Segmented Controls component styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$edge-segment-border-radius : 25%;
+$segment-border             : 1px solid $gray-200;
+
+// settings/layout-vars
+$unit-default-spacing : $unit-default-spacing;
+
+.segmented-control {
+    display     : flex;
+    align-items : stretch;
+}
+
+.segmented-control__segment {
+    display           : inline-block;
+    padding           : rem-calc($unit-default-spacing ($unit-default-spacing * 2));
+    border            : $segment-border;
+    border-left-width : 0;
+    font-size         : rem-calc(12);
+    cursor            : pointer;
+    @include sans-bold;
+}
+
+.segmented-control__segment:first-child {
+    border-left-width         : 1px;
+    border-bottom-left-radius : $edge-segment-border-radius;
+    border-top-left-radius    : $edge-segment-border-radius;
+}
+
+.segmented-control__segment:last-child {
+    border-top-right-radius    : $edge-segment-border-radius;
+    border-bottom-right-radius : $edge-segment-border-radius;
+}
+
+.segmented-control__segment--selected {
+    background-color : $sre-primary;
+    color            : $white;
+}

@@ -1,0 +1,65 @@
+<nav class="search-nav">
+  <div class="search-nav__main">
+    <button type="button" class="search-nav__show-filters elm-search-properties-toggle-filters">
+      Show Filters
+    </button>
+    <h1 class="search-nav__results elm-total-search-results">
+      <%= Sre.Listing.ViewHelper.format_number @total_results %> Homes
+    </h1>
+    <form class="search-nav__sort" method="post" action="">
+      <label for="search_sort">
+        <span class="search-nav__sort__label--desktop">
+          sorted by
+        </span>
+        <span class="search-nav__sort__label--mobile">
+          Sort:
+        </span>
+        <span class="search-nav__sort__select">
+          <select id="search_sort" name="search_sort" class="search-nav__sort__select__input elm-change-sort-order">
+            <%= for option <- get_sort_options assigns[:order_by] do %>
+            <option value="<%= option.value %>" <%= if option[:selected], do: "selected" %>>
+              <%= option.label %>
+            </option>
+            <% end %>
+          </select>
+          <%= Sre.UI.Svg.Icon.render_template icon: "caret_down", classes: ["icon--gray-700", "search-nav__sort__select__icon"] %>
+        </span>
+      </label>
+    </form>
+  </div>
+  <!--
+    .search-nav__save-search--saved => when search has been saved
+    .search-nav__save-search--show-save-options => to show save search form
+  -->
+
+  <%= if is_nil(@saved_search) do %>
+    <div class="search-nav__save-search">
+  <% else %>
+    <div class="search-nav__save-search search-nav__save-search--saved">
+  <% end %>
+      <button type="button" class="search-nav__save-search__save-button elm-save-search-button">
+        Save Search
+      </button>
+      <div type="button" class="search-nav__save-search__save-label">
+        <span class="u-text-truncate">
+          <%= @saved_search && @saved_search.name %>
+        </span>
+      </div>
+      <div class="search-nav__save-search__save-search__dropdown panel panel--shadow">
+        <h2 class="h3 u-mbottom16">Saved Search Settings</h2>
+        <%= Sre.UI.Form.Input.render_template(
+          id: "saved_search_name",
+          label: "Name Your Search",
+          type: "text",
+          placeholder: "Ex: Honolulu - 2-3 beds",
+          classname: "u-mbottom16"
+        )%>
+        <%= Sre.UI.Button.ButtonDefault.render_template(
+          value: "Update",
+          classname: "search-nav__save-search__save-search-button button--expand u-mbottom0",
+        )%>
+      </div>
+    </div>
+
+  <div class="search-nav__sub elm-mobile-search-view-switcher"></div>
+</nav>

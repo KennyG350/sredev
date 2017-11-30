@@ -1,0 +1,44 @@
+<div class="user-page">
+  <%= render Sre.UserManagement.UserView, "nav.html" %>
+  <section class="user-page__main">
+    <h1 class="user-page__main__section-header">
+      Your Saved Searches
+    </h1>
+    <table class="table">
+      <tbody class="tbody table__tbody">
+
+        <%= for search <- @searches do %>
+          <tr class="tr tbody_tr">
+            <td class="td">
+              <a class="a" href=<%= "#{property_path(@conn, :index)}?#{encode_search_attributes(search.search_attributes)}" %>>
+                <%= search.name %>
+              </a>
+            </td>
+            <td class="td">
+              <div class="saved-search__edit u-text-right">
+                <%= link "Delete", to: user_management_saved_search_path(@conn, :delete, search), method: :delete, class: "button button__primary button--sm u-mbottom0" %>
+                <div
+                  class="saved-search__edit__dropdown panel panel--shadow u-text-left"
+                  style="display: none;"
+                >
+                  <h2 class="h3 u-mbottom16">Saved Search Settings</h2>
+                  <%= Sre.UI.Form.Input.render_template(
+                    id: "saved_search_edit_name1",
+                    label: "Edit Name",
+                    type: "text",
+                    placeholder: "Ex: Honolulu - 2-3 beds",
+                    classname: "u-mbottom16"
+                  )%>
+                  <%= Sre.UI.Button.ButtonDefault.render_template(
+                    value: "Update",
+                    classname: "button--expand u-mbottom0",
+                  )%>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>

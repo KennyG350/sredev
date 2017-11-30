@@ -1,0 +1,6 @@
+<button
+  type="button"
+  class="<%= @classname %> <%= elm_classes(@listing) %> <%= if favorited?(@listing) do @favorited_classname end %>"
+  data-listing-id="<%= @listing.id %>"
+  data-favorited="<%= if favorited?(@listing) do "true" else "false" end %>"
+>

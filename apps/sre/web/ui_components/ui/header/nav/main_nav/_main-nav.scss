@@ -1,0 +1,213 @@
+// *******************************************
+// *******************************************
+
+    // Main nav component styles
+
+// *******************************************
+// *******************************************
+
+$main-nav-height                       : $unit-md-header-height; // settings/layout
+$main-nav-border-color                 : $header-border-color; // ui/header/header
+$main-nav-transparent-link-text-shadow : $text-shadow; // settings/stylistic
+
+// nav list
+.main-nav__list {
+    display        : flex;
+    flex-direction : column;
+
+    @include min-screen($breakpoint-md) {
+        flex-direction : row;
+        height         : rem-calc($main-nav-height);
+    }
+
+}
+
+// nav item
+.main-nav__item {
+    position      : relative;
+    display       : flex;
+    flex-wrap     : wrap;
+    align-items   : center;
+    min-height    : rem-calc($main-nav-height);
+    margin        : rem-calc(0 1);
+    border-bottom : 1px solid $gray-200;
+
+    @include min-screen($breakpoint-md) {
+        max-width     : rem-calc(200);
+        border-bottom : 0;
+    }
+
+}
+
+// link element
+.main-nav__link {
+    position        : relative;
+    display         : flex;
+    align-items     : center;
+    flex            : 1 0 auto;
+    height          : rem-calc($main-nav-height);
+    padding         : rem-calc(0 16);
+    font-size       : rem-calc(14);
+    color           : $gray-700;
+    text-decoration : none;
+    line-height     : rem-calc($main-nav-height);
+
+    .main-nav__item--active & {
+        color : $gray-900;
+    }
+
+    @include min-screen($breakpoint-md) {
+        flex : 0 0 auto;
+    }
+
+    &::before {
+        content    : '';
+        position   : absolute;
+        top        : 3px;
+        bottom     : 3px;
+        left       : 3px;
+        width      : 4px;
+        opacity    : 0;
+        background : $gray-100;
+        transition : opacity 250ms ease;
+
+        @include min-screen($breakpoint-md) {
+            top    : auto;
+            right  : 0;
+            bottom : 3px;
+            left   : 0;
+            width  : auto;
+            height : 4px;
+        }
+
+        .main-nav__item--active & {
+            opacity    : 1;
+            background : $primary;
+        }
+
+    }
+
+    &:hover,
+    &:focus {
+
+        &::before {
+            opacity : 1;
+        }
+
+    }
+
+    // transparent style modifier
+    .main-nav--transparent & {
+        background  : transparent !important;
+        color       : $white;
+        text-shadow : $main-nav-transparent-link-text-shadow;
+
+        &::before {
+            display : none;
+        }
+
+    }
+
+    &.main-nav__link--no-hover::before {
+        display : none;
+    }
+
+}
+
+@media only screen and (max-width: 970px) {
+    .main-nav__link {
+        padding: 0 .25rem;
+    }
+}
+
+// callout modifier
+.main-nav__link--callout {
+    height      : auto;
+    margin      : rem-calc(0 16);
+    padding     : rem-calc(9 12);
+    background  : $gray-050;
+    line-height : normal;
+
+    // transparent style modifier
+    .main-nav--transparent & {
+        border     : 2px solid $white;
+        background : transparent !important;
+    }
+
+}
+
+// submenus
+.main-nav__submenu {
+    flex       : 1 0 100%;
+    border-top : 3px solid $gray-200;
+    background : $gray-050;
+
+    @include min-screen($breakpoint-md) {
+        position      : absolute;
+        top           : 100%;
+        left          : 0;
+        z-index       : $stack-top;
+        min-width     : rem-calc(200);
+        opacity       : 0;
+        visibility    : hidden;
+        box-shadow    : $shadow;
+        border        : 1px solid $gray-200;
+        border-bottom : 0;
+        background    : $white;
+        transition    : opacity 250ms ease 100ms,
+                        visibility 250ms ease 100ms;
+    }
+
+    .main-nav__item:last-child & {
+        right : 0;
+        left  : auto;
+    }
+
+}
+
+// icon used to signify submenu
+.main-nav__item__dropicon {
+    width  : rem-calc(12);
+    height : rem-calc(12);
+    margin : rem-calc(0 0 0 $unit-default-spacing);
+    fill   : $gray-700;
+}
+
+.main-nav__submenu__item {
+    padding-left : rem-calc(72 - 16);
+
+    @include min-screen($breakpoint-md) {
+        max-width: 100%;
+        padding-left  : 0;
+        border-bottom : 1px solid $gray-200;
+    }
+
+    .main-nav__link {
+        flex : 1 0 auto;
+        color : $gray-700 !important;
+
+        &::before {
+            display : none;
+        }
+
+    }
+
+}
+
+.main-nav__item--has-submenu {
+    border-bottom : 0;
+
+    &:hover,
+    &:focus {
+
+        .main-nav__submenu {
+
+            @include min-screen($breakpoint-md) {
+                opacity    : 1;
+                visibility : visible;
+            }
+        }
+
+    }
+
+}

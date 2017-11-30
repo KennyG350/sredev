@@ -1,0 +1,31 @@
+.map-overlay {
+    position : absolute;
+    top      : 0;
+    right    : 0;
+    bottom   : 0;
+    left     : 0;
+    z-index  : -1;
+}
+
+.map-overlay--visible {
+    z-index  : 100;
+}
+
+.map-overlay__button {
+    position   : absolute;
+    right      : rem-calc(10);
+    bottom     : rem-calc(26);
+    z-index    : 100;
+    padding    : rem-calc(12);
+    background : $white;
+    font-size  : rem-calc(14);
+    color      : $primary;
+}
+
+.map-overlay__button--below-map {
+    z-index : 10;
+}
+
+.map-overlay__map-container {
+    height : 100%;
+}

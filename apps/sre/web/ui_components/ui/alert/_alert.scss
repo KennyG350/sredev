@@ -1,0 +1,82 @@
+// *******************************************
+// *******************************************
+
+    // Alert Components
+
+// *******************************************
+// *******************************************
+
+// @vars
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing ;
+
+$alert-radius : 3px;
+$alert-color-map: (
+    'primary': $primary,
+    'error': $symbolic-error,
+    'success': $symbolic-success,
+    'warning' : $symbolic-warning,
+);
+
+$alert-box-shadow: $shadow-light;
+
+.alert {
+    display : flex;
+    padding : rem-calc($unit-default-spacing ($unit-default-spacing * 1.5));
+    background : $primary;
+    color      : $white;
+
+    .icon {
+        fill : $white;
+    }
+
+}
+
+.alert--shadow {
+    box-shadow : $alert-box-shadow;
+}
+
+.alert--outline {
+    border     : 2px solid $primary;
+    background : $white;
+    color      : $primary;
+}
+
+@each $alert-color-map-key, $alert-color-map-color in $alert-color-map {
+
+    .alert--#{$alert-color-map-key} {
+        background : $alert-color-map-color;
+        color      : $white;
+
+        &.alert--outline {
+            border-color : $alert-color-map-color;
+            background   : $white;
+            color        : $alert-color-map-color;
+
+            .icon {
+                fill : $alert-color-map-color;
+            }
+
+        }
+
+    }
+
+}
+
+.alert__content {
+    display      : flex;
+    align-items  : center;
+    flex         : 1 0 auto;
+    font-size    : rem-calc(14);
+}
+
+.alert__close__icon {
+    width  : rem-calc(16);
+    height : rem-calc(16);
+    margin : 0;
+}
+
+// border-radius modifier
+.alert--radius {
+    border-radius : $alert-radius;
+}

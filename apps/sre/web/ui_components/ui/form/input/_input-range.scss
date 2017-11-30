@@ -1,0 +1,38 @@
+// *******************************************
+// *******************************************
+
+    // Min/Max input range components
+
+// *******************************************
+// *******************************************
+
+// @vars
+$grid-gutter : $unit-grid-gutter; // settings/layout-units
+
+// container element
+.input-range {
+    display         : flex;
+    justify-content : space-between;
+    align-items     : flex-end;
+}
+
+// min input
+.input-range__min {
+    flex         : 1 1 auto;
+    margin-right : rem-calc($unit-grid-gutter / 2);
+}
+
+// max input
+.input-range__max {
+    flex        : 1 1 auto;
+    margin-left : rem-calc($unit-grid-gutter / 2);
+}
+
+// separate min and max
+// 1. offset input margins
+.input-range__sep {
+    display      : flex;
+    align-self   : center;
+    margin-right : rem-calc(-($unit-grid-gutter * .25)); // .1
+    margin-left  : rem-calc(-($unit-grid-gutter * .25)); // .1
+}

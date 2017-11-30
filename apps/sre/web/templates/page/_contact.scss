@@ -1,0 +1,44 @@
+// *******************************************
+// *******************************************
+
+    // Contact page specific styles
+    // /contact
+
+// *******************************************
+// *******************************************
+
+// @vars
+
+// settings/layout-units
+$unit-default-spacing : $unit-default-spacing;
+
+$contact-md-offices-width : 220;
+
+.contact-page {
+
+    @include min-screen($breakpoint-md) {
+        display : flex;
+        padding : rem-calc($unit-default-spacing * 6);
+    }
+
+}
+
+.contact-page__form {
+
+    @include min-screen($breakpoint-md) {
+        flex : 1 0 calc(100% - #{rem-calc($contact-md-offices-width)});
+        padding : rem-calc($unit-default-spacing * 3);
+    }
+
+}
+
+.contact-page__offices {
+
+    @include min-screen($breakpoint-md) {
+        flex        : 1 1 rem-calc($contact-md-offices-width);
+        margin-left : rem-calc($unit-grid-gutter);
+
+    }
+        margin-bottom : 20px;
+        margin-top : -40px;
+}

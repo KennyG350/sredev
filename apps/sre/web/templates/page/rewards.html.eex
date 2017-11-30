@@ -1,0 +1,280 @@
+<!--<script type="text/javascript">
+
+function ValidateEmail(mail)   
+{  
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))  
+  {  
+    return (true)  
+  }  
+    alert("You have entered an invalid email address!")  
+    return (false)  
+}
+
+function validatePhone(phone) {
+    var error = "";
+    var stripped = phone.replace(/[\(\)\.\-\ ]/g, '');
+
+   if (stripped == "") {
+        error = "You didn't enter a phone number.";
+    } else if (isNaN(parseInt(stripped))) {
+        phone = "";
+        error = "The phone number contains illegal characters.";
+
+    } else if (!(stripped.length == 10)) {
+        phone = "";
+        error = "The phone number is the wrong length. Make sure you included an area code.\n"; 
+
+function myRewards()
+{
+// Reset error messages to blank
+document.getElementById('nameError').innerHTML = '';
+document.getElementById('emailError').innerHTML = '';
+document.getElementById('phoneError').innerHTML = '';
+document.getElementById('messageError').innerHTML = '';
+
+
+// Form validation checking
+if ((document.rewards.first_name.value === null) || (document.rewards.first_name.value.length === 0) || (isNaN(document.rewards.first_name.value) === true))
+{
+document.getElementById('nameError').innerHTML = 'Input required.';
+} else if ((document.rewards.last_name.value === null) || (document.rewards.last_name.value.length === 0) || (isNaN(document.rewards.last_name.value.value) === true))
+{
+document.getElementById('nameError').innerHTML = 'Numeric value required. Example: 30%';
+} else if ((document.rewards.email.value === null) || (document.rewards.email.value.length === 0) || (isNaN(document.rewards.email.value) === true))
+{
+document.getElementById('emailError').innerHTML = 'A valid email address is required.';
+} else if ((document.rewards.phone.value === null) || (document.rewards.phone.value.length === 0) || (isNaN(document.rewards.phone.value) === true))
+{
+document.getElementById('phoneError').innerHTML = 'A Valid phone number is required.';
+} else if ((document.rewards.message.value === null) || (document.rewards.message.value.length === 0) || (isNaN(document.rewards.message.value) === true))
+{
+document.getElementById('messageError').innerHTML = 'A message is required.';
+} else
+{
+{
+
+}
+}
+function myRewardsReset()
+{
+// Reset everything to default/null/blank
+document.getElementById('nameError').innerHTML = '';
+document.getElementById('emailError').innerHTML = '';
+document.getElementById('emailError').innerHTML = '';
+document.getElementById('phoneError').innerHTML = '';
+document.getElementById('messageError').innerHTML = '';
+document.rewards.first_name.value = null;
+document.rewards.last_name.value = null;
+document.rewards.email.value = null;
+document.rewards.phone.value = null;
+document.rewards.message.value = null;
+}
+
+</script>
+-->
+
+<script>
+function on_submit (event) {
+//event.preventDefault();
+ var first_name = document.getElementById('first_name').value;
+ var last_name = document.getElementById('last_name').value;
+ var email_name = document.getElementById('email').value;
+ var phone_name = document.getElementById('phone').value;
+ var message_name = document.getElementById('message').value;
+ var has_error = false;
+ if (first_name.length <= 0) {
+ document.getElementById('firstnameerror').innerHTML = 'Please enter your first name';
+ has_error = true;
+ }
+ if (last_name.length <= 0) {
+ document.getElementById('lastnameerror').innerHTML = 'Please enter your last name';
+ has_error = true;
+ }
+ if (email_name.length <= 0) {
+ document.getElementById('emailerror').innerHTML = 'Please enter your email address';
+ has_error = true;
+ }
+ if (phone_name.length <= 0) {
+ document.getElementById('phoneerror').innerHTML = 'Please enter your phone number';
+ has_error = true;
+ }
+ if (message_name.length <= 0) {
+ document.getElementById('messageerror').innerHTML = 'Please enter a message';
+ has_error = true;
+ }
+ //console.log("first name", first_name);
+ if (has_error) {
+  return false;
+ }
+ else {
+ return true;
+ }
+}
+</script>
+
+<hgroup class="marketing-page__hero">
+<h1 class="marketing-page__hero__h1"> Smart Rewards Program</h1>
+<div class="share-feedback">
+<h1 class="marketing-page__hero__h1">Share your feedback about our website! Winners will be announced on this page.</h1>
+<div>
+</hgroup>
+<div> <%= if @contact_sent==="true" do %>
+  <p style="text-align: center; font-size: 30px; margin-top: 20px; color: #00b3e6; font-weight: bold;">Thank you! Your submission has been sent!</p>
+</div>
+<% end %>
+<section class="marketing-page__section marketing-page__section--contact">
+<div class="u-mauto u-size-max-width">
+  <div class="marketing-page__contact">
+    <div class="marketing-page__contact__content">
+      <h1 class="week-vacation"> A week vacation to Hawaii for you and a guest <br>
+      <h4 class="rountrip-airfaire">Roundtrip Airfare &amp; Accomodations</h4>
+      <div class="flex-container-images"> <img class="flex-item-images"
+            class="marketing-page__contact__content__agent"
+            alt="Image of Hawaii"
+            src="<%= static_path(@conn, "/images/sre-hokua-view-01.png") %>"
+          /> <img class="flex-item-image-greetings"
+            class="marketing-page__contact__content__agent"
+            alt="Greetings from Hawaii"
+            src="<%= static_path(@conn, "/images/greetings-from-sre-01.png") %>"
+          /> </div>
+      <h1 class="zhou-ling"> Zhou Ling Signed Serigraph w/ frame <br>
+        <!--(2 winners per month)--> </h1>
+      <h4 class="frame-size">42.5" x 42.5" w/ frame</h4>
+      <div class="flex-container-images"> <img class="flex-item-zhou-ling-image"
+            class="marketing-page__contact__content__agent"
+            alt="Image of Zhou Ling"
+            src="<%= static_path(@conn, "/images/zhouling-rewards-page.jpeg") %>"
+          /> </div>
+    </div>
+    <form onsubmit="return on_submit()" method="post" id="contact_form" class="marketing-page__contact__form elm-message-form">
+      <h1 class="marketing-page__section__h1 marketing-page__contact__content__h1"> Send Us Your Opinion </h1>
+      <%= Sre.UI.Form.Input.render_template(
+            id: "first_name",
+            label: "First Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+          )%> <span class="form-submit-error smpc-error" id="firstnameerror"></span> <%= Sre.UI.Form.Input.render_template(
+            id: "last_name",
+            label: "Last Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+          )%> <span class="form-submit-error smpc-error" id="lastnameerror"></span> <%= Sre.UI.Form.Input.render_template(
+            id: "email",
+            label: "Email",
+            type: "email",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+          )%> <span class="form-submit-error smpc-error" id="emailerror"></span> <%= Sre.UI.Form.Input.render_template(
+            id: "phone",
+            label: "phone",
+            type: "tel",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+          )%> <span class="form-submit-error smpc-error" id="phoneerror"></span> <%= Sre.UI.Form.Textarea.render_template(
+            id: "message",
+            label: "How Can We Make It Better? *",
+            placeholder: "",
+            classname: "u-mbottom16",
+          )%> <span class="form-submit-error smpc-error" id="messageerror"></span>
+      <div class="disclaimer"><sup>*</sup> By participating, all entrants acknowledge and agree that they have entered the contest of their own free will and that the full rules and details of the contest have been made available to them. By entering this promotion, participants agree to have their name be visible on SRE’s rewards page upon winning. You must be 21 years of age or older to win.  No purchase necessary.  One qualifier per household. You need not be present to win. Void where prohibited.  Winners will be announced on this page. The more detailed your feedback is, the better chances you have of winning. </div>
+      <div class="grid end--md">
+        <div class="grid__sm--12 grid__md--7"> <%= Sre.UI.Button.ButtonDefault.render_template(
+                value: "Send",
+                classname: "button button--expand u-mbottom0",
+                id: "buying-contact"
+              )%> </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="u-mauto u-size-max-width" align="left">
+  <div class="mortgage-branch-margins" align="left">
+    <hr>
+    <div class="grid">
+      <div class="grid__md--12 mortpage-calctitle" align="center">SRE Branch Offices </div>
+      <div class="grid__sm--12 grid__md--3">
+        <div class="label">
+          <ul>
+            <li>SRE Matrix (Alabama) LLC</li>
+            <li>SRE Matrix (Alaska) LLC</li>
+            <li>SRE Matrix (Arizona) Inc.</li>
+            <li>SRE Matrix (Arkansas) LLC</li>
+            <li>SRE Matrix Inc. (California)</li>
+            <li>SRE Matrix (Colorado) LLC</li>
+            <li>SRE Matrix (Connecticut) LLC</li>
+            <li>SRE Matrix (Delaware) LLC</li>
+            <li>SRE Matrix (Dist. of Columbia) LLC</li>
+            <li>BBK Realty and Management LLC (Florida)</li>
+            <li>SRE Matrix (Georgia) LLC</li>
+            <li>SRE Matrix Inc. (Hawaii)</li>
+            <li>SRE Matrix (Idaho) LLC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid__sm--12 grid__md--3">
+        <div class="label">
+          <ul>
+            <li>SRE Matrix (Illinois) LLC</li>
+            <li>SRE Matrix Indiana LLC</li>
+            <li>SRE Matrix (Iowa) LLC</li>
+            <li>SRE Matrix (Kansas) LLC</li>
+            <li>SRE Matrix (Kentucky) LLC</li>
+            <li>SRE Matrix (Louisiana) LLC</li>
+            <li>SRE Matrix (Maine) LLC</li>
+            <li>SRE Matrix (Maryland) LLC</li>
+            <li>SRE Matrix (Massachusetts) LLC</li>
+            <li>SRE Matrix (Michigan) LLC</li>
+            <li>SRE Minneapolis LLC (Minnesota)</li>
+            <li>SRE Matrix (Mississippi) LLC</li>
+            <li>SRE Matrix (Missouri) LLC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid__sm--12 grid__md--3">
+        <div class="label">
+          <ul>
+            <li>SRE Matrix (Montana) LLC</li>
+            <li>SRE Matrix (Nebraska) LLC</li>
+            <li>SRE Matrix Inc. (Nevada)</li>
+            <li>SRE Matrix (New Hampshire) LLC</li>
+            <li>SRE Matrix (New Jersey) LLC</li>
+            <li>SRE Matrix (New Mexico) LLC</li>
+            <li>SRE Matrix (New York) LLC</li>
+            <li>SRE Matrix (North Carolina) LLC</li>
+            <li>SRE Matrix (North Dakota) LLC</li>
+            <li>SRE Matrix, LLC (Ohio)</li>
+            <li>SRE Matrix (Oklahoma) LLC</li>
+            <li>SRE Matrix (Oregon) LLC</li>
+            <li>SRE Matrix (Pennsylvania) LLC</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid__sm--12 grid__md--3">
+        <div class="label">
+          <ul>
+            <li>SRE Matrix (Rhode Island) LLC</li>
+            <li>SRE Matrix (South Carolina) LLC</li>
+            <li>SRE Matrix (South Dakota) LLC</li>
+            <li>SRE Matrix (Tennessee) LLC</li>
+            <li>SRE Matrix (Texas) LLC</li>
+            <li>Utah Real Estate Information, PLLC (Utah)</li>
+            <li>SRE Matrix (Vermont) LLC</li>
+            <li>SRE Matrix (Virginia) LLC</li>
+            <li>SRE Washington LLC (Washington)</li>
+            <li>SRE Matrix (West Virginia) LLC</li>
+            <li>SRE Matrix (Wisconsin) LLC</li>
+            <li>SRE Matrix (Wyoming) LLC</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mortpage-calctitle" align="center">SRE Concierge Center</div>
+<div class="contact-page__offices__office u-font12 u-text-gray-700 u-line14 mortgage-bot-20" align="center">
+  <p class="mortgage-add-top">17550 N. Perimeter Dr. Ste 250 Scottsdale, AZ 85255</span><br>
+    Tel: <a class="a u-link-clean" href="tel:+14807710636">480.771.0636</a> Email: <a class="a u-link-clean" href="mailto:info@sre.com">info@sre.com</a></p>
+</div>
+</div>

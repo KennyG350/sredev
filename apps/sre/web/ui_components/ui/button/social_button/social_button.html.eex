@@ -1,0 +1,6 @@
+
+<% network_name = if @network == "google", do: "google+", else: @network %>
+
+<button class="button social-button social-button--<%= @network %> <%= @classname %>">
+  Sign up with <%= String.capitalize network_name %>
+</button>

@@ -1,0 +1,13 @@
+<%= unless length(@listings) > 0 do %>
+  <p>No Results Found</p>
+<% end %>
+
+<ul class="homepage__cardlist">
+  <%= for listing <- @listings do %>
+    <li class="homepage__cardlist__card homepage__cardlist__card--sm-11of12">
+      <a href="/properties/<%= listing.url %>" class="u-link-clean elm-listing-link">
+        <%= Sre.UI.Card.PropertyCard.render_template listing: listing %>
+      </a>
+    </li>
+  <% end %>
+</ul>

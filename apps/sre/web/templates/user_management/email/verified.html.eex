@@ -1,0 +1,7 @@
+<div class="">
+  <%= if @message do %>
+  <h3>Thank you for verifying - You can now login with your new email</h3>
+  <% else %>
+    <h3>This link has expired.  Please login with your old email and submit change email again.</h3>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<form
+  class="location-search elm-location-search <%= @classname %>"
+  role="search"
+>
+  <%= Sre.UI.Svg.Icon.render_template icon: "map_pin", classes: ["location-search__prefix-icon"] %>
+  <input
+    type="text"
+    id="location_search"
+    class="location-search__input elm-location-search-input"
+    placeholder="Search a location..."
+    autocomplete="off"
+    value="<%= @filters[:location] || "" %>"
+  />
+  <div class="search-form__form__suggest search-form__suggest elm-search-form-suggest"></div>
+  <button
+    class="location-search__button"
+    type="submit"
+  >
+    <span class="location-search__button__layout">
+      <%= Sre.UI.Svg.Icon.render_template(
+        icon: "search",
+        classes: ["icon--primary", "location-search__button__icon"]
+      )%>
+    </span>
+  </button>
+</form>

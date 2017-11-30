@@ -1,0 +1,33 @@
+<div class="property-rebate-formula <%= @classname %>">
+  <h1 class="property-rebate-formula__header u-text-center strong u-font21 u-mbottom16">
+    Estimated SRE <%= Sre.Listing.ViewHelper.get_rebate_text @listing %>
+  </h1>
+  <div class="u-flex u-flex-justify-between u-mbottom8">
+    <span class="u-text-upper">
+      List Price
+    </span>
+    <span class="strong">
+      $<%= Sre.Listing.ViewHelper.get_list_price @listing %>
+    </span>
+  </div>
+  <div class="u-flex u-flex-justify-between u-mbottom8">
+    <span class="u-text-upper">
+      SRE <%= Sre.Listing.ViewHelper.get_rebate_text @listing %>
+    </span>
+    <span class="strong">
+      - $<%= Sre.Listing.ViewHelper.get_rebate_amount @listing %>
+    </span>
+  </div>
+  <div class="property-rebate-formula__total u-flex u-flex-justify-between u-flex-align-items-center u-font21">
+    <span class="u-text-upper">
+      Your Price
+    </span>
+    <span class="property-rebate-formula__price strong u-text-primary">
+      $<%= Sre.Listing.ViewHelper.get_price_after_rebate @listing %>
+    </span>
+  </div>
+  <div class="property-rebate-formula__total u-flex u-flex-justify-between u-flex-align-items-center u-font12">
+    <span>
+    Estimated <%= Sre.Listing.ViewHelper.get_rebates_text @listing %> are calculated assuming the traditional 6% brokerage commission rate. SRE <%= Sre.Listing.ViewHelper.get_rebates_text @listing %> to homebuyers all of our brokerage commission that exceeds 1% of the purchase price. <%= Sre.Listing.ViewHelper.get_rebate_text @listing %> amounts may vary depending on actual purchase price and commission rate. <%= Sre.Listing.ViewHelper.get_rebate_text @listing %> not available where prohibited by law.</span>
+  </div>
+</div>

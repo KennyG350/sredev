@@ -1,0 +1,327 @@
+<article class="marketing-page sell-page">
+  <hgroup class="marketing-page__hero">
+    <h1 class="marketing-page__hero__h1">
+      Smart Home Sellers
+    </h1>
+    <h1 class="marketing-page__hero__h1">SRE accepts any commission rate starting at 1% of the sales price and provides full service for customer satisfaction.</h1>
+  </hgroup>
+  <section class="marketing-page__section marketing-page__section--white">
+    <h1 class="marketing-page__section__h1">
+      How much can I save with SRE?
+    </h1>
+    <div class="u-mauto u-size-max-width elm-sell-calculator">
+      <!-- PLACEHOLDER CONTENT: This will get replaced immediately when the Elm calculator app is rendered -->
+      <div class="sell-page__calculator">
+          <div class="sell-page__calculator__total-savings">
+            Estimated Savings with SRE:
+            <strong class="u-text-primary strong sell-page__calculator__total-savings__total elm-estimated-savings-with-sre"></strong>
+          </div>
+          <div class="sell-page__calculator__input">
+            <h1 class="marketing-page__section__h1 sell-page__calculator__input__h1">
+              Selling with
+              <svg class="marketing-page__section__h1__sre" viewBox="0 0 60 32" xmlns="http://www.w3.org/2000/svg">
+                <title>SRE</title>
+                <g>
+                  <path d="M1.096 22.6h6.958s-.352 4.13 2.635 4.13c2.986 0 2.494-3.64 2.494-3.64s-.14-1.786-2.39-2.8c-2.25-1.016-8.726-3.893-9.452-7.528C.506 8.58.99 4.904 5.207 2.225c0 0 1.546-1.225 5.482-1.225 3.794 0 6.36.945 7.765 2.8C19.86 5.657 20 8.528 20 10.033h-6.887s.387-3.92-2.32-3.92c-2.704 0-2.423 3.395-2.142 3.885.282.49.985 2.275 7.17 4.55 0 0 5.194 1.565 5.194 7.796 0 6.23-3.227 9.45-10.49 9.45-7.26 0-9.428-2.962-9.428-9.194zM41.518 31.234V1.41h17.384v6.51h-9.7v5.077l8.827.013.01 5.826-8.868.01.004 6.227h9.73l-.004 6.16"/>
+                  <path d="M30.25 14.314h-1.996v-7.35h2.622s2.443-.064 2.443 3.64c0 3.703-3.07 3.71-3.07 3.71m10.606 15.934c-.298-.735-.492-.455-.457-7.544 0 0 .204-5.87-4.598-5.87 0 0 5.06-.793 5.06-7.63 0-6.84-5.95-7.795-8.996-7.795H21.014v29.824h7.62V19.116h2.313s2.02-.157 2.02 2.31c0 2.47.264 7.72.3 8.367.034.648.386 1.44 1.124 1.44h7.8s-1.035-.25-1.334-.985"/>
+                </g>
+              </svg>
+            </h1>
+
+            <div class="panel panel--gray-050 u-p8">
+              <div class="grid">
+                <div class="grid__sm--7">
+                  <label class="u-block" for="income">Estimated List Price</label>
+                </div>
+
+                <div class="grid__sm--5">
+                  <div class="input-scaffold u-m0">
+                    <input
+                      autocomplete="off"
+                      class="input input-scaffold__input input--text input--md elm-sell-calculator-price"
+                      id="price"
+                      name="price"
+                      placeholder="Home price"
+                      type="text"
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel--gray-050 u-p8">
+              <div class="grid">
+                <div class="grid__sm--7">
+                  <label class="u-block u-line18" for="income">Select Commission to Buyer's Agent</label>
+                </div>
+
+                <div class="grid__sm--5">
+                  <div class="input-scaffold input-scaffold--select">
+                    <select
+                      class="input input-scaffold__input input--select input--md elm-sell-calculator-percent"
+                      id="percentage"
+                      name="percentage"
+                    >
+                      <option value="1">1%</option>
+                      <option value="1.5">1.5%</option>
+                      <option value="2">2%</option>
+                      <option value="2.5">2.5%</option>
+                      <option value="3">3%</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sell-page__calculator__breakdown">
+            <div class="sell-page__calculator__breakdown__row sell-page__calculator__breakdown__row--header">
+              <h2 class="strong sell-page__calculator__breakdown__h2">
+                With
+                <svg class="sell-page__calculator__breakdown__h2__sre" viewBox="0 0 60 32" xmlns="http://www.w3.org/2000/svg">
+                  <title>SRE</title>
+                  <g>
+                    <path d="M1.096 22.6h6.958s-.352 4.13 2.635 4.13c2.986 0 2.494-3.64 2.494-3.64s-.14-1.786-2.39-2.8c-2.25-1.016-8.726-3.893-9.452-7.528C.506 8.58.99 4.904 5.207 2.225c0 0 1.546-1.225 5.482-1.225 3.794 0 6.36.945 7.765 2.8C19.86 5.657 20 8.528 20 10.033h-6.887s.387-3.92-2.32-3.92c-2.704 0-2.423 3.395-2.142 3.885.282.49.985 2.275 7.17 4.55 0 0 5.194 1.565 5.194 7.796 0 6.23-3.227 9.45-10.49 9.45-7.26 0-9.428-2.962-9.428-9.194zM41.518 31.234V1.41h17.384v6.51h-9.7v5.077l8.827.013.01 5.826-8.868.01.004 6.227h9.73l-.004 6.16"/>
+                    <path d="M30.25 14.314h-1.996v-7.35h2.622s2.443-.064 2.443 3.64c0 3.703-3.07 3.71-3.07 3.71m10.606 15.934c-.298-.735-.492-.455-.457-7.544 0 0 .204-5.87-4.598-5.87 0 0 5.06-.793 5.06-7.63 0-6.84-5.95-7.795-8.996-7.795H21.014v29.824h7.62V19.116h2.313s2.02-.157 2.02 2.31c0 2.47.264 7.72.3 8.367.034.648.386 1.44 1.124 1.44h7.8s-1.035-.25-1.334-.985"/>
+                  </g>
+                </svg>
+              </h2>
+              <h2 class="strong sell-page__calculator__breakdown__h2">Traditional Brokerage</h2>
+            </div>
+
+            <div class="sell-page__calculator__breakdown__row">
+              <div class="sell-page__calculator__breakdown__row__column">
+                <span class="u-sans-light">1%</span>
+                <span class="u-sans-bold"> to SRE</span>
+              </div>
+
+              <div class="sell-page__calculator__breakdown__row__column">
+                <span class="u-sans-light">3%</span>
+                <span class="u-sans-bold"> to seller agent</span>
+              </div>
+            </div>
+
+            <div class="sell-page__calculator__breakdown__row">
+              <div class="sell-page__calculator__breakdown__row__column">
+                <span class="u-sans-light elm-percent-to-buyer-agent">1%</span>
+                <span class="u-sans-bold"> to buyer agent</span>
+              </div>
+
+              <div class="sell-page__calculator__breakdown__row__column">
+                <span class="u-sans-light">3%</span>
+                <span class="u-sans-bold"> to buyer agent</span>
+              </div>
+            </div>
+
+            <div class="sell-page__calculator__breakdown__row sell-page__calculator__breakdown__row--highlight">
+              <div class="sell-page__calculator__breakdown__row__column">
+                <div class="u-text-gray-500 u-sans-light">
+                  <span class="elm-sre-total-percent"></span>
+                  <span> total fee</span>
+                </div>
+
+                <div class="u-text-gray-900 u-sans-bold">
+                  <span>or </span>
+                  <span class="elm-sre-total-fee"></span>
+                </div>
+              </div>
+
+              <div class="sell-page__calculator__breakdown__row__column">
+                <div class="u-sans-light u-text-500">
+                  <span>6%</span>
+                  <span> total fee</span>
+                </div>
+
+                <div class="u-sans-bold u-text-gray-900">
+                  <span>or </span>
+                  <span class="elm-traditional-total-fee"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="testimonial-hero testimonial-hero--1">
+    <blockquote class="testimonial-hero__blockquote">
+      <div class="testimonial-hero__blockquote__content">
+        <p class="strong">
+          "This was the first time I used SRE and was a little hesitant as the seller’s commission was only 2% vs. the normal 6%. However, Marie provided all the attention and service I got from previous real estate transactions and more."
+        </p>
+        <footer class="testimonial-hero__blockquote__footer">
+          <cite class="testimonial-hero__blockquote__footer__cite">
+            <strong class="strong">
+              R.T.
+            </strong>
+            Metro Honolulu
+          </cite>
+          <div class="testimonial-hero__blockquote__footer__rebate">
+            <strong class="strong">
+              Saved
+            </strong>
+            <span class="testimonial-hero__blockquote__footer__rebate__amount strong">
+              $110,375
+            </span>
+          </div>
+        </footer>
+      </div>
+    </blockquote>
+  </section>
+  <section class="marketing-page__section marketing-page__section--contact">
+    <div class="u-mauto u-size-max-width">
+      <div class="marketing-page__contact">
+        <div class="marketing-page__contact__content">
+          <img
+            class="marketing-page__contact__content__agent"
+            alt="Image of an SRE Agent"
+            src="<%= static_path(@conn, "/images/contact-agent-1.png") %>"
+          />
+          <h1 class="marketing-page__section__h1 marketing-page__contact__content__h1">
+            Contact an Agent
+          </h1>
+          <p class="marketing-page__section__subtext">
+            Our agents at your nearest office will provide full services for customer satisfaction. 
+            <br /><br />
+          </p>
+          <!--<p class="marketing-page__section__subtext">
+            SRE has regional branch offices nationwide and our agents at your nearest office will provide full services for customer satisfaction.
+          </p>-->
+        </div>
+        <form id="contact_form" class="marketing-page__contact__form elm-message-form">
+          <%= Sre.UI.Form.Input.render_template(
+            id: "first_name",
+            label: "First Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_first_name(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Input.render_template(
+            id: "last_name",
+            label: "Last Name",
+            type: "text",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_last_name(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Input.render_template(
+            id: "email",
+            label: "Email",
+            type: "email",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_email(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Input.render_template(
+            id: "phone",
+            label: "phone",
+            type: "tel",
+            classname: "u-mbottom16",
+            value: Sre.User.ViewHelper.get_current_user_phone(assigns[:user])
+          )%>
+          <%= Sre.UI.Form.Textarea.render_template(
+            id: "message",
+            label: "Message",
+            placeholder: "",
+            classname: "u-mbottom16"
+          )%>
+          <div class="grid end--md">
+            <div class="grid__sm--12 grid__md--7">
+              <%= Sre.UI.Button.ButtonDefault.render_template(
+                value: "Send",
+                classname: "button button--expand u-mbottom0",
+                id: "buying-contact"
+              )%>
+            </div>
+          </div>
+          <div class="form-submit-error"></div>
+        </form>
+      </div>
+      <div class="u-mauto u-size-max-width">  
+    <hr>
+    <div class="mortgage-branch-margins" align="left">
+      <div class="grid">
+        <div class="grid__md--12 mortpage-calctitle" align="center">SRE Branch Offices </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Alabama) LLC</li>
+              <li>SRE Matrix (Alaska) LLC</li>
+              <li>SRE Matrix (Arizona) Inc.</li>
+              <li>SRE Matrix (Arkansas) LLC</li>
+              <li>SRE Matrix Inc. (California)</li>
+              <li>SRE Matrix (Colorado) LLC</li>
+              <li>SRE Matrix (Connecticut) LLC</li>
+              <li>SRE Matrix (Delaware) LLC</li>
+              <li>SRE Matrix (Dist. of Columbia) LLC</li>
+              <li>BBK Realty and Management LLC (Florida)</li>
+              <li>SRE Matrix (Georgia) LLC</li>
+              <li>SRE Matrix Inc. (Hawaii)</li>
+              <li>SRE Matrix (Idaho) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Illinois) LLC</li>
+              <li>SRE Matrix Indiana LLC</li>
+              <li>SRE Matrix (Iowa) LLC</li>
+              <li>SRE Matrix (Kansas) LLC</li>
+              <li>SRE Matrix (Kentucky) LLC</li>
+              <li>SRE Matrix (Louisiana) LLC</li>
+              <li>SRE Matrix (Maine) LLC</li>
+              <li>SRE Matrix (Maryland) LLC</li>
+              <li>SRE Matrix (Massachusetts) LLC</li>
+              <li>SRE Matrix (Michigan) LLC</li>
+              <li>SRE Minneapolis LLC (Minnesota)</li>
+              <li>SRE Matrix (Mississippi) LLC</li>
+              <li>SRE Matrix (Missouri) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Montana) LLC</li>
+              <li>SRE Matrix (Nebraska) LLC</li>
+              <li>SRE Matrix Inc. (Nevada)</li>
+              <li>SRE Matrix (New Hampshire) LLC</li>
+              <li>SRE Matrix (New Jersey) LLC</li>
+              <li>SRE Matrix (New Mexico) LLC</li>
+              <li>SRE Matrix (New York) LLC</li>
+              <li>SRE Matrix (North Carolina) LLC</li>
+              <li>SRE Matrix (North Dakota) LLC</li>
+              <li>SRE Matrix, LLC (Ohio)</li>
+              <li>SRE Matrix (Oklahoma) LLC</li>
+              <li>SRE Matrix (Oregon) LLC</li>
+              <li>SRE Matrix (Pennsylvania) LLC</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid__sm--12 grid__md--3">
+          <div class="label">
+            <ul>
+              <li>SRE Matrix (Rhode Island) LLC</li>
+              <li>SRE Matrix (South Carolina) LLC</li>
+              <li>SRE Matrix (South Dakota) LLC</li>
+              <li>SRE Matrix (Tennessee) LLC</li>
+              <li>SRE Matrix (Texas) LLC</li>
+              <li>Utah Real Estate Information, PLLC (Utah)</li>
+              <li>SRE Matrix (Vermont) LLC</li>
+              <li>SRE Matrix (Virginia) LLC</li>
+              <li>SRE Washington LLC (Washington)</li>
+              <li>SRE Matrix (West Virginia) LLC</li>
+              <li>SRE Matrix (Wisconsin) LLC</li>
+              <li>SRE Matrix (Wyoming) LLC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mortpage-calctitle" align="center">SRE Concierge Center</div>
+    <div class="contact-page__offices__office u-font12 u-text-gray-700 u-line14 mortgage-bot-20" align="center">
+      <p class="mortgage-add-top">17550 N. Perimeter Dr. Ste 250 Scottsdale, AZ 85255</span><br>
+      Tel: <a class="a u-link-clean" href="tel:+14807710636">480.771.0636</a>
+      Email: <a class="a u-link-clean" href="mailto:info@sre.com">info@sre.com</a></p>
+    </div>
+  </section>
+</article>

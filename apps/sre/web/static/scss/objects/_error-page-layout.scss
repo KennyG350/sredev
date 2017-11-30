@@ -1,0 +1,88 @@
+// *******************************************
+// *******************************************
+
+    // Error page layout styles
+
+// *******************************************
+// *******************************************
+
+// @vars
+$unit-sm-edge-space     : $unit-sm-edge-space; // settings/layout-units
+$unit-sm-header-height  : $unit-sm-header-height; // settings/layout-units
+$unit-md-header-height : $unit-md-header-height; // settings/layout-units
+$unit-md-edge-space    : $unit-md-edge-space; // settings/layout-units
+$unit-md-width         : $unit-md-width; // settings/layout-units
+$unit-grid-4of12            : $unit-grid-4of12; // settings/layout-units
+$unit-grid-gutter           : $unit-grid-gutter; // settings/layout-units
+
+.error-page-layout {
+    height              : calc(100vh - #{rem-calc($unit-sm-header-height)});
+    background-color    : $black;
+    background-position : center;
+    background-repeat   : no-repeat;
+    background-size     : cover;
+
+    @include min-screen($breakpoint-md) {
+      height : calc(100vh);
+      margin : rem-calc(0 (-$unit-md-edge-space));
+      min-height : rem-calc(500);
+    }
+
+}
+
+.error-page-layout__content {
+    height    : 100%;
+    max-width : rem-calc($unit-md-width);
+    margin    : 0 auto;
+}
+
+// defines 1/3 width of content
+.error-page-layout__content__layout {
+    position  : relative;
+    height    : 100%;
+    padding   : rem-calc(0 $unit-sm-edge-space);
+
+    @include min-screen($breakpoint-md) {
+        max-width : $unit-grid-4of12;
+        padding   : rem-calc(0 $unit-grid-gutter);
+    }
+
+}
+
+// position content centered vertically
+.error-page-layout__content__message {
+    padding    : rem-calc($unit-sm-edge-space);
+    text-align : center;
+
+    @include min-screen($breakpoint-md) {
+        position   : absolute;
+        top        : 50%;
+        right      : 0;
+        left       : 0;
+        padding    : rem-calc(0 $unit-grid-gutter);
+        transform  : translateY(-50%);
+        text-align : left;
+    }
+
+}
+
+.error-page-layout__error-code {
+    margin : 0 auto rem-calc(21);
+}
+
+.error-page-layout__tagline {
+    margin-bottom : rem-calc(21);
+    font-size     : rem-calc(36);
+    line-height   : rem-calc(40);
+}
+
+.error-page-layout__cta {
+    font-size   : rem-calc(21);
+    line-height : rem-calc(24);
+    @include sans-bold;
+}
+
+.error-page-layout__sub {
+    margin-top  : rem-calc(21);
+    font-weight : bold;
+}
